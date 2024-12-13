@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.47f1 (88c277b85d21) revision 8962679'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'fr' Physical Memory: 16281 MB
+OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'fr' Physical Memory: 16113 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.47f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/theod/Documents/vdef/vdef
+C:/Users/Dell/OneDrive - EPITA/Documents/GitHub/TheThroneOfValdoriam/Projet Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53940
-Successfully changed project path to: C:/Users/theod/Documents/vdef/vdef
-C:/Users/theod/Documents/vdef/vdef
+49829
+Successfully changed project path to: C:/Users/Dell/OneDrive - EPITA/Documents/GitHub/TheThroneOfValdoriam/Projet Unity
+C:/Users/Dell/OneDrive - EPITA/Documents/GitHub/TheThroneOfValdoriam/Projet Unity
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,75 +49,69 @@ C:/Users/theod/Documents/vdef/vdef
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [15620]  Target information:
+Player connection [9852]  Target information:
 
-Player connection [15620]  * "[IP] 192.168.1.31 [Port] 0 [Flags] 2 [Guid] 3001520318 [EditorId] 3001520318 [Version] 1048832 [Id] WindowsEditor(7,PC_de_Théodore) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [9852]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 2040305146 [EditorId] 2040305146 [Version] 1048832 [Id] WindowsEditor(7,Theodore) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [15620]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 3001520318 [EditorId] 3001520318 [Version] 1048832 [Id] WindowsEditor(7,PC_de_Théodore) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [9852]  * "[IP] 10.3.140.113 [Port] 0 [Flags] 2 [Guid] 2040305146 [EditorId] 2040305146 [Version] 1048832 [Id] WindowsEditor(7,Theodore) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [15620]  * "[IP] 172.26.96.1 [Port] 0 [Flags] 2 [Guid] 3001520318 [EditorId] 3001520318 [Version] 1048832 [Id] WindowsEditor(7,PC_de_Théodore) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [15620]  * "[IP] 172.23.16.1 [Port] 0 [Flags] 2 [Guid] 3001520318 [EditorId] 3001520318 [Version] 1048832 [Id] WindowsEditor(7,PC_de_Théodore) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Unable to join player connection multicast group (err: 10013).
-Player connection [15620] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9852] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [9852] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-Refreshing native plugins compatible for Editor in 15.12 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 62.94 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.47f1 (88c277b85d21)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.47f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/theod/Documents/vdef/vdef/Assets
+[Subsystems] Discovering subsystems at path C:/Users/Dell/OneDrive - EPITA/Documents/GitHub/TheThroneOfValdoriam/Projet Unity/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f08)
+    Renderer: NVIDIA Quadro P1000 (ID=0x1cbb)
     Vendor:   NVIDIA
-    VRAM:     5955 MB
-    Driver:   32.0.15.6603
+    VRAM:     4007 MB
+    Driver:   32.0.15.5599
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.47f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.47f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.47f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56720
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56140
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.47f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.47f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.013936 seconds.
-- Loaded All Assemblies, in  0.525 seconds
+Registered in 0.016032 seconds.
+- Loaded All Assemblies, in  0.868 seconds
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.375 seconds
-Domain Reload Profiling: 896ms
-	BeginReloadAssembly (147ms)
+- Finished resetting the current domain, in  0.603 seconds
+Domain Reload Profiling: 1467ms
+	BeginReloadAssembly (350ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (51ms)
-	RebuildNativeTypeToScriptingClass (17ms)
-	initialDomainReloadingComplete (82ms)
-	LoadAllAssembliesAndSetupDomain (224ms)
-		LoadAssemblies (144ms)
+	RebuildCommonClasses (79ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (125ms)
+	LoadAllAssembliesAndSetupDomain (288ms)
+		LoadAssemblies (344ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (221ms)
-			TypeCache.Refresh (219ms)
-				TypeCache.ScanAssembly (200ms)
+		AnalyzeDomain (285ms)
+			TypeCache.Refresh (283ms)
+				TypeCache.ScanAssembly (255ms)
 			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (376ms)
+	FinalizeReload (604ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (308ms)
+		SetupLoadedEditorAssemblies (504ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (16ms)
-			SetLoadedEditorAssemblies (7ms)
+			InitializePlatformSupportModulesInManaged (22ms)
+			SetLoadedEditorAssemblies (16ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (215ms)
-			ProcessInitializeOnLoadMethodAttributes (67ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (357ms)
+			ProcessInitializeOnLoadMethodAttributes (103ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -126,868 +120,66 @@ Domain Reload Profiling: 896ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.986 seconds
+- Loaded All Assemblies, in  1.246 seconds
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.248 seconds
-Domain Reload Profiling: 2228ms
-	BeginReloadAssembly (315ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (11ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (34ms)
-	RebuildCommonClasses (53ms)
-	RebuildNativeTypeToScriptingClass (18ms)
-	initialDomainReloadingComplete (64ms)
-	LoadAllAssembliesAndSetupDomain (530ms)
-		LoadAssemblies (454ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (258ms)
-			TypeCache.Refresh (230ms)
-				TypeCache.ScanAssembly (210ms)
-			ScanForSourceGeneratedMonoScriptInfo (19ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (1249ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1067ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (79ms)
-			ProcessInitializeOnLoadAttributes (918ms)
-			ProcessInitializeOnLoadMethodAttributes (39ms)
-			AfterProcessingInitializeOnLoad (17ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 7.80 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3689 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (128.4 KB). Loaded Objects now: 4178.
-Memory consumption went from 149.6 MB to 149.5 MB.
-Total: 7.695200 ms (FindLiveObjects: 0.385700 ms CreateObjectMapping: 0.406600 ms MarkObjects: 6.691500 ms  DeleteObjects: 0.209500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 231.554560 seconds.
-  path: Assets/NewBrush.brush
-  artifactKey: Guid(e323d08d42a5b3f4a8e84dab1986b628) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/NewBrush.brush using Guid(e323d08d42a5b3f4a8e84dab1986b628) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '9778c6cd5cc09ea023171114783e64d8') in 0.084028 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  3.339 seconds
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in 10.830 seconds
-Domain Reload Profiling: 14164ms
-	BeginReloadAssembly (265ms)
+- Finished resetting the current domain, in  1.825 seconds
+Domain Reload Profiling: 3043ms
+	BeginReloadAssembly (249ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (7ms)
 		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (93ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (43ms)
-	LoadAllAssembliesAndSetupDomain (2978ms)
-		LoadAssemblies (3068ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (80ms)
+	LoadAllAssembliesAndSetupDomain (823ms)
+		LoadAssemblies (652ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (23ms)
-			TypeCache.Refresh (11ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (317ms)
+			TypeCache.Refresh (284ms)
+				TypeCache.ScanAssembly (259ms)
+			ScanForSourceGeneratedMonoScriptInfo (21ms)
 			ResolveRequiredComponents (10ms)
-	FinalizeReload (10830ms)
+	FinalizeReload (1826ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (741ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (74ms)
-			ProcessInitializeOnLoadAttributes (620ms)
-			ProcessInitializeOnLoadMethodAttributes (22ms)
-			AfterProcessingInitializeOnLoad (10ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Refreshing native plugins compatible for Editor in 5.56 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3663 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 15 unused Assets / (99.8 KB). Loaded Objects now: 4199.
-Memory consumption went from 148.2 MB to 148.1 MB.
-Total: 4.369300 ms (FindLiveObjects: 0.312100 ms CreateObjectMapping: 0.321600 ms MarkObjects: 3.670500 ms  DeleteObjects: 0.064000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 627.030606 seconds.
-  path: Assets/Scenes/MenuController.prefab
-  artifactKey: Guid(6cff5056421550844b6026baa7457cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MenuController.prefab using Guid(6cff5056421550844b6026baa7457cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '20032dcf8610b2c66f892a7a07eddfbf') in 0.010621 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 1.850468 seconds.
-  path: Assets/Scenes/MainMenu.unity
-  artifactKey: Guid(195b5a4e04a5bea49a7cc8c056600891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainMenu.unity using Guid(195b5a4e04a5bea49a7cc8c056600891) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '6d25125ea1e1305032ad7985775f29a9') in 0.000789 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.218306 seconds.
-  path: Assets/Scenes/MenuController.prefab
-  artifactKey: Guid(6cff5056421550844b6026baa7457cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MenuController.prefab using Guid(6cff5056421550844b6026baa7457cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '20032dcf8610b2c66f892a7a07eddfbf') in 0.000861 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.965 seconds
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-<color=#73ACE5>[FusionEditor/Installer]</color> Setting 'FUSION_WEAVER' & 'FUSION2' Define
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-Fusion.FusionEditorLog:LogInstaller (string)
-Fusion.Editor.FusionInstaller:.cctor () (at Assets/Photon/Fusion/Editor/Fusion.Unity.Editor.cs:11701)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Assets/Photon/Fusion/Editor/Fusion.Unity.Editor.cs Line: 11701)
-
-[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.772 seconds
-Domain Reload Profiling: 2732ms
-	BeginReloadAssembly (219ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (53ms)
-	RebuildCommonClasses (52ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (47ms)
-	LoadAllAssembliesAndSetupDomain (624ms)
-		LoadAssemblies (470ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (269ms)
-			TypeCache.Refresh (228ms)
-				TypeCache.ScanAssembly (208ms)
-			ScanForSourceGeneratedMonoScriptInfo (20ms)
-			ResolveRequiredComponents (19ms)
-	FinalizeReload (1773ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1022ms)
+		SetupLoadedEditorAssemblies (1602ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (11ms)
 			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (96ms)
-			ProcessInitializeOnLoadAttributes (868ms)
-			ProcessInitializeOnLoadMethodAttributes (28ms)
-			AfterProcessingInitializeOnLoad (11ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Refreshing native plugins compatible for Editor in 10.14 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3708 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 24 unused Assets / (132.2 KB). Loaded Objects now: 4274.
-Memory consumption went from 150.2 MB to 150.1 MB.
-Total: 4.872900 ms (FindLiveObjects: 0.359400 ms CreateObjectMapping: 0.292800 ms MarkObjects: 3.964400 ms  DeleteObjects: 0.255100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:scripting/monoscript/fileName/FusionRunnerVisibilityControlsWindow.cs: 503e55d51d5bac9ff9db7e3128ab6896 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/precompiled-assembly-types:websocket-sharp: 14fbe16c400853e620dbee885c09856b -> 
-  custom:scripting/precompiled-assembly-types:Photon3Unity3D: c6b5832f40bb2e6733b55db4d782a76d -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Sockets: 9fb5846d0e49f79a62e53897c4dfc26f -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:scripting/monoscript/fileName/FusionBasicBillboard.cs: a80a3abf722bfab7012d987c953fb25b -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporterEditor.cs: 0b9c7f8db96d38ff89dc9f2e19e80a40 -> 
-  custom:scripting/monoscript/fileName/EnableOnSingleRunner.cs: 9976ce768e23cc0678b095d30598d8cd -> 
-  custom:scripting/monoscript/fileName/FusionWeaverTriggerImporter.cs: 5fc682d3abd06512b01d7350f2f8770a -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatistics.cs: 021db0ff7e2d9da1efde47d41baabec6 -> 
-  custom:scripting/monoscript/fileName/FusionAddressablePrefabsPreloader.cs: 609c7194fc18608a6ba4972670be253b -> 
-  custom:scripting/monoscript/fileName/FusionBootstrap.cs: 6c11197935a2055b5e9a8f3a7b6b3582 -> 
-  custom:scripting/monoscript/fileName/NetworkCharacterController.cs: 0d9ab4a1b508efe718225ceffebd8e54 -> 
-  custom:scripting/monoscript/fileName/NetworkObjectProviderDefault.cs: 0eb113b3784be4de9cc2f3cdcdf5e36c -> 
-  custom:scripting/monoscript/fileName/FusionStatsConfig.cs: d07ac9fd432a3fe1fc143ca6057eefa0 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:scripting/monoscript/fileName/FusionStatsGraphDefault.cs: 5ee101599c172926cb7544039c27358d -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:scripting/monoscript/fileName/FusionStatsPanelHeader.cs: 4548dffe5115cb5888d454a4d21545ba -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLink.cs: 6e4a2325960fce24f58edb6ee6b338d8 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:scripting/monoscript/fileName/NetworkPrefabsInspector.cs: d5690b6a52b511d4d789d0067f817a3c -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.Editor.cs: 48a145cd8a74e9c9562a1f15ca91cf96 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Runtime: 7e594ae8b4bdbcc37644229d4539762e -> 
-  custom:scripting/monoscript/fileName/FusionStatsWorldAnchor.cs: e51e9d4336f8910a14a6d0db6934550f -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraph.cs: 9984a882a8791892508319702985b2a1 -> 
-  custom:scripting/monoscript/fileName/RunnerLagCompensationGizmos.cs: f7028307a5d8b8de388a40efb20302af -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLinksRoot.cs: 64f229c02655e4ab1b3ad93c7368ccfe -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.cs: 637ce84f5d924288b5841d0c572e7c7e -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraphCombine.cs: 504ba5016b23b7b24ba99fd9902d9b08 -> 
-  custom:scripting/monoscript/fileName/RunnerEnableVisibility.cs: e1b57f1bd6fcbd3137975404af4bcf85 -> 
-  custom:scripting/monoscript/fileName/FusionStatsCanvas.cs: 416da2e503a8c9751993b0a30323c49f -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporter.cs: a2caae9d85fed596662aa6841efc1b3e -> 
-  custom:scripting/monoscript/fileName/FusionEditorConfigImporter.cs: efe09da10695ecc318b2a0af514b1210 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Realtime: e0f689bc800d7f4dbb38556dab9ab917 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Common: 405307a00445c43b95790cf1621743d3 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity: c2cb3f71ad0397b1dd48b94e5a353f38 -> 
-  custom:scripting/monoscript/fileName/FusionStatistics.cs: 106e5dd35e0be1ca1db7ee4ef56a87b5 -> 
-  custom:scripting/monoscript/fileName/NetworkSceneManagerDefault.cs: 871a1346f3625e42e5be83f620052e51 -> 
-  custom:scripting/precompiled-assembly-types:NanoSockets: 5215c3b157b18801e4d4a67db049f6fb -> 
-  custom:scripting/monoscript/fileName/FusionBootstrapDebugGUI.cs: 371b4228dd1f5808b5897e19c03d546a -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/RunnerAOIGizmos.cs: 8b1629a60417f80a3d501474e540ad3f -> 
-  custom:scripting/monoscript/fileName/FusionEditorSkin.cs: c6dee1ba664a2a78ce51705f2322e50c -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Log: 17ae28182ca24f7ef3aba1ab6cfb3aea -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity.Editor: 3a9bc2e5511997a9db727cf7083c77ec -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.887 seconds
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-<color=#73ACE5>[FusionEditor/Installer]</color> Setting 'FUSION_WEAVER' & 'FUSION2' Define
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-Fusion.FusionEditorLog:LogInstaller (string)
-Fusion.Editor.FusionInstaller:.cctor () (at Assets/Photon/Fusion/Editor/Fusion.Unity.Editor.cs:11701)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Assets/Photon/Fusion/Editor/Fusion.Unity.Editor.cs Line: 11701)
-
-[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  8.148 seconds
-Domain Reload Profiling: 9029ms
-	BeginReloadAssembly (300ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (116ms)
-	RebuildCommonClasses (49ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (45ms)
-	LoadAllAssembliesAndSetupDomain (473ms)
-		LoadAssemblies (472ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (135ms)
-			TypeCache.Refresh (107ms)
-				TypeCache.ScanAssembly (93ms)
-			ScanForSourceGeneratedMonoScriptInfo (18ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (8148ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (6688ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (12ms)
-			SetLoadedEditorAssemblies (7ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (104ms)
-			ProcessInitializeOnLoadAttributes (6485ms)
-			ProcessInitializeOnLoadMethodAttributes (65ms)
+			BeforeProcessingInitializeOnLoad (118ms)
+			ProcessInitializeOnLoadAttributes (1393ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
 			AfterProcessingInitializeOnLoad (15ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Refreshing native plugins compatible for Editor in 20.47 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (13ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 26.25 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3714 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 28 unused Assets / (134.4 KB). Loaded Objects now: 4290.
-Memory consumption went from 155.0 MB to 154.8 MB.
-Total: 7.791200 ms (FindLiveObjects: 0.857600 ms CreateObjectMapping: 0.529900 ms MarkObjects: 6.166300 ms  DeleteObjects: 0.235900 ms)
+Unloading 3739 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 46 unused Assets / (133.1 KB). Loaded Objects now: 4234.
+Memory consumption went from 150.9 MB to 150.7 MB.
+Total: 6.373600 ms (FindLiveObjects: 0.372700 ms CreateObjectMapping: 0.305200 ms MarkObjects: 5.447600 ms  DeleteObjects: 0.246700 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
-  custom:scripting/monoscript/fileName/FusionRunnerVisibilityControlsWindow.cs: 503e55d51d5bac9ff9db7e3128ab6896 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/precompiled-assembly-types:websocket-sharp: 14fbe16c400853e620dbee885c09856b -> 
-  custom:scripting/precompiled-assembly-types:Photon3Unity3D: c6b5832f40bb2e6733b55db4d782a76d -> 
   custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Sockets: 9fb5846d0e49f79a62e53897c4dfc26f -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:scripting/monoscript/fileName/FusionBasicBillboard.cs: a80a3abf722bfab7012d987c953fb25b -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporterEditor.cs: 0b9c7f8db96d38ff89dc9f2e19e80a40 -> 
-  custom:scripting/monoscript/fileName/EnableOnSingleRunner.cs: 9976ce768e23cc0678b095d30598d8cd -> 
-  custom:scripting/monoscript/fileName/FusionWeaverTriggerImporter.cs: 5fc682d3abd06512b01d7350f2f8770a -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatistics.cs: 021db0ff7e2d9da1efde47d41baabec6 -> 
-  custom:scripting/monoscript/fileName/FusionAddressablePrefabsPreloader.cs: 609c7194fc18608a6ba4972670be253b -> 
-  custom:scripting/monoscript/fileName/FusionBootstrap.cs: 6c11197935a2055b5e9a8f3a7b6b3582 -> 
-  custom:scripting/monoscript/fileName/NetworkCharacterController.cs: 0d9ab4a1b508efe718225ceffebd8e54 -> 
-  custom:scripting/monoscript/fileName/NetworkObjectProviderDefault.cs: 0eb113b3784be4de9cc2f3cdcdf5e36c -> 
-  custom:scripting/monoscript/fileName/FusionStatsConfig.cs: d07ac9fd432a3fe1fc143ca6057eefa0 -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:scripting/monoscript/fileName/FusionStatsGraphDefault.cs: 5ee101599c172926cb7544039c27358d -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Rocks: 5f71c6f5683af58c1bc2dc303f06a8f9 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:scripting/monoscript/fileName/FusionStatsPanelHeader.cs: 4548dffe5115cb5888d454a4d21545ba -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLink.cs: 6e4a2325960fce24f58edb6ee6b338d8 -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil: a89b8974831fb168c35dab32ff4bc2ab -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:scripting/monoscript/fileName/NetworkPrefabsInspector.cs: d5690b6a52b511d4d789d0067f817a3c -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.Editor.cs: 48a145cd8a74e9c9562a1f15ca91cf96 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Runtime: 7e594ae8b4bdbcc37644229d4539762e -> 
-  custom:scripting/monoscript/fileName/FusionStatsWorldAnchor.cs: e51e9d4336f8910a14a6d0db6934550f -> 
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
   custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraph.cs: 9984a882a8791892508319702985b2a1 -> 
-  custom:scripting/monoscript/fileName/RunnerLagCompensationGizmos.cs: f7028307a5d8b8de388a40efb20302af -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLinksRoot.cs: 64f229c02655e4ab1b3ad93c7368ccfe -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.cs: 637ce84f5d924288b5841d0c572e7c7e -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Mdb: eeaf3d2a18354879d00d7a56d9384f12 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraphCombine.cs: 504ba5016b23b7b24ba99fd9902d9b08 -> 
-  custom:scripting/monoscript/fileName/RunnerEnableVisibility.cs: e1b57f1bd6fcbd3137975404af4bcf85 -> 
-  custom:scripting/monoscript/fileName/FusionStatsCanvas.cs: 416da2e503a8c9751993b0a30323c49f -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporter.cs: a2caae9d85fed596662aa6841efc1b3e -> 
-  custom:scripting/monoscript/fileName/FusionEditorConfigImporter.cs: efe09da10695ecc318b2a0af514b1210 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Realtime: e0f689bc800d7f4dbb38556dab9ab917 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Common: 405307a00445c43b95790cf1621743d3 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity: c2cb3f71ad0397b1dd48b94e5a353f38 -> 
-  custom:scripting/monoscript/fileName/FusionStatistics.cs: 106e5dd35e0be1ca1db7ee4ef56a87b5 -> 
-  custom:scripting/monoscript/fileName/NetworkSceneManagerDefault.cs: 871a1346f3625e42e5be83f620052e51 -> 
-  custom:scripting/precompiled-assembly-types:NanoSockets: 5215c3b157b18801e4d4a67db049f6fb -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Pdb: 8503f4121aa743c4dd93ab49beabf1b4 -> 
-  custom:scripting/monoscript/fileName/FusionBootstrapDebugGUI.cs: 371b4228dd1f5808b5897e19c03d546a -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/RunnerAOIGizmos.cs: 8b1629a60417f80a3d501474e540ad3f -> 
-  custom:scripting/monoscript/fileName/FusionEditorSkin.cs: c6dee1ba664a2a78ce51705f2322e50c -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Log: 17ae28182ca24f7ef3aba1ab6cfb3aea -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity.Editor: 3a9bc2e5511997a9db727cf7083c77ec -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.689 seconds
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-<color=#73ACE5>[FusionEditor/Installer]</color> Setting 'FUSION_WEAVER' & 'FUSION2' Define
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-Fusion.FusionEditorLog:LogInstaller (string)
-Fusion.Editor.FusionInstaller:.cctor () (at Assets/Photon/Fusion/Editor/Fusion.Unity.Editor.cs:11701)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Assets/Photon/Fusion/Editor/Fusion.Unity.Editor.cs Line: 11701)
-
-[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.973 seconds
-Domain Reload Profiling: 2657ms
-	BeginReloadAssembly (186ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (45ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (38ms)
-	LoadAllAssembliesAndSetupDomain (413ms)
-		LoadAssemblies (384ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (125ms)
-			TypeCache.Refresh (93ms)
-				TypeCache.ScanAssembly (81ms)
-			ScanForSourceGeneratedMonoScriptInfo (20ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (1974ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1163ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (13ms)
-			SetLoadedEditorAssemblies (6ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (98ms)
-			ProcessInitializeOnLoadAttributes (1001ms)
-			ProcessInitializeOnLoadMethodAttributes (33ms)
-			AfterProcessingInitializeOnLoad (13ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Refreshing native plugins compatible for Editor in 10.83 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3714 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 28 unused Assets / (134.2 KB). Loaded Objects now: 4305.
-Memory consumption went from 155.1 MB to 155.0 MB.
-Total: 5.553700 ms (FindLiveObjects: 0.427100 ms CreateObjectMapping: 0.397500 ms MarkObjects: 4.528400 ms  DeleteObjects: 0.199600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:scripting/monoscript/fileName/FusionRunnerVisibilityControlsWindow.cs: 503e55d51d5bac9ff9db7e3128ab6896 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/precompiled-assembly-types:websocket-sharp: 14fbe16c400853e620dbee885c09856b -> 
-  custom:scripting/precompiled-assembly-types:Photon3Unity3D: c6b5832f40bb2e6733b55db4d782a76d -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Sockets: 9fb5846d0e49f79a62e53897c4dfc26f -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:scripting/monoscript/fileName/FusionBasicBillboard.cs: a80a3abf722bfab7012d987c953fb25b -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporterEditor.cs: 0b9c7f8db96d38ff89dc9f2e19e80a40 -> 
-  custom:scripting/monoscript/fileName/EnableOnSingleRunner.cs: 9976ce768e23cc0678b095d30598d8cd -> 
-  custom:scripting/monoscript/fileName/FusionWeaverTriggerImporter.cs: 5fc682d3abd06512b01d7350f2f8770a -> 
-  custom:scripting/monoscript/fileName/Fusion.CodeGen.User.cs: 7518413c31be8fc7fe79dd8f5b20fa0c -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatistics.cs: 021db0ff7e2d9da1efde47d41baabec6 -> 
-  custom:scripting/monoscript/fileName/FusionAddressablePrefabsPreloader.cs: 609c7194fc18608a6ba4972670be253b -> 
-  custom:scripting/monoscript/fileName/FusionBootstrap.cs: 6c11197935a2055b5e9a8f3a7b6b3582 -> 
-  custom:scripting/monoscript/fileName/NetworkCharacterController.cs: 0d9ab4a1b508efe718225ceffebd8e54 -> 
-  custom:scripting/monoscript/fileName/NetworkObjectProviderDefault.cs: 0eb113b3784be4de9cc2f3cdcdf5e36c -> 
-  custom:scripting/monoscript/fileName/FusionStatsConfig.cs: d07ac9fd432a3fe1fc143ca6057eefa0 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:scripting/monoscript/fileName/FusionStatsGraphDefault.cs: 5ee101599c172926cb7544039c27358d -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Rocks: 5f71c6f5683af58c1bc2dc303f06a8f9 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:scripting/monoscript/fileName/FusionStatsPanelHeader.cs: 4548dffe5115cb5888d454a4d21545ba -> 
-  custom:scripting/monoscript/fileName/Fusion.CodeGen.cs: b9ff9c5a347ec7e6d58d9aa467d5ae96 -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLink.cs: 6e4a2325960fce24f58edb6ee6b338d8 -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil: a89b8974831fb168c35dab32ff4bc2ab -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:scripting/monoscript/fileName/NetworkPrefabsInspector.cs: d5690b6a52b511d4d789d0067f817a3c -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.Editor.cs: 33ff73e1c007e8a46f2c03621d0520aa -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Runtime: 7e594ae8b4bdbcc37644229d4539762e -> 
-  custom:scripting/precompiled-assembly-types:Unity.Fusion.CodeGen: f1e094c67a8e343812574a90957048af -> 
-  custom:scripting/monoscript/fileName/FusionStatsWorldAnchor.cs: e51e9d4336f8910a14a6d0db6934550f -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraph.cs: 9984a882a8791892508319702985b2a1 -> 
-  custom:scripting/monoscript/fileName/RunnerLagCompensationGizmos.cs: f7028307a5d8b8de388a40efb20302af -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLinksRoot.cs: 64f229c02655e4ab1b3ad93c7368ccfe -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.cs: 637ce84f5d924288b5841d0c572e7c7e -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Mdb: eeaf3d2a18354879d00d7a56d9384f12 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraphCombine.cs: 504ba5016b23b7b24ba99fd9902d9b08 -> 
-  custom:scripting/monoscript/fileName/RunnerEnableVisibility.cs: e1b57f1bd6fcbd3137975404af4bcf85 -> 
-  custom:scripting/monoscript/fileName/FusionStatsCanvas.cs: 416da2e503a8c9751993b0a30323c49f -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporter.cs: a2caae9d85fed596662aa6841efc1b3e -> 
-  custom:scripting/monoscript/fileName/FusionEditorConfigImporter.cs: efe09da10695ecc318b2a0af514b1210 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Realtime: e0f689bc800d7f4dbb38556dab9ab917 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Common: 405307a00445c43b95790cf1621743d3 -> 
-  custom:scripting/monoscript/fileName/FusionHubWindow.cs: 761ecf44afbbe98f819411be58e9da60 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity: c2cb3f71ad0397b1dd48b94e5a353f38 -> 
-  custom:scripting/monoscript/fileName/FusionStatistics.cs: 106e5dd35e0be1ca1db7ee4ef56a87b5 -> 
-  custom:scripting/monoscript/fileName/NetworkSceneManagerDefault.cs: 871a1346f3625e42e5be83f620052e51 -> 
-  custom:scripting/precompiled-assembly-types:NanoSockets: 5215c3b157b18801e4d4a67db049f6fb -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Pdb: 8503f4121aa743c4dd93ab49beabf1b4 -> 
-  custom:scripting/monoscript/fileName/FusionBootstrapDebugGUI.cs: 371b4228dd1f5808b5897e19c03d546a -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/RunnerAOIGizmos.cs: 8b1629a60417f80a3d501474e540ad3f -> 
-  custom:scripting/monoscript/fileName/FusionEditorSkin.cs: c6dee1ba664a2a78ce51705f2322e50c -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Log: 17ae28182ca24f7ef3aba1ab6cfb3aea -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity.Editor: 68ea4e16afd58ebae0c9e956fafeb5ba -> 
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.651 seconds
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.450 seconds
-Domain Reload Profiling: 2096ms
-	BeginReloadAssembly (179ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (39ms)
-	RebuildCommonClasses (42ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (41ms)
-	LoadAllAssembliesAndSetupDomain (371ms)
-		LoadAssemblies (422ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (48ms)
-			TypeCache.Refresh (13ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (21ms)
-			ResolveRequiredComponents (12ms)
-	FinalizeReload (1451ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (846ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (9ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (75ms)
-			ProcessInitializeOnLoadAttributes (720ms)
-			ProcessInitializeOnLoadMethodAttributes (27ms)
-			AfterProcessingInitializeOnLoad (10ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Refreshing native plugins compatible for Editor in 10.77 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3714 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 28 unused Assets / (134.3 KB). Loaded Objects now: 4320.
-Memory consumption went from 155.1 MB to 155.0 MB.
-Total: 4.267500 ms (FindLiveObjects: 0.331800 ms CreateObjectMapping: 0.362400 ms MarkObjects: 3.446900 ms  DeleteObjects: 0.125100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:scripting/monoscript/fileName/FusionRunnerVisibilityControlsWindow.cs: 503e55d51d5bac9ff9db7e3128ab6896 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/precompiled-assembly-types:websocket-sharp: 14fbe16c400853e620dbee885c09856b -> 
-  custom:scripting/precompiled-assembly-types:Photon3Unity3D: c6b5832f40bb2e6733b55db4d782a76d -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Sockets: 9fb5846d0e49f79a62e53897c4dfc26f -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:scripting/monoscript/fileName/FusionBasicBillboard.cs: a80a3abf722bfab7012d987c953fb25b -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporterEditor.cs: 0b9c7f8db96d38ff89dc9f2e19e80a40 -> 
-  custom:scripting/monoscript/fileName/EnableOnSingleRunner.cs: 9976ce768e23cc0678b095d30598d8cd -> 
-  custom:scripting/monoscript/fileName/FusionWeaverTriggerImporter.cs: 5fc682d3abd06512b01d7350f2f8770a -> 
-  custom:scripting/monoscript/fileName/Fusion.CodeGen.User.cs: 7518413c31be8fc7fe79dd8f5b20fa0c -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatistics.cs: 021db0ff7e2d9da1efde47d41baabec6 -> 
-  custom:scripting/monoscript/fileName/FusionAddressablePrefabsPreloader.cs: 609c7194fc18608a6ba4972670be253b -> 
-  custom:scripting/monoscript/fileName/FusionBootstrap.cs: 6c11197935a2055b5e9a8f3a7b6b3582 -> 
-  custom:scripting/monoscript/fileName/NetworkCharacterController.cs: 0d9ab4a1b508efe718225ceffebd8e54 -> 
-  custom:scripting/monoscript/fileName/NetworkObjectProviderDefault.cs: 0eb113b3784be4de9cc2f3cdcdf5e36c -> 
-  custom:scripting/monoscript/fileName/FusionStatsConfig.cs: d07ac9fd432a3fe1fc143ca6057eefa0 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:scripting/monoscript/fileName/FusionStatsGraphDefault.cs: 5ee101599c172926cb7544039c27358d -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Rocks: 5f71c6f5683af58c1bc2dc303f06a8f9 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:scripting/monoscript/fileName/FusionStatsPanelHeader.cs: 4548dffe5115cb5888d454a4d21545ba -> 
-  custom:scripting/monoscript/fileName/Fusion.CodeGen.cs: b9ff9c5a347ec7e6d58d9aa467d5ae96 -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLink.cs: 6e4a2325960fce24f58edb6ee6b338d8 -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil: a89b8974831fb168c35dab32ff4bc2ab -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:scripting/monoscript/fileName/NetworkPrefabsInspector.cs: d5690b6a52b511d4d789d0067f817a3c -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.Editor.cs: 33ff73e1c007e8a46f2c03621d0520aa -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Runtime: 7e594ae8b4bdbcc37644229d4539762e -> 
-  custom:scripting/precompiled-assembly-types:Unity.Fusion.CodeGen: f1e094c67a8e343812574a90957048af -> 
-  custom:scripting/monoscript/fileName/FusionStatsWorldAnchor.cs: e51e9d4336f8910a14a6d0db6934550f -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraph.cs: 9984a882a8791892508319702985b2a1 -> 
-  custom:scripting/monoscript/fileName/RunnerLagCompensationGizmos.cs: f7028307a5d8b8de388a40efb20302af -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLinksRoot.cs: 64f229c02655e4ab1b3ad93c7368ccfe -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.cs: 637ce84f5d924288b5841d0c572e7c7e -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Mdb: eeaf3d2a18354879d00d7a56d9384f12 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraphCombine.cs: 504ba5016b23b7b24ba99fd9902d9b08 -> 
-  custom:scripting/monoscript/fileName/RunnerEnableVisibility.cs: e1b57f1bd6fcbd3137975404af4bcf85 -> 
-  custom:scripting/monoscript/fileName/FusionStatsCanvas.cs: 416da2e503a8c9751993b0a30323c49f -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporter.cs: a2caae9d85fed596662aa6841efc1b3e -> 
-  custom:scripting/monoscript/fileName/FusionEditorConfigImporter.cs: efe09da10695ecc318b2a0af514b1210 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Realtime: e0f689bc800d7f4dbb38556dab9ab917 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Common: 405307a00445c43b95790cf1621743d3 -> 
-  custom:scripting/monoscript/fileName/FusionHubWindow.cs: 761ecf44afbbe98f819411be58e9da60 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity: c2cb3f71ad0397b1dd48b94e5a353f38 -> 
-  custom:scripting/monoscript/fileName/FusionStatistics.cs: 106e5dd35e0be1ca1db7ee4ef56a87b5 -> 
-  custom:scripting/monoscript/fileName/NetworkSceneManagerDefault.cs: 871a1346f3625e42e5be83f620052e51 -> 
-  custom:scripting/precompiled-assembly-types:NanoSockets: 5215c3b157b18801e4d4a67db049f6fb -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Pdb: 8503f4121aa743c4dd93ab49beabf1b4 -> 
-  custom:scripting/monoscript/fileName/FusionBootstrapDebugGUI.cs: 371b4228dd1f5808b5897e19c03d546a -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/RunnerAOIGizmos.cs: 8b1629a60417f80a3d501474e540ad3f -> 
-  custom:scripting/monoscript/fileName/FusionEditorSkin.cs: c6dee1ba664a2a78ce51705f2322e50c -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Log: 17ae28182ca24f7ef3aba1ab6cfb3aea -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity.Editor: 68ea4e16afd58ebae0c9e956fafeb5ba -> 
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 10.03 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 3 unused Assets / (108.5 KB). Loaded Objects now: 4320.
-Memory consumption went from 97.3 MB to 97.2 MB.
-Total: 6.829800 ms (FindLiveObjects: 0.352200 ms CreateObjectMapping: 0.338100 ms MarkObjects: 6.012900 ms  DeleteObjects: 0.125500 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:scripting/monoscript/fileName/FusionRunnerVisibilityControlsWindow.cs: 503e55d51d5bac9ff9db7e3128ab6896 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/precompiled-assembly-types:websocket-sharp: 14fbe16c400853e620dbee885c09856b -> 
-  custom:scripting/precompiled-assembly-types:Photon3Unity3D: c6b5832f40bb2e6733b55db4d782a76d -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Sockets: 9fb5846d0e49f79a62e53897c4dfc26f -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:scripting/monoscript/fileName/FusionBasicBillboard.cs: a80a3abf722bfab7012d987c953fb25b -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporterEditor.cs: 0b9c7f8db96d38ff89dc9f2e19e80a40 -> 
-  custom:scripting/monoscript/fileName/EnableOnSingleRunner.cs: 9976ce768e23cc0678b095d30598d8cd -> 
-  custom:scripting/monoscript/fileName/FusionWeaverTriggerImporter.cs: 5fc682d3abd06512b01d7350f2f8770a -> 
-  custom:scripting/monoscript/fileName/Fusion.CodeGen.User.cs: 7518413c31be8fc7fe79dd8f5b20fa0c -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatistics.cs: 021db0ff7e2d9da1efde47d41baabec6 -> 
-  custom:scripting/monoscript/fileName/FusionAddressablePrefabsPreloader.cs: 609c7194fc18608a6ba4972670be253b -> 
-  custom:scripting/monoscript/fileName/FusionBootstrap.cs: 6c11197935a2055b5e9a8f3a7b6b3582 -> 
-  custom:scripting/monoscript/fileName/NetworkCharacterController.cs: 0d9ab4a1b508efe718225ceffebd8e54 -> 
-  custom:scripting/monoscript/fileName/NetworkObjectProviderDefault.cs: 0eb113b3784be4de9cc2f3cdcdf5e36c -> 
-  custom:scripting/monoscript/fileName/FusionStatsConfig.cs: d07ac9fd432a3fe1fc143ca6057eefa0 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:scripting/monoscript/fileName/FusionStatsGraphDefault.cs: 5ee101599c172926cb7544039c27358d -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Rocks: 5f71c6f5683af58c1bc2dc303f06a8f9 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:scripting/monoscript/fileName/FusionStatsPanelHeader.cs: 4548dffe5115cb5888d454a4d21545ba -> 
-  custom:scripting/monoscript/fileName/Fusion.CodeGen.cs: b9ff9c5a347ec7e6d58d9aa467d5ae96 -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLink.cs: 6e4a2325960fce24f58edb6ee6b338d8 -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil: a89b8974831fb168c35dab32ff4bc2ab -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:scripting/monoscript/fileName/NetworkPrefabsInspector.cs: d5690b6a52b511d4d789d0067f817a3c -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.Editor.cs: 33ff73e1c007e8a46f2c03621d0520aa -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Runtime: 7e594ae8b4bdbcc37644229d4539762e -> 
-  custom:scripting/precompiled-assembly-types:Unity.Fusion.CodeGen: f1e094c67a8e343812574a90957048af -> 
-  custom:scripting/monoscript/fileName/FusionStatsWorldAnchor.cs: e51e9d4336f8910a14a6d0db6934550f -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraph.cs: 9984a882a8791892508319702985b2a1 -> 
-  custom:scripting/monoscript/fileName/RunnerLagCompensationGizmos.cs: f7028307a5d8b8de388a40efb20302af -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLinksRoot.cs: 64f229c02655e4ab1b3ad93c7368ccfe -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.cs: 637ce84f5d924288b5841d0c572e7c7e -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Mdb: eeaf3d2a18354879d00d7a56d9384f12 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraphCombine.cs: 504ba5016b23b7b24ba99fd9902d9b08 -> 
-  custom:scripting/monoscript/fileName/RunnerEnableVisibility.cs: e1b57f1bd6fcbd3137975404af4bcf85 -> 
-  custom:scripting/monoscript/fileName/FusionStatsCanvas.cs: 416da2e503a8c9751993b0a30323c49f -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporter.cs: a2caae9d85fed596662aa6841efc1b3e -> 
-  custom:scripting/monoscript/fileName/FusionEditorConfigImporter.cs: efe09da10695ecc318b2a0af514b1210 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Realtime: e0f689bc800d7f4dbb38556dab9ab917 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Common: 405307a00445c43b95790cf1621743d3 -> 
-  custom:scripting/monoscript/fileName/FusionHubWindow.cs: 761ecf44afbbe98f819411be58e9da60 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity: c2cb3f71ad0397b1dd48b94e5a353f38 -> 
-  custom:scripting/monoscript/fileName/FusionStatistics.cs: 106e5dd35e0be1ca1db7ee4ef56a87b5 -> 
-  custom:scripting/monoscript/fileName/NetworkSceneManagerDefault.cs: 871a1346f3625e42e5be83f620052e51 -> 
-  custom:scripting/precompiled-assembly-types:NanoSockets: 5215c3b157b18801e4d4a67db049f6fb -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Pdb: 8503f4121aa743c4dd93ab49beabf1b4 -> 
-  custom:scripting/monoscript/fileName/FusionBootstrapDebugGUI.cs: 371b4228dd1f5808b5897e19c03d546a -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/RunnerAOIGizmos.cs: 8b1629a60417f80a3d501474e540ad3f -> 
-  custom:scripting/monoscript/fileName/FusionEditorSkin.cs: c6dee1ba664a2a78ce51705f2322e50c -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Log: 17ae28182ca24f7ef3aba1ab6cfb3aea -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity.Editor: 68ea4e16afd58ebae0c9e956fafeb5ba -> 
-========================================================================
-Received Import Request.
-  Time since last request: 612.944931 seconds.
-  path: Assets/Scenes/Canvas.prefab
-  artifactKey: Guid(15be7ac718d631e4d830d8ba54c71450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Canvas.prefab using Guid(15be7ac718d631e4d830d8ba54c71450) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '268a12d0886e859ec042c6f1c31e16dc') in 0.007167 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Caller must complete domain reload
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  5.884 seconds
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in 17.721 seconds
-Domain Reload Profiling: 23602ms
-	BeginReloadAssembly (510ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (20ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (205ms)
-	RebuildCommonClasses (215ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (73ms)
-	LoadAllAssembliesAndSetupDomain (5060ms)
-		LoadAssemblies (5182ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (46ms)
-			TypeCache.Refresh (24ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (19ms)
-	FinalizeReload (17722ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1174ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (14ms)
-			SetLoadedEditorAssemblies (8ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (105ms)
-			ProcessInitializeOnLoadAttributes (997ms)
-			ProcessInitializeOnLoadMethodAttributes (36ms)
-			AfterProcessingInitializeOnLoad (13ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Refreshing native plugins compatible for Editor in 10.72 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3713 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 28 unused Assets / (134.3 KB). Loaded Objects now: 4335.
-Memory consumption went from 154.9 MB to 154.7 MB.
-Total: 6.339300 ms (FindLiveObjects: 0.441200 ms CreateObjectMapping: 0.364100 ms MarkObjects: 5.326100 ms  DeleteObjects: 0.206300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:scripting/monoscript/fileName/FusionRunnerVisibilityControlsWindow.cs: 503e55d51d5bac9ff9db7e3128ab6896 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/precompiled-assembly-types:websocket-sharp: 14fbe16c400853e620dbee885c09856b -> 
-  custom:scripting/precompiled-assembly-types:Photon3Unity3D: c6b5832f40bb2e6733b55db4d782a76d -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Sockets: 9fb5846d0e49f79a62e53897c4dfc26f -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:scripting/monoscript/fileName/FusionBasicBillboard.cs: a80a3abf722bfab7012d987c953fb25b -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporterEditor.cs: 0b9c7f8db96d38ff89dc9f2e19e80a40 -> 
-  custom:scripting/monoscript/fileName/EnableOnSingleRunner.cs: 9976ce768e23cc0678b095d30598d8cd -> 
-  custom:scripting/monoscript/fileName/FusionWeaverTriggerImporter.cs: 5fc682d3abd06512b01d7350f2f8770a -> 
-  custom:scripting/monoscript/fileName/Fusion.CodeGen.User.cs: 7518413c31be8fc7fe79dd8f5b20fa0c -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatistics.cs: 021db0ff7e2d9da1efde47d41baabec6 -> 
-  custom:scripting/monoscript/fileName/FusionAddressablePrefabsPreloader.cs: 609c7194fc18608a6ba4972670be253b -> 
-  custom:scripting/monoscript/fileName/FusionBootstrap.cs: 6c11197935a2055b5e9a8f3a7b6b3582 -> 
-  custom:scripting/monoscript/fileName/NetworkCharacterController.cs: 0d9ab4a1b508efe718225ceffebd8e54 -> 
-  custom:scripting/monoscript/fileName/NetworkObjectProviderDefault.cs: 0eb113b3784be4de9cc2f3cdcdf5e36c -> 
-  custom:scripting/monoscript/fileName/FusionStatsConfig.cs: d07ac9fd432a3fe1fc143ca6057eefa0 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:scripting/monoscript/fileName/FusionStatsGraphDefault.cs: 5ee101599c172926cb7544039c27358d -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Rocks: 5f71c6f5683af58c1bc2dc303f06a8f9 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:scripting/monoscript/fileName/FusionStatsPanelHeader.cs: 4548dffe5115cb5888d454a4d21545ba -> 
-  custom:scripting/monoscript/fileName/Fusion.CodeGen.cs: b9ff9c5a347ec7e6d58d9aa467d5ae96 -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLink.cs: 6e4a2325960fce24f58edb6ee6b338d8 -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil: a89b8974831fb168c35dab32ff4bc2ab -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:scripting/monoscript/fileName/NetworkPrefabsInspector.cs: d5690b6a52b511d4d789d0067f817a3c -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.Editor.cs: 33ff73e1c007e8a46f2c03621d0520aa -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Runtime: 7e594ae8b4bdbcc37644229d4539762e -> 
-  custom:scripting/precompiled-assembly-types:Unity.Fusion.CodeGen: f1e094c67a8e343812574a90957048af -> 
-  custom:scripting/monoscript/fileName/FusionStatsWorldAnchor.cs: e51e9d4336f8910a14a6d0db6934550f -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraph.cs: 9984a882a8791892508319702985b2a1 -> 
-  custom:scripting/monoscript/fileName/RunnerLagCompensationGizmos.cs: f7028307a5d8b8de388a40efb20302af -> 
-  custom:scripting/monoscript/fileName/RunnerVisibilityLinksRoot.cs: 64f229c02655e4ab1b3ad93c7368ccfe -> 
-  custom:scripting/monoscript/fileName/Fusion.Unity.cs: 637ce84f5d924288b5841d0c572e7c7e -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Mdb: eeaf3d2a18354879d00d7a56d9384f12 -> 
-  custom:scripting/monoscript/fileName/FusionNetworkObjectStatsGraphCombine.cs: 504ba5016b23b7b24ba99fd9902d9b08 -> 
-  custom:scripting/monoscript/fileName/RunnerEnableVisibility.cs: e1b57f1bd6fcbd3137975404af4bcf85 -> 
-  custom:scripting/monoscript/fileName/FusionStatsCanvas.cs: 416da2e503a8c9751993b0a30323c49f -> 
-  custom:scripting/monoscript/fileName/NetworkProjectConfigImporter.cs: a2caae9d85fed596662aa6841efc1b3e -> 
-  custom:scripting/monoscript/fileName/FusionEditorConfigImporter.cs: efe09da10695ecc318b2a0af514b1210 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Realtime: e0f689bc800d7f4dbb38556dab9ab917 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Common: 405307a00445c43b95790cf1621743d3 -> 
-  custom:scripting/monoscript/fileName/FusionHubWindow.cs: 761ecf44afbbe98f819411be58e9da60 -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity: c2cb3f71ad0397b1dd48b94e5a353f38 -> 
-  custom:scripting/monoscript/fileName/FusionStatistics.cs: 106e5dd35e0be1ca1db7ee4ef56a87b5 -> 
-  custom:scripting/monoscript/fileName/NetworkSceneManagerDefault.cs: 871a1346f3625e42e5be83f620052e51 -> 
-  custom:scripting/precompiled-assembly-types:NanoSockets: 5215c3b157b18801e4d4a67db049f6fb -> 
-  custom:scripting/precompiled-assembly-types:Mono.Cecil.Pdb: 8503f4121aa743c4dd93ab49beabf1b4 -> 
-  custom:scripting/monoscript/fileName/FusionBootstrapDebugGUI.cs: 371b4228dd1f5808b5897e19c03d546a -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/fileName/RunnerAOIGizmos.cs: 8b1629a60417f80a3d501474e540ad3f -> 
-  custom:scripting/monoscript/fileName/FusionEditorSkin.cs: c6dee1ba664a2a78ce51705f2322e50c -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Log: 17ae28182ca24f7ef3aba1ab6cfb3aea -> 
-  custom:scripting/precompiled-assembly-types:Fusion.Unity.Editor: 68ea4e16afd58ebae0c9e956fafeb5ba -> 
-========================================================================
-Received Import Request.
-  Time since last request: 5949.215773 seconds.
-  path: Assets/Scenes/Canvas.prefab
-  artifactKey: Guid(15be7ac718d631e4d830d8ba54c71450) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Canvas.prefab using Guid(15be7ac718d631e4d830d8ba54c71450) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '268a12d0886e859ec042c6f1c31e16dc') in 0.013910 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
