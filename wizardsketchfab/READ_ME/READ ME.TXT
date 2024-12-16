@@ -1,0 +1,17 @@
+you are not allowed to put my character and sell it separately or in an asset bundle use it wherever else you want as long as you credit me 
+
+Once you open up blend file
+open a new text window (Text Editor), after you opened "text editor window" press open and find the "rigui.py" file
+found in this same folder after you opened it press play on the right side of the button "open"
+
+To save the custom ui so you dont have to do this every time you open up a file in same "text editor" there is a drop down
+menu once you press "text" witch is to the left of the "play button" in that drop down you have to check button "REGISTER"
+
+!!!!!!(You will find pitcures for everything below this text file)!!!!!
+
+that will give you the CUSTOM UI witch contains all control layers 
+(to enable/disable bone names go to armature tab "viewport display" and check or uncheck names box)
+
+to apply texture go to shading tab add material (shift + a) type image click on image texture click open locate "56x56texture.png" connect to base color and your good to go 
+
+for any additional questions feel free to text me
