@@ -8,26 +8,19 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using System.Threading;
+using UnityEngine.Serialization;
 
 public class MenuController : MonoBehaviour
 {
     [Header("Volume Settings")] //paramètres des slides (Leewen)
     [SerializeField] public AudioMixer audioMixer;
-    [SerializeField]public Slider musicSlider;
-    [SerializeField]public Slider sfxSlider;
-    [SerializeField]public float defaultVolume = 0.4f;
+    [SerializeField]public float defaultVolume = 0.6f;
+    [SerializeField] public float volumeChanged = 0.6f;
 
-    public Slider MusicSlider
-    {
-        get => musicSlider;
-        set => musicSlider = value;
-    }
-
-    public Slider SfxSlider
-    {
-        get => sfxSlider;
-        set => sfxSlider = value;
-    }
+    
+    MusicManager manager = new MusicManager();
+    
     
 
     
@@ -47,12 +40,14 @@ public class MenuController : MonoBehaviour
         MusicManager.Instance.PlayMusic("Menu");
         
     }
+    
 
 
-    public void StopMenuTheme()
+    public void StopMenuTheme() //arrete le menu du jeu puis initialise la transition vers le thème du jeu
     {
-        MusicManager manager = MusicManager.Instance;
-        manager.SetMusicVolume(0); //coupe la musique lors du démarrage du jeu
+        //manager.SetMusicVolume(0); // coupe la musique lors du démarrage du jeu
+        int milliseconds = 2000;
+        Thread.Sleep(milliseconds);
     }
     //public void Play()
     //{
@@ -80,41 +75,11 @@ public class MenuController : MonoBehaviour
     {
         Application.Quit();
     }
-
-    public void UpdateMusicVolume(float volume) //slider Music
-    {
-        audioMixer.SetFloat("MusicVolume", volume);
-    }
     
     
-    public void UpdateSoundVolume(float volume) //slider SFX
+    public void ResetMusic(string MenuType)
     {
-        audioMixer.SetFloat("SFXVolume", volume);
-    }
-    
-    
-    public void SaveVolume()
-    {
-        audioMixer.GetFloat("MusicVolume", out float musicVolume);
-        PlayerPrefs.SetFloat("MusicVolume", musicVolume);
- 
-        audioMixer.GetFloat("SFXVolume", out float sfxVolume);
-        PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
-    }
- 
-    public void LoadVolume()
-    {
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
-        sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
-
-    }
-    
-    public void ResetButton(string MenuType)
-    {
-        if(MenuType == "Sound")
-        {
-        }
-
+        //manager.SetMusicVolume(defaultVolume);
     }
 
     public IEnumerator ConfirmationBox()
@@ -127,3 +92,7 @@ public class MenuController : MonoBehaviour
 
     
 }
+
+
+
+
