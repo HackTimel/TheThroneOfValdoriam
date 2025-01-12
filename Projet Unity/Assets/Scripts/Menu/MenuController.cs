@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -10,7 +12,7 @@ public class MenuController : MonoBehaviour
     [Header("Volume Settings")]
     [SerializeField] public TMP_Text VolumeTextValue = null;
     [SerializeField] public Slider VolumeSlider = null;
-    [SerializeField] private float defaultVolume = 50;
+    [SerializeField] private float defaultVolume = (float)0.4;
 
     [SerializeField] public GameObject ConfirmationPrompt = null;
 
@@ -19,6 +21,20 @@ public class MenuController : MonoBehaviour
     private string levelToLoad;
     //[SerializeField] private GameObject noSavedGameDialog = null;
 
+
+    public void Start() //Pour la musique
+    {
+        AudioListener.volume = (float)0.5;
+        MusicManager.Instance.PlayMusic("Menu");
+        
+    }
+
+    //public void Play()
+    //{
+        //SceneManager.LoadScene(_newGameLevel, "Cross Fade");
+        //MusicManager.Instance.PlayMusic("Menu");
+    //}
+    // Pour la transition Menu => jeu plus tard
 
     public void NewGameDialogYes()
     {
