@@ -50,6 +50,14 @@ public class MusicManager : MonoBehaviour
             yield return null;
         }
     }
+    
+    public void SetMusicVolume(float volume)
+    {
+        if (musicSource != null)
+        {
+            musicSource.volume = volume;
+        }
+    }
 }
 
 
