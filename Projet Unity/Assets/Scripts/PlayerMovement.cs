@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode moveBackward = KeyCode.S;
     public KeyCode moveRight = KeyCode.D;
     public KeyCode moveLeft = KeyCode.A;
+    public static KeyCode pause = KeyCode.Escape;
 
     // Re-adding old directional key references
     public KeyCode devant => moveForward;

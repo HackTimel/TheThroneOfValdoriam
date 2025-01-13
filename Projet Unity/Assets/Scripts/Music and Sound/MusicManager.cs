@@ -13,8 +13,8 @@ public class MusicManager : MonoBehaviour
     private MusicLibrary musicLibrary;
     [SerializeField]
     public AudioSource musicSource;
-    
-    [SerializeField] public Slider volumeSlider; //permet de stocker les changements en jeu
+
+    [SerializeField] public Slider volumeSlider;//permet de stocker les changements en jeu
     [SerializeField] public Slider sfxSlider;
 
     public Slider GetVolumeSlider()
