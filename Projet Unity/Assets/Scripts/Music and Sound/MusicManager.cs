@@ -14,13 +14,31 @@ public class MusicManager : MonoBehaviour
     [SerializeField]
     public AudioSource musicSource;
 
-    [SerializeField] public Slider volumeSlider;//permet de stocker les changements en jeu
-    [SerializeField] public Slider sfxSlider;
-
-    public Slider GetVolumeSlider()
+    [SerializeField] public  Slider volumeSlider;//permet de stocker les changements en jeu
+    [SerializeField] public  Slider sfxSlider;
+    
+/*
+    public void SaveSound()
     {
-        return volumeSlider;
+        SaveScript.SaveMenuSound(this);
     }
+
+    public void LoadSound()
+    {
+        MenuData data = SaveScript.LoadMenuSound();
+        volumeSlider = data.musicVolume;
+        sfxSlider = data.sfxVolume;
+    }
+
+    private void Start()
+    {
+        LoadSound();
+    }
+    */
+    public Slider GetVolumeSlider()
+        {
+            return volumeSlider;
+        }
     private void Awake()
     {
         if (Instance != null)
