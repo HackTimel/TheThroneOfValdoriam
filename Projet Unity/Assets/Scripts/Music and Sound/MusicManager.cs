@@ -21,20 +21,29 @@ public class MusicManager : MonoBehaviour
     {
         return volumeSlider;
     }
-    private void Awake()
+    
+    public void LoadVolume() //permet de garder les paramètres entre les scènes et donc le menu pause
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        float volume = PlayerPrefs.GetFloat("MusicVolume");
+        volumeSlider.value = volume;
     }
 
-     void Update() //pour enregistrer la valeur
+    public void Awake()
+    {
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Instance = this;
+                //DontDestroyOnLoad(gameObject);
+            }
+        
+            //LoadVolume(); //charge les paramètres lorsque l'on entre dans une nouvelle scène
+    }
+
+    void Update() //pour enregistrer la valeur
     {
         SetVolume(volumeSlider.value);
     }
@@ -84,6 +93,8 @@ public class MusicManager : MonoBehaviour
             musicSource.volume = volume;
         }
     }
+
+    
 }
 
 

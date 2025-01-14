@@ -15,9 +15,11 @@ public class PauseScript : MonoBehaviour
     public GameObject optionsMenuContainer =  GameObject.Find("OptionsMenuContainer"); // objet à afficher (OptionsMenuContainer)
     private bool isOptionsMenuVisible = false; //menu au debut fermé.
     
+    
     void Start()
     {
         pauseMenu.SetActive(false); //rend l'objet inactif aka le menu pause au démarrage (on commence pas en pause)
+        PauseMenuSound.Instance.PlayMusic("Level1");
     }
 
     // Update is called once per frame
