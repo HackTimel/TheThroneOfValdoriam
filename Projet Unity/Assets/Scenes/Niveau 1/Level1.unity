@@ -2516,12 +2516,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8209208ea8bd89f449b13032b0234f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  groundDrag: 0
-  jumpForce: 0
+  moveSpeed: 5
+  groundDrag: 1.95
+  jumpForce: 1
   jumpCooldown: 0
-  sprintMultiplier: 0
-  playerHeight: 2
+  sprintMultiplier: 3.29
+  playerHeight: 0.5
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -2532,7 +2532,7 @@ MonoBehaviour:
   moveRight: 100
   moveLeft: 97
   orientation: {fileID: 235358443}
-  rb: {fileID: 0}
+  rb: {fileID: 660242412}
   Name: 
   Pv: 0
   Mana: 0
