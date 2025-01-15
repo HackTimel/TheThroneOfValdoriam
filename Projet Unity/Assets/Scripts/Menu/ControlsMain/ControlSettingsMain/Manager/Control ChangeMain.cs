@@ -1,35 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ArriereManager : MonoBehaviour
+public class SautManagerMain : MonoBehaviour
 {
-    [SerializeField] public Button ToucheArriere;
-    [SerializeField] private ArriereComportement arriereComportement;
+    [SerializeField] public Button ToucheSauter;
+
+    [SerializeField] public SautComportementMain sautComportement;
     [SerializeField] private PlayerMovement playerMovement;
-    
     public bool changement = false;
 
     public int delay = 0;
     
     public bool assign = false;
     
+    public bool assignspace = false;
 
     public string touche;
+
     private KeyCode key;
 
-    // Update is called once per frame
-
-    void Start() //ici on load les paramètres du Main Menu
+    public void Start()
     {
-        touche = PlayerPrefs.GetString("PlayerArriere");
-        key = GetKeyCode(touche);
-        AssignerArriere(key,touche);
-        arriereComportement.NewText(touche);
+        AssignerSaut(KeyCode.Space,"espace");
     }
-    void Update()
+
+    public void Update()
     {
+        bool different = true;
         
         if (delay > 0)
         {
@@ -37,42 +40,55 @@ public class ArriereManager : MonoBehaviour
         }
         if (assign && delay == 0)
         {
-            AssignerArriere(key, touche);
-            assign = false;
+            AssignerSaut(key, touche);
+            changement = false;
         }
-        
+
+        if (assignspace && delay == 0)
+        {
+            AssignerSaut(KeyCode.Space, "espace");
+            changement = false;
+        }
         
         if (changement)
         {
-            if (Input.anyKeyDown) //&& logique pour éviter les conflit avec le cas particulier
+            if (Input.GetKey(KeyCode.Space)) //la touche espace n'a apparement pas de nom = cas particulier
+            {
+                touche = "espace";
+                sautComportement.NewText(touche);
+                assignspace = true;
+                different = false;
+                Delay(100);
+            }
+            if (Input.anyKeyDown && different) //&& logique pour éviter les conflit avec le cas particulier
             {
                 touche = Input.inputString;
                 key = GetKeyCode(touche);
-                arriereComportement.NewText(touche);
+                sautComportement.NewText(touche);
                 assign = true;
                 Delay(100);
-                changement = false;
             }
         }
     }
-    
+
     public void Delay(int time)
     {
         delay = time;
     }
-    
-    public void ChangementArriere()
+
+    public void ChangementSauter()
     {
         changement = true;
-        arriereComportement.NewText("?");
+        sautComportement.NewText("?");
     }
-    
-    public void AssignerArriere(KeyCode key,string cle)
+
+    public void AssignerSaut(KeyCode key,string cle)
     {
-        playerMovement.moveBackward = key;
-        PlayerPrefs.SetString("PlayerArriere", cle);
+        playerMovement.jump = key;
+        PlayerPrefs.SetString("PlayerJump", cle);
     }
-    
+
+
     public KeyCode GetKeyCode(string key)
     {
         Dictionary<string, KeyCode> DicoTouche = new Dictionary<string, KeyCode>()
@@ -103,9 +119,13 @@ public class ArriereManager : MonoBehaviour
             { "x", KeyCode.X },
             { "y", KeyCode.Y },
             { "z", KeyCode.Z },
-            {"shift", KeyCode.LeftShift}
+            {"espace", KeyCode.Space },
         };
         
         return DicoTouche[key];
     }
+
+
+
+
 }

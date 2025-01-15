@@ -23,12 +23,13 @@ public class SprintManager : MonoBehaviour
 
     // Update is called once per frame
 
-    //void Start() //ici on load les paramètres du Main Menu
-    //{
-        //touche = PlayerPrefs.GetString("PlayerSprint");
-        //key = GetKeyCode(touche);
-        //AssignerSprint(key,touche);
-    //}
+    void Start() //ici on load les paramètres du Main Menu
+    {
+        touche = PlayerPrefs.GetString("PlayerSprint");
+        key = GetKeyCode(touche);
+        AssignerSprint(key,touche);
+        sprintComportement.NewText(touche);
+    }
     void Update()
     {
         

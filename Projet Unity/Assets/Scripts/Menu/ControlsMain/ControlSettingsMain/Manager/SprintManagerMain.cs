@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ArriereManager : MonoBehaviour
+public class SprintManagerMain : MonoBehaviour
 {
-    [SerializeField] public Button ToucheArriere;
-    [SerializeField] private ArriereComportement arriereComportement;
+    
+    [SerializeField] public Button ToucheSprinter;
+    [SerializeField] private SprintComportementMain sprintComportement;
     [SerializeField] private PlayerMovement playerMovement;
     
     public bool changement = false;
@@ -15,21 +16,21 @@ public class ArriereManager : MonoBehaviour
     
     public bool assign = false;
     
+    public bool assignshift = false;
 
     public string touche;
     private KeyCode key;
 
     // Update is called once per frame
 
-    void Start() //ici on load les paramètres du Main Menu
+    public void Start()
     {
-        touche = PlayerPrefs.GetString("PlayerArriere");
-        key = GetKeyCode(touche);
-        AssignerArriere(key,touche);
-        arriereComportement.NewText(touche);
+        AssignerSprint(KeyCode.LeftShift,"shift");
     }
     void Update()
     {
+        
+        bool different = true;
         
         if (delay > 0)
         {
@@ -37,18 +38,33 @@ public class ArriereManager : MonoBehaviour
         }
         if (assign && delay == 0)
         {
-            AssignerArriere(key, touche);
-            assign = false;
+            AssignerSprint(key, touche);
+            changement = false;
+        }
+        
+        if (assignshift && delay == 0)
+        {
+            AssignerSprint(KeyCode.LeftShift, touche);
+            changement = false;
         }
         
         
         if (changement)
         {
-            if (Input.anyKeyDown) //&& logique pour éviter les conflit avec le cas particulier
+            if (Input.GetKey(KeyCode.LeftShift)) //la touche espace n'a apparement pas de nom = cas particulier
+            {
+                touche = "shift";
+                sprintComportement.NewText(touche);
+                assignshift = true;
+                different = false;
+                Delay(100);
+                changement = false;
+            }
+            if (Input.anyKeyDown && different) //&& logique pour éviter les conflit avec le cas particulier
             {
                 touche = Input.inputString;
                 key = GetKeyCode(touche);
-                arriereComportement.NewText(touche);
+                sprintComportement.NewText(touche);
                 assign = true;
                 Delay(100);
                 changement = false;
@@ -61,16 +77,16 @@ public class ArriereManager : MonoBehaviour
         delay = time;
     }
     
-    public void ChangementArriere()
+    public void ChangementSprinter()
     {
         changement = true;
-        arriereComportement.NewText("?");
+        sprintComportement.NewText("?");
     }
     
-    public void AssignerArriere(KeyCode key,string cle)
+    public void AssignerSprint(KeyCode key,string cle)
     {
-        playerMovement.moveBackward = key;
-        PlayerPrefs.SetString("PlayerArriere", cle);
+        playerMovement.sprintKey = key;
+        PlayerPrefs.SetString("PlayerSprint", cle);
     }
     
     public KeyCode GetKeyCode(string key)

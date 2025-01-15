@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class ArriereManager : MonoBehaviour
+public class GaucheManagerMain : MonoBehaviour
 {
-    [SerializeField] public Button ToucheArriere;
-    [SerializeField] private ArriereComportement arriereComportement;
+    [SerializeField] public Button ToucheGauche;
+    [SerializeField] private GaucheComportementMain gaucheComportement;
     [SerializeField] private PlayerMovement playerMovement;
     
     public bool changement = false;
@@ -21,12 +20,9 @@ public class ArriereManager : MonoBehaviour
 
     // Update is called once per frame
 
-    void Start() //ici on load les paramètres du Main Menu
+    public void Start()
     {
-        touche = PlayerPrefs.GetString("PlayerArriere");
-        key = GetKeyCode(touche);
-        AssignerArriere(key,touche);
-        arriereComportement.NewText(touche);
+        AssignerGauche(KeyCode.A,"a");
     }
     void Update()
     {
@@ -37,8 +33,9 @@ public class ArriereManager : MonoBehaviour
         }
         if (assign && delay == 0)
         {
-            AssignerArriere(key, touche);
+            AssignerGauche(key, touche);
             assign = false;
+            changement = false;
         }
         
         
@@ -48,10 +45,9 @@ public class ArriereManager : MonoBehaviour
             {
                 touche = Input.inputString;
                 key = GetKeyCode(touche);
-                arriereComportement.NewText(touche);
+                gaucheComportement.NewText(touche);
                 assign = true;
                 Delay(100);
-                changement = false;
             }
         }
     }
@@ -61,16 +57,16 @@ public class ArriereManager : MonoBehaviour
         delay = time;
     }
     
-    public void ChangementArriere()
+    public void ChangementGauche()
     {
         changement = true;
-        arriereComportement.NewText("?");
+        gaucheComportement.NewText("?");
     }
     
-    public void AssignerArriere(KeyCode key,string cle)
+    public void AssignerGauche(KeyCode key,string cle)
     {
-        playerMovement.moveBackward = key;
-        PlayerPrefs.SetString("PlayerArriere", cle);
+        playerMovement.moveLeft = key;
+        PlayerPrefs.SetString("PlayerGauche", cle);
     }
     
     public KeyCode GetKeyCode(string key)

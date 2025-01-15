@@ -20,12 +20,13 @@ public class GaucheManager : MonoBehaviour
 
     // Update is called once per frame
 
-    //void Start() //ici on load les paramètres du Main Menu
-    //{
-        //touche = PlayerPrefs.GetString("PlayerGauche");
-        //key = GetKeyCode(touche);
-        //AssignerSprint(key,touche);
-    //}
+    void Start() //ici on load les paramètres du Main Menu
+    {
+        touche = PlayerPrefs.GetString("PlayerGauche");
+        key = GetKeyCode(touche);
+        AssignerGauche(key,touche);
+        gaucheComportement.NewText(touche);
+    }
     void Update()
     {
         
@@ -50,6 +51,7 @@ public class GaucheManager : MonoBehaviour
                 gaucheComportement.NewText(touche);
                 assign = true;
                 Delay(400);
+                changement = false;
             }
         }
     }

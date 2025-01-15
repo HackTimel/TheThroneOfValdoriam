@@ -21,12 +21,13 @@ public class DroiteManager : MonoBehaviour
 
     // Update is called once per frame
 
-    //void Start() //ici on load les paramètres du Main Menu
-    //{
-        //touche = PlayerPrefs.GetString("PlayerDroite");
-        //key = GetKeyCode(touche);
-        //AssignerSprint(key,touche);
-    //}
+    void Start() //ici on load les paramètres du Main Menu
+    {
+        touche = PlayerPrefs.GetString("PlayerDroite");
+        key = GetKeyCode(touche);
+        AssignerDroite(key,touche);
+        droiteComportement.NewText(touche);
+    }
     void Update()
     {
         
@@ -50,6 +51,7 @@ public class DroiteManager : MonoBehaviour
                 droiteComportement.NewText(touche);
                 assign = true;
                 Delay(400);
+                changement = false;
             }
         }
     }

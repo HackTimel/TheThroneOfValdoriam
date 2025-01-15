@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ArriereManager : MonoBehaviour
+public class ArriereManagerMain : MonoBehaviour
 {
     [SerializeField] public Button ToucheArriere;
-    [SerializeField] private ArriereComportement arriereComportement;
+    [SerializeField] private ArriereComportementMain arriereComportement;
     [SerializeField] private PlayerMovement playerMovement;
     
     public bool changement = false;
@@ -21,12 +21,9 @@ public class ArriereManager : MonoBehaviour
 
     // Update is called once per frame
 
-    void Start() //ici on load les paramètres du Main Menu
+    public void Start()
     {
-        touche = PlayerPrefs.GetString("PlayerArriere");
-        key = GetKeyCode(touche);
-        AssignerArriere(key,touche);
-        arriereComportement.NewText(touche);
+        AssignerArriere(KeyCode.S,"s");
     }
     void Update()
     {

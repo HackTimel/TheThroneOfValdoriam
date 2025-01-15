@@ -21,12 +21,13 @@ public class AvancerManager : MonoBehaviour
 
     // Update is called once per frame
 
-    //void Start() //ici on load les paramètres du Main Menu
-    //{
-        //touche = PlayerPrefs.GetString("PlayerAvancer");
-        //key = GetKeyCode(touche);
-        //AssignerSprint(key,touche);
-    //}
+    void Start() //ici on load les paramètres du Main Menu
+    {
+        touche = PlayerPrefs.GetString("PlayerAvancer");
+        key = GetKeyCode(touche);
+        AssignerAvancer(key,touche);
+        avancerComportement.NewText(touche);
+    }
     void Update()
     {
         
@@ -49,7 +50,8 @@ public class AvancerManager : MonoBehaviour
                 key = GetKeyCode(touche);
                 avancerComportement.NewText(touche);
                 assign = true;
-                Delay(400);
+                Delay(100);
+                changement = false;
             }
         }
     }

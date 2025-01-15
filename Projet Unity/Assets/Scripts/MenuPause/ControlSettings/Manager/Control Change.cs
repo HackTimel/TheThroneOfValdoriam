@@ -24,13 +24,16 @@ public class SautManager : MonoBehaviour
     public string touche;
 
     private KeyCode key;
+    
+    
 
-    //public void Start()
-    //{
-        //touche = PlayerPrefs.GetString("PlayerJump");
-        //key = GetKeyCode(touche);
-        //AssignerSaut(key,touche);
-    //}
+    public void Start()
+    {
+        touche = PlayerPrefs.GetString("PlayerJump");
+        key = GetKeyCode(touche);
+        AssignerSaut(key,touche);
+        sautComportement.NewText(touche);
+    }
 
     public void Update()
     {
@@ -69,7 +72,9 @@ public class SautManager : MonoBehaviour
                 sautComportement.NewText(touche);
                 assign = true;
                 Delay(400);
+                
             }
+            changement = false;
         }
     }
 
@@ -84,9 +89,9 @@ public class SautManager : MonoBehaviour
         sautComportement.NewText("?");
     }
 
-    public void AssignerSaut(KeyCode key,string cle)
+    public void AssignerSaut(KeyCode Key,string cle)
     {
-        playerMovement.jump = key;
+        playerMovement.jump = Key;
         PlayerPrefs.SetString("PlayerJump", cle);
     }
 
@@ -121,6 +126,7 @@ public class SautManager : MonoBehaviour
             { "x", KeyCode.X },
             { "y", KeyCode.Y },
             { "z", KeyCode.Z },
+            {"espace", KeyCode.Space },
         };
         
         return DicoTouche[key];
