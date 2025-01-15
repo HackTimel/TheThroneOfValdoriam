@@ -4251,8 +4251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicLibrary: {fileID: 1037004573}
   musicSource: {fileID: 1037004574}
-  volumeSlider: {fileID: 0}
-  sfxSlider: {fileID: 0}
+  volumeSlider: {fileID: 1921220919}
+  sfxSlider: {fileID: 1657473410}
 --- !u!114 &1037004573
 MonoBehaviour:
   m_ObjectHideFlags: 0
