@@ -14,10 +14,12 @@ public class PauseScript : MonoBehaviour
     
     public GameObject optionsMenuContainer =  GameObject.Find("OptionsMenuContainer"); // objet à afficher (OptionsMenuContainer)
     private bool isOptionsMenuVisible = false; //menu au debut fermé.
+    private bool isCursorLocked = true;
     
     void Start()
     {
         pauseMenu.SetActive(false); //rend l'objet inactif aka le menu pause au démarrage (on commence pas en pause)
+        LockCursor();
     }
 
     // Update is called once per frame
@@ -37,12 +39,25 @@ public class PauseScript : MonoBehaviour
             }
         }
     }
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked; // Verrouille le curseur au centre de l'écran
+        Cursor.visible = false;                  // Cache le curseur
+        isCursorLocked = true;
+    }
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;  // Libère le curseur
+        Cursor.visible = true;                   // Rend le curseur visible
+        isCursorLocked = false;
+    }
 
     public void PauseGame()
     {
         pauseMenu.SetActive(true); //rend l'objet menu actif (on voit les options)
         paused = true;
         Time.timeScale = 0; //on freeze le jeu
+        UnlockCursor();
         
     }
 
@@ -51,6 +66,7 @@ public class PauseScript : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1; //on remet les pendules à l'heure.
         paused = false;
+        LockCursor();
     }
 
     public void Options() //explicite pour les autres et pour l'inspector

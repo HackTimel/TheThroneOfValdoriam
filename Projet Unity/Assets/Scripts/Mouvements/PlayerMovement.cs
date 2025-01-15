@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     public Transform orientation;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
     private Vector3 moveDirection;
     private bool readyToJump = true;
 
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    void Update()
+    public void Update()
     {
         HandleInput();
         CheckGroundStatus();
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         ControlSpeed();
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         MovePlayer();
     }
@@ -83,6 +83,10 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection.magnitude > 0)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed, ForceMode.Force);
+        
+        Vector3 lookDirection = moveDirection.normalized;
+        Quaternion targetRotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
         }
     }
 
