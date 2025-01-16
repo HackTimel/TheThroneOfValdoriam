@@ -14,36 +14,45 @@ public class MusicManager : MonoBehaviour
     [SerializeField]
     public AudioSource musicSource;
 
-    [SerializeField] public Slider volumeSlider;//permet de stocker les changements en jeu
-    [SerializeField] public Slider sfxSlider;
-
-    public Slider GetVolumeSlider()
-    {
-        return volumeSlider;
-    }
+    [SerializeField] public  Slider volumeSlider;//permet de stocker les changements en jeu
+    [SerializeField] public  Slider sfxSlider;
     
-    public void LoadVolume() //permet de garder les paramètres entre les scènes et donc le menu pause
+/*
+    public void SaveSound()
     {
-        float volume = PlayerPrefs.GetFloat("MusicVolume");
-        volumeSlider.value = volume;
+        SaveScript.SaveMenuSound(this);
     }
 
-    public void Awake()
+    public void LoadSound()
     {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                Instance = this;
-                //DontDestroyOnLoad(gameObject);
-            }
-        
-            //LoadVolume(); //charge les paramètres lorsque l'on entre dans une nouvelle scène
+        MenuData data = SaveScript.LoadMenuSound();
+        volumeSlider = data.musicVolume;
+        sfxSlider = data.sfxVolume;
     }
 
-    void Update() //pour enregistrer la valeur
+    private void Start()
+    {
+        LoadSound();
+    }
+    */
+    public Slider GetVolumeSlider()
+        {
+            return volumeSlider;
+        }
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+     void Update() //pour enregistrer la valeur
     {
         SetVolume(volumeSlider.value);
     }
@@ -93,8 +102,6 @@ public class MusicManager : MonoBehaviour
             musicSource.volume = volume;
         }
     }
-
-    
 }
 
 
