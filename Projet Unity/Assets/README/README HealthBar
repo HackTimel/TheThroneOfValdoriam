@@ -1,0 +1,4 @@
+﻿Faire attention à bien mettre à jour les pv en fonction d'un game Object "Joueur" et pas d'un champ local.
+
+
+Update la fonction Update() en enlevant les fonctions de TakeDamage et Heal avec Uparrow et DownArrow une fois implémenté en situation réelle.
