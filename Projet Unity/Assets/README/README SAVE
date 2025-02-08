@@ -1,0 +1,13 @@
+﻿4 Fichiers ont été modifiées pour le systeme de save & load :
+    -HealthManager (pour charger correctement les pv)
+    -PlayerDataManager (Pour sauvegarder dans le lvl1)
+    -PersistentManager (Pour pouvoir lire la sauvegarde, puis l'appliquer dans les niveaux) (fichier "dont destroy on load")
+    -PlayerManager (vérifie si un chargement de sauvegarde à eu lieux)
+    
+    Note 08/02/2025 :
+    Le système de sauvegarde n'est pas opérationnel, seul le chargement des pv est fonctionnel, on devrait s'en inspirer pour toutes
+    les autres données numériques (xp, monnaie...). Cependant, il reste à appliquer le changement de position du joueur 
+    (ppt écrite mais pas fonctionnel ?) et que l'option de charger soit possible à l'infini (si on a charger une partie et qu'on 
+    revient au menu, il n'est plus possible de relancer la sauvegarde (le bouton ne fait rien)).
+    
+    TDLR : Seul le chargement des pv marche, il reste le changement de position et la réiteration de la save.

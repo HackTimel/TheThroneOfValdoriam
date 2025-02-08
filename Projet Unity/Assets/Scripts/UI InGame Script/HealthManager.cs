@@ -9,7 +9,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] public Image healthBar;
 
     public float pointdevie_temporaire = 100f; //temporaire car doit être affecté à la classe joueur qui sera bientot implémenté
-    
+    [SerializeField] public PlayerManager playerManager;
     
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,15 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update() //test du fonctionnement de la barre
     {
+        if (playerManager.health_change)
+        {
+            if (playerManager.healthpriority < 100f)
+            {
+                TakeDamage(100f - playerManager.healthpriority);
+            }
+            playerManager.health_change = false;
+        } //forcer l application des pv sauvegardés !!
+        
         if (Input.GetKeyDown(KeyCode.U))
         {
             TakeDamage(20f);
@@ -36,6 +45,8 @@ public class HealthManager : MonoBehaviour
             pointdevie_temporaire = 100f;
             healthBar.fillAmount = pointdevie_temporaire / 100f;
         }
+        
+        
         
     }
 
