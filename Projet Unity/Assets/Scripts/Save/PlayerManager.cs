@@ -11,12 +11,12 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        if (PersitentManager.instance.hasLoaded) //vérifie si on charge une game
+        if (PersistentManager.instance.hasLoaded) //vérifie si on charge une game
         {
             // Appliquer les données sauvegardées
-            playerTransform.position = new Vector3(PersitentManager.instance.savedPosition[0], PersitentManager.instance.savedPosition[1], PersitentManager.instance.savedPosition[2]);
-            healthpriority= PersitentManager.instance.savedHealth;
-            PersitentManager.instance.hasLoaded = false; // Reset pour éviter de recharger en boucle
+            playerTransform.position = new Vector3(PersistentManager.instance.savedPosition[0], PersistentManager.instance.savedPosition[1], PersistentManager.instance.savedPosition[2]);
+            healthpriority= PersistentManager.instance.savedHealth;
+            PersistentManager.instance.hasLoaded = false; // Reset pour éviter de recharger en boucle
             health_change = true;
         }
     }

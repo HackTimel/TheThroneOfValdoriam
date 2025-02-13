@@ -2498,8 +2498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09761bcd32133345b1bf0025732fafa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthManager: {fileID: 0}
-  playerTransform: {fileID: 0}
+  healthManager: {fileID: 1674857233}
+  playerTransform: {fileID: 660242411}
+  healthpriority: 0
+  health_change: 0
 --- !u!1 &461210433
 GameObject:
   m_ObjectHideFlags: 0
@@ -5908,7 +5910,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthManager: {fileID: 1674857233}
   playerTransform: {fileID: 660242411}
-  health: 0
 --- !u!4 &1282111097
 Transform:
   m_ObjectHideFlags: 0
@@ -6066,7 +6067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1337380577
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7787,7 +7788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1580052527
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8380,6 +8381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2090924703}
   pointdevie_temporaire: 100
+  playerManager: {fileID: 450893096}
 --- !u!114 &1694435231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9379,7 +9381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1960553586
 RectTransform:
   m_ObjectHideFlags: 0

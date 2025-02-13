@@ -1,0 +1,23 @@
+﻿
+
+
+le systeme de load utilise les même fichier que save + Load + SaveListManagers(pour afficher les saves) + Load (comportement 
+des boutons prefab affiché dans SaveListManagers)
+
+Le système de load fonctionne désormais à merveille, bien sur le nombre de slot est passé de 1 à +infini (je rigole) mais 
+surtout, on sait désormais que le répeetoire où cela est sauvegardé se nomme "*\AppData\LocalLow\DefaultCompany\Mouvement 3pers" 
+dans ce dossier la.
+
+
+Le load peut trouver tout les fichiers et leur nom ici et les afficher dans les saves. 
+
+
+
+à revoir : 
+
+    -CleanCode à réaliser (meilleur pour un rendu et plus "collaboratif")
+    -Load la position du joueur (l'appliquer).
+    -Load toute les futurs informations à venir (inventaire, xp ...).
+
+Désormais, le systeme de sauvegarde doit pouvoir attribuer un nom spécifique à la sauvegarde (ajout dans le README correspondant)
+et à l'avenir stocker les autres valeurs.

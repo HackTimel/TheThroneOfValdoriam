@@ -4,9 +4,9 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PersitentManager : MonoBehaviour
+public class PersistentManager : MonoBehaviour
 {
-    public static PersitentManager instance;
+    public static PersistentManager instance;
 
     public float[] savedPosition = new float[3];
     public float savedHealth;
@@ -26,9 +26,9 @@ public class PersitentManager : MonoBehaviour
     }
     
 
-    public void LoadGame()
+    public void LoadGame(string saveName)
     {
-        string path = Application.persistentDataPath + "/playerData.json";
+        string path = Application.persistentDataPath + "/" + $"{saveName}.json";
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
@@ -46,3 +46,4 @@ public class PersitentManager : MonoBehaviour
         }
     }
 }
+
