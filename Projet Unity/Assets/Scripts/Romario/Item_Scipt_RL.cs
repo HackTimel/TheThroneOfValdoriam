@@ -5,5 +5,6 @@ using UnityEngine;
 public class Item_Scipt_RL : ScriptableObject
 {
    public string name;
+   public Sprite visuel;
    public GameObject prefab;
 }

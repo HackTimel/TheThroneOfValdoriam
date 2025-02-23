@@ -12,7 +12,7 @@ public class PauseScript : MonoBehaviour
     
     public static bool paused = false; //permet à la touche échap de pouvoir entrer et quitter le menu pause et static permet d'avoir son statut pour arreter correctement les inputs du jeu
     
-    public GameObject optionsMenuContainer =  GameObject.Find("OptionsMenuContainer"); // objet à afficher (OptionsMenuContainer)
+        public GameObject optionsMenuContainer =  GameObject.Find("OptionsMenuContainer"); // objet à afficher (OptionsMenuContainer)
     private bool isOptionsMenuVisible = false; //menu au debut fermé.
     private bool isCursorLocked = true;
     
