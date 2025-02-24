@@ -13,13 +13,24 @@ public class Inventaire_RL : MonoBehaviour
     private GameObject inventoryPanel;
     [SerializeField]
     public List<Item_Scipt_RL> content = new List<Item_Scipt_RL>();
-
     [SerializeField] 
     private Transform inventaire_slot_RL;
-
     private const int INVENTAIRE_SIZE = 35;
+    [SerializeField] 
+    private bool isCursorLocked = true;
+    public static Inventaire_RL instance;
+    [SerializeField] private GameObject action_Panel;
+    [SerializeField] private GameObject Poser;
+    [SerializeField] private GameObject Equiper_Arme;
+    [SerializeField] private GameObject Detruire;
+    [SerializeField] private GameObject Consommer;
+    private Item_Scipt_RL _itemSciptRl_current;
+    [SerializeField] public Sprite Transparent;
 
-    private bool isCursorLocked = true; // Par défaut, le curseur est verrouillé
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -78,9 +89,20 @@ public class Inventaire_RL : MonoBehaviour
 
     private void Refresh_content_RL()
     {
+        for (int i = 0; i < inventaire_slot_RL.childCount; i++)
+        {
+            
+            Tool_Type_Trigger curent_slot =  inventaire_slot_RL.GetChild(i).GetComponent<Tool_Type_Trigger>();
+            curent_slot.item_visuel.sprite = Transparent;
+            curent_slot.item =null;
+
+        }
         for (int i = 0; i <content.Count; i++)
         {
-            inventaire_slot_RL.GetChild(i).GetChild(0).GetComponent<Image>().sprite = content[i].visuel;
+            Tool_Type_Trigger curent_slot =  inventaire_slot_RL.GetChild(i).GetComponent<Tool_Type_Trigger>();
+            curent_slot.item_visuel.sprite = content[i].visuel;
+            curent_slot.item = content[i];
+
         }
     }
 
@@ -88,4 +110,57 @@ public class Inventaire_RL : MonoBehaviour
     {
         return INVENTAIRE_SIZE == content.Count;
     }
+
+    public void Open_Action(Item_Scipt_RL item)
+    {
+        _itemSciptRl_current = item;
+        
+        if (item == null)
+        {
+           return; 
+        }
+        switch (item.type)
+        {
+            case Item_type.Arme:
+                Consommer.SetActive(false);
+                break;
+            case Item_type.Livre_de_sort:
+                Equiper_Arme.SetActive(false);
+                Consommer.SetActive(false);
+                break;
+            case Item_type.Consomable:
+                Equiper_Arme.SetActive(false);
+                break;
+           
+        }
+        action_Panel.SetActive(true);
+    }
+
+    public void Close_Action_Panel()
+    {
+        action_Panel.SetActive(false);
+        _itemSciptRl_current = null;
+    }
+
+    public void Poser_Action_Button()
+    {
+        Refresh_content_RL();
+        Close_Action_Panel();
+    }
+    public void Detruire_Action_Button()
+    {
+        content.Remove(_itemSciptRl_current);
+        Refresh_content_RL();
+        Close_Action_Panel();
+        
+    }
+    public void Consommer_Action_Button()
+    {
+        Close_Action_Panel();
+    }
+    public void Equiper_Arme_Action_Button()
+    {
+        Close_Action_Panel();
+    }
+   
 }

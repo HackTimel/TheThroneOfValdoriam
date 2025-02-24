@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63c77ec047165ca47b39e5918a2fd4e4, type: 3}
-  m_Name: SWord
+  m_Name: Halberd_0 1
   m_EditorClassIdentifier: 
   name: Hache
-  prefab: {fileID: 191440, guid: 316022a1c585a7b45b3cc2f855960c93, type: 3}
+  description: Arme manie par le grand Leewen
+  visuel: {fileID: 21300000, guid: f7111abcf951a1f4398426869d06640b, type: 3}
+  prefab: {fileID: 0}
+  type: 1

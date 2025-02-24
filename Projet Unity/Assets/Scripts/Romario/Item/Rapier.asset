@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63c77ec047165ca47b39e5918a2fd4e4, type: 3}
-  m_Name: Sword
+  m_Name: Rapier
   m_EditorClassIdentifier: 
-  name: Sword
+  name: 'Rapiere '
+  description: Rapiere de legende
+  visuel: {fileID: 21300000, guid: 358541a3db89a6f45956a5d4726d7312, type: 3}
   prefab: {fileID: 0}
+  type: 1

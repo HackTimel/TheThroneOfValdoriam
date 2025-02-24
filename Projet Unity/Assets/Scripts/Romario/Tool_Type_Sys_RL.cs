@@ -1,24 +1,26 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Tool_Type_Sys_RL : MonoBehaviour
 {
     public static Tool_Type_Sys_RL instance;
-    public GameObject tooltype;
+    public Tool_Type tooltype;
 
     private void Awake()
     {
         instance = this;
         
     }
-    public void Show()
+    public void Show(string content,string header)
     {
-        tooltype.SetActive(true);
+        tooltype.SetTexte(content,header);
+        tooltype.GameObject().SetActive(true);
     }
     public void Hide()
     {
-        tooltype.SetActive(false);
+        tooltype.GameObject().SetActive(false);
     }
 }
