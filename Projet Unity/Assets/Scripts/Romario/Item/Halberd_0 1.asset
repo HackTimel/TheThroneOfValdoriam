@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Hache
   description: Arme manie par le grand Leewen
   visuel: {fileID: 21300000, guid: f7111abcf951a1f4398426869d06640b, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 2655180415730428750, guid: 3c670cc076cb4a046b45588093d4e5ba, type: 3}
   type: 1

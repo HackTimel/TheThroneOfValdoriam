@@ -26,6 +26,7 @@ public class Inventaire_RL : MonoBehaviour
     [SerializeField] private GameObject Consommer;
     private Item_Scipt_RL _itemSciptRl_current;
     [SerializeField] public Sprite Transparent;
+     [SerializeField] private Transform Drop_Point;
 
     private void Awake()
     {
@@ -144,6 +145,9 @@ public class Inventaire_RL : MonoBehaviour
 
     public void Poser_Action_Button()
     {
+        GameObject instantiate = Instantiate(_itemSciptRl_current.prefab);
+        instantiate.transform.position = Drop_Point.position;
+        content.Remove(_itemSciptRl_current);
         Refresh_content_RL();
         Close_Action_Panel();
     }
