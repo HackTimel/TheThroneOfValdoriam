@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: -3511560386840603029}
   m_Layer: 5
   m_Name: PrefabSaveList
-  m_TagString: Untagged
+  m_TagString: SaveButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   persistentManager: {fileID: 0}
+  selected: 0
   button: {fileID: 5954197440995389838}
 --- !u!114 &-3511560386840603029
 MonoBehaviour:

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
@@ -6,16 +7,37 @@ using TMPro;
 
 public class SaveListManager : MonoBehaviour
 {
-    public GameObject saveEntryPrefab; // Assignez le préfab dans l'inspecteur
+    public GameObject saveEntryPrefab; 
     public Transform saveListContainer; 
+    public Transform saveEntryContainer;
+    public bool change;
 
     private string savePath;
 
-    void Start()
+    private void Start()
     {
         savePath = Application.persistentDataPath +  "/";
         LoadSaveFiles();
+    }
 
+    void Update()
+    {
+        if (change)
+        {
+            savePath = Application.persistentDataPath +  "/";
+            ClearSaveEntries();  // Vide la liste des entrées existantes
+            LoadSaveFiles();
+            change = false;
+        }
+    }
+    
+    void ClearSaveEntries()
+    {
+        // Détruit tous les enfants du conteneur
+        foreach (Transform child in saveEntryContainer)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     void LoadSaveFiles()
@@ -23,7 +45,7 @@ public class SaveListManager : MonoBehaviour
         if (!Directory.Exists(savePath))
             Directory.CreateDirectory(savePath);
 
-        string[] files = Directory.GetFiles(savePath, "*.json"); // Assurez-vous que vos sauvegardes sont en JSON
+        string[] files = Directory.GetFiles(savePath, "*.json"); 
         foreach (string file in files)
         {
             string fileName = Path.GetFileNameWithoutExtension(file);
