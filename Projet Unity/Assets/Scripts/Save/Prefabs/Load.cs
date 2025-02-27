@@ -8,7 +8,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Load : MonoBehaviour, IDeselectHandler
+public class Load : MonoBehaviour//, IDeselectHandler
 {
     public PersistentManager persistentManager;
 
@@ -42,15 +42,6 @@ public class Load : MonoBehaviour, IDeselectHandler
         
         if (selected)
         {
-            GameObject[] allSaves = GameObject.FindGameObjectsWithTag("SaveButton");
-            foreach (GameObject temp in allSaves)
-            {
-                Load script = temp.GetComponent<Load>();
-                if (temp != gameObject)
-                {
-                    script.selected = false;
-                }
-            }
             button.image.color = Color.green; 
         }
 
@@ -63,6 +54,15 @@ public class Load : MonoBehaviour, IDeselectHandler
     public void selectIt()
     {
         selected = true;
+        GameObject[] allSaves = GameObject.FindGameObjectsWithTag("SaveButton");
+        foreach (GameObject temp in allSaves)
+        {
+            Load script = temp.GetComponent<Load>();
+            if (temp != gameObject)
+            {
+                script.selected = false;
+            }
+        }
     }
     
     public void LoadSave()
@@ -94,16 +94,14 @@ public class Load : MonoBehaviour, IDeselectHandler
         Destroy(gameObject);
     }
 
-    public void OnDeselect(BaseEventData eventData)
-    {
-        if (selected && Input.GetMouseButtonDown(0)) 
-        {
-            GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
+    //public void OnDeselect(BaseEventData eventData)
+    //{
+        //GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
 
-            if (selectedObject != gameObject) 
-            {
-                selected = false;
-            }
-        }
-    }
+        //if (selectedObject != gameObject) 
+        //{
+            //selected = false;
+            //button.image.color = Color.black; // Ajoutez ceci pour forcer la mise à jour de l'affichage
+        //}
+    //}
 }
