@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Multi.unity
     guid: 688466d7159ec9341940b459244eb3e0
+  - enabled: 1
+    path: Assets/Scenes/Invenatire_RL.unity
+    guid: 8fbf3eeee3bc3974c9f4546435dc7f19
   m_configObjects: {}
