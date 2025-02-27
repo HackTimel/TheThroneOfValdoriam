@@ -12,10 +12,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] public PlayerManager playerManager;
     
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update() //test du fonctionnement de la barre

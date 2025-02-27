@@ -35,6 +35,7 @@ public class PersistentManager : MonoBehaviour
             PlayerData loadedData = JsonUtility.FromJson<PlayerData>(json);
             
             savedPosition = loadedData.position;
+            Debug.Log($"Position chargée : X={savedPosition[0]}, Y={savedPosition[1]}, Z={savedPosition[2]}");
             savedHealth = loadedData.health;
             hasLoaded = true;
 
