@@ -906,7 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToucheAvancer: {fileID: 255652487}
   avancerComportement: {fileID: 84977803}
-  playerMovement: {fileID: 2110498196}
+  playerMovement: {fileID: 0}
   changement: 0
   delay: 0
   assign: 0
@@ -3851,7 +3851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToucheSauter: {fileID: 207194892}
   sautComportement: {fileID: 406931220}
-  playerMovement: {fileID: 2110498196}
+  playerMovement: {fileID: 0}
   changement: 0
   delay: 0
   assign: 0
@@ -5527,7 +5527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToucheArriere: {fileID: 1059966659}
   arriereComportement: {fileID: 579826151}
-  playerMovement: {fileID: 2110498196}
+  playerMovement: {fileID: 0}
   changement: 0
   delay: 0
   assign: 0
@@ -9688,7 +9688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToucheSprinter: {fileID: 313717744}
   sprintComportement: {fileID: 1466200172}
-  playerMovement: {fileID: 2110498196}
+  playerMovement: {fileID: 0}
   changement: 0
   delay: 0
   assign: 0
@@ -10672,7 +10672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToucheDroite: {fileID: 1772455744}
   droiteComportement: {fileID: 1771364309}
-  playerMovement: {fileID: 2110498196}
+  playerMovement: {fileID: 0}
   changement: 0
   delay: 0
   assign: 0
@@ -11273,7 +11273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToucheGauche: {fileID: 315565264}
   gaucheComportement: {fileID: 1855424066}
-  playerMovement: {fileID: 2110498196}
+  playerMovement: {fileID: 0}
   changement: 0
   delay: 0
   assign: 0
@@ -12228,7 +12228,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2110498197}
-  - component: {fileID: 2110498196}
   m_Layer: 0
   m_Name: PlayerMouvement
   m_TagString: Untagged
@@ -12236,35 +12235,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2110498196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110498195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f93030f7d57820546b52bc7ef1ca1671, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 0
-  groundDrag: 0
-  jumpForce: 0
-  jumpCooldown: 0
-  sprintMultiplier: 0
-  playerHeight: 0
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  jumpKey: 32
-  sprintKey: 304
-  moveForward: 119
-  moveBackward: 115
-  moveRight: 100
-  moveLeft: 97
-  orientation: {fileID: 0}
-  rb: {fileID: 0}
 --- !u!4 &2110498197
 Transform:
   m_ObjectHideFlags: 0
