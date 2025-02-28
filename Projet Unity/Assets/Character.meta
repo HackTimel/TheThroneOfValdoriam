@@ -1,6 +1,10 @@
 fileFormatVersion: 2
-guid: 9a3c14b2131ecec46b268dff6ec7d8e2
+<<<<<<<< HEAD:Projet Unity/Assets/Character.meta
+guid: b0b6236d2f7d7474e9d8c87f328bf2f7
 folderAsset: yes
+========
+guid: b5f957873a5b82042967195ffffc9063
+>>>>>>>> romari_br2:Projet Unity/Assets/StarterAssets/StarterAssets_Documentation_v1.1.pdf.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

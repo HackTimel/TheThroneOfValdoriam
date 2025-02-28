@@ -1,6 +1,10 @@
 fileFormatVersion: 2
-guid: 8df2150bced7b4741975537aed6da475
+<<<<<<<< HEAD:Projet Unity/Assets/BrokenVector.meta
+guid: 1ae97b569e38ea1439c589f2d478d307
 folderAsset: yes
+========
+guid: 8fbf3eeee3bc3974c9f4546435dc7f19
+>>>>>>>> romari_br2:Projet Unity/Assets/Scenes/Invenatire_RL.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
