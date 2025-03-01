@@ -1697,6 +1697,8 @@ MonoBehaviour:
   moveRight: 100
   moveLeft: 97
   orientation: {fileID: 156558587375444586}
+  rb: {fileID: 0}
+  readyToJump: 0
 --- !u!114 &6296672342718147250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1873,6 +1875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6426e535d29a2a4d8a6fd729f1dd00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  playerCam: {fileID: 0}
 --- !u!1 &4619501626718021751
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,14 +20,14 @@ public class PauseScript : MonoBehaviour
     {
         optionsMenuContainer =  GameObject.Find("OptionsMenuContainer"); // objet à afficher (OptionsMenuContainer)
         pauseMenu.SetActive(false); //rend l'objet inactif aka le menu pause au démarrage (on commence pas en pause)
-        PauseMenuSound.Instance.PlayMusic("Level1");
+        //PauseMenuSound.Instance.PlayMusic("Level1");
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(PlayerMovement.pause))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!paused)
             {

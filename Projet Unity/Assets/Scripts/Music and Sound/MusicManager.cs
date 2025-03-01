@@ -45,7 +45,7 @@ public class MusicManager : MonoBehaviour
     public void Awake()
     {
         float volume = PlayerPrefs.GetFloat("MusicVolume");
-        volumeSlider.value = volume;
+        //volumeSlider.value = volume;
             if (Instance != null)
             {
                 Destroy(gameObject);

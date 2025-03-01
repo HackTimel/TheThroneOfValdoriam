@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     private Vector3 moveDirection;
-    private bool readyToJump = true;
+    public bool readyToJump = true;
 
     void Start()
     {

@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        if (PersistentManager.instance.hasLoaded) //vérifie si on charge une game
+       if (PersistentManager.instance.hasLoaded) //vérifie si on charge une game
         {
             // Appliquer les données sauvegardées
             //playerTransform.position = new Vector3(PersistentManager.instance.savedPosition[0], PersistentManager.instance.savedPosition[1], PersistentManager.instance.savedPosition[2]);
