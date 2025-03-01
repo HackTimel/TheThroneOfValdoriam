@@ -44,6 +44,7 @@ public class PauseScript : MonoBehaviour
 
     public void PauseGame()
     {
+        UnlockCursor();
         pauseMenu.SetActive(true); //rend l'objet menu actif (on voit les options)
         paused = true;
         Time.timeScale = 0; //on freeze le jeu
@@ -53,10 +54,10 @@ public class PauseScript : MonoBehaviour
 
     public void ResumeGame()
     {
+        LockCursor();
         pauseMenu.SetActive(false);
         Time.timeScale = 1; //on remet les pendules à l'heure.
         paused = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void Options() //explicite pour les autres et pour l'inspector
@@ -93,6 +94,20 @@ public class PauseScript : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit(); //une fois build marchera
-    }
+        Application.Quit(); // Quitte le jeu dans un build
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
+    }
+    
+    void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }
+
