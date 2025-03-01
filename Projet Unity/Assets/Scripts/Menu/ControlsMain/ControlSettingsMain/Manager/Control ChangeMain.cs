@@ -27,7 +27,7 @@ public class SautManagerMain : MonoBehaviour
 
     public void Start()
     {
-        AssignerSaut(KeyCode.Space,"espace");
+//        AssignerSaut(KeyCode.Space,"espace");
     }
 
     public void Update()

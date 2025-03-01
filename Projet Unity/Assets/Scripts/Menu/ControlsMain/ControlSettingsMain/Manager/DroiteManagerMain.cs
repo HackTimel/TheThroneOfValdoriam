@@ -23,7 +23,7 @@ public class DroiteManagerMain : MonoBehaviour
 
     public void Start()
     {
-        AssignerDroite(KeyCode.D,"d");
+//        AssignerDroite(KeyCode.D,"d");
     }
     void Update()
     {

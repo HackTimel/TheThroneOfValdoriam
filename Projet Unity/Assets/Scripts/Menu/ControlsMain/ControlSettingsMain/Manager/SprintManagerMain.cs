@@ -25,7 +25,7 @@ public class SprintManagerMain : MonoBehaviour
 
     public void Start()
     {
-        AssignerSprint(KeyCode.LeftShift,"shift");
+//        AssignerSprint(KeyCode.LeftShift,"shift");
     }
     void Update()
     {

@@ -22,7 +22,7 @@ public class GaucheManagerMain : MonoBehaviour
 
     public void Start()
     {
-        AssignerGauche(KeyCode.A,"a");
+//        AssignerGauche(KeyCode.A,"a");
     }
     void Update()
     {
