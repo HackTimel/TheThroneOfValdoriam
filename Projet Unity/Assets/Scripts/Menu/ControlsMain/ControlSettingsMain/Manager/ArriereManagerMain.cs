@@ -23,7 +23,7 @@ public class ArriereManagerMain : MonoBehaviour
 
     public void Start()
     {
-//        AssignerArriere(KeyCode.S,"s");
+        AssignerArriere(KeyCode.S,"s");
     }
     void Update()
     {

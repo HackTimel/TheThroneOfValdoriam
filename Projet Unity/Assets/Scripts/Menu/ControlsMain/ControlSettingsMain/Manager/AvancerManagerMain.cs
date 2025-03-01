@@ -23,7 +23,7 @@ public class AvancerManagerMain : MonoBehaviour
 
     public void Start()
     {
-        //AssignerAvancer(KeyCode.Z,"z");
+        AssignerAvancer(KeyCode.Z,"z");
     }
     void Update()
     {
