@@ -11,7 +11,7 @@ public class AnimationStateController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        touche = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        touche = GameObject.Find("Chevalier").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -26,5 +26,14 @@ public class AnimationStateController : MonoBehaviour
         animator.SetBool("isWalking", avancer);
         animator.SetBool("isRunning", courrir);
         animator.SetBool("isJump", sauter);
+        Attack();
     }
+    public void Attack()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetTrigger("Is_Attack");
+        }
+    }
+    
 }
