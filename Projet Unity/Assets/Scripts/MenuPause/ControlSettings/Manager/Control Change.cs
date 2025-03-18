@@ -6,7 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+using playermov;
 public class SautManager : MonoBehaviour
 {
     [SerializeField] public Button ToucheSauter;

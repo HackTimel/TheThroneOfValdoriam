@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine;using Cinemachine; // N'oublie pas d'importer Cinemachine
+using playermov;
+
+
 
 public class AnimationStateController : MonoBehaviour
 {
+    
     Animator animator;
     PlayerMovement touche;
+    private bool is_Attacking;
+    public float attack_Delay;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        touche = GameObject.Find("Chevalier").GetComponent<PlayerMovement>();
+        touche = GameObject.Find("Mage").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -26,14 +33,35 @@ public class AnimationStateController : MonoBehaviour
         animator.SetBool("isWalking", avancer);
         animator.SetBool("isRunning", courrir);
         animator.SetBool("isJump", sauter);
-        Attack();
+        Attack_player0();
+     
     }
-    public void Attack()
+
+   public void Attack_player0()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            animator.SetTrigger("Is_Attack");
+            StartCoroutine(Attack());
         }
     }
+    IEnumerator Attack()
+    {
+        is_Attacking = true;
+    
+     
+
+        Debug.Log("Attaque en cours, caméra figée !");
+        animator.SetTrigger("Attack");
+    
+        yield return new WaitForSeconds(attack_Delay);
+    
+        
+       
+
+        Debug.Log("Attaque terminée, caméra réactivée !");
+        is_Attacking = false;
+    }
+  
+    
     
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using playermov;
 public class ArriereManager : MonoBehaviour
 {
     [SerializeField] public Button ToucheArriere;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using playermov;
 public class GaucheManagerMain : MonoBehaviour
 {
     [SerializeField] public Button ToucheGauche;
