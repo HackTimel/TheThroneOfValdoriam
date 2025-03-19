@@ -27,12 +27,22 @@ public class AnimationStateController : MonoBehaviour
         // Récupérer les états des touches une seule fois
         bool avancer = Input.GetKey(touche.devant) || Input.GetKey(touche.gauche) || Input.GetKey(touche.droite) || Input.GetKey(touche.derriere);
         bool courrir = Input.GetKey(touche.sprintKey) && avancer; // Le sprint nécessite d'avancer
+        bool grimper = Input.GetKey(KeyCode.E);
         bool sauter = Input.GetKey(touche.jumpKey);
 
         // Mettre à jour les états dans l'Animator
-        animator.SetBool("isWalking", avancer);
-        animator.SetBool("isRunning", courrir);
-        animator.SetBool("isJump", sauter);
+        if (!grimper)
+        {
+            animator.SetBool("isWalking", avancer);
+        }
+        if (!grimper)
+        {
+            animator.SetBool("isRunning", courrir);
+        }
+        if (!grimper)
+        {
+            animator.SetBool("isJump", sauter);
+        }
         Attack_player0();
      
     }

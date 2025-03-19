@@ -8,16 +8,19 @@ namespace climb0
 {
 
 
-    public class Climb_RL : PlayerMovement
+    public class Climb_RL : MonoBehaviour
     {
         [Header("Reference")] 
         public LayerMask whatIsWall;
-       
-
+        public Rigidbody rb;
+        public Animator animator;
+        public Transform orientation;
+   
         [Header("Climbing")] public float climbSpeed;
         public float climbTimer;
         public float maxclimbTime;
         private bool isClimbing;
+        public float climbForce;
 
         [Header("Wall Detection")] public float detectionLength;
         public float spherecastRadius;
@@ -42,34 +45,35 @@ namespace climb0
             Vector3 castOrigin = transform.position - orientation.forward * 0.5f;
 
             isWallHit = Physics.SphereCast(
-                castOrigin, // Nouvelle origine du cast
+                castOrigin, 
                 spherecastRadius,
                 orientation.forward,
                 out frontWallHit,
                 detectionLength,
                 whatIsWall
             );
-            
+
 
             wallLookAngle = Vector3.Angle(orientation.forward, -frontWallHit.normal);
-
-            Debug.DrawRay(castOrigin, orientation.forward * detectionLength, Color.red);
+            Debug.Log("Wall Detected: " + isWallHit); 
         }
 
 
         private void StateMachine()
         {
-            if (isWallHit && Input.GetKeyDown(KeyCode.V) && wallLookAngle < maxWallLookAngle)
+            if (isWallHit && Input.GetKeyDown(KeyCode.E) && wallLookAngle < maxWallLookAngle)
             {
                 if (isClimbing)
                 {
-                    moveSpeed = 10;
+                   
                     StopClimb();
+                    
                 }
                 else
                 {
-                    moveSpeed = 1;
+                  
                     StartClimb();
+                  
                 }
             }
         }
@@ -80,6 +84,7 @@ namespace climb0
             isClimbing = true;
             climbTimer = 0f;
             rb.useGravity = false;
+            
 
         }
 
@@ -92,7 +97,8 @@ namespace climb0
                 return;
             }
 
-            rb.velocity = new Vector3(rb.velocity.x, climbSpeed, rb.velocity.z);
+            rb.AddForce(Vector3.up * climbForce, ForceMode.Acceleration);
+            animator.SetBool("Is_Climb", true);
             //rb.AddForce(-frontWallHit.normal * 5f, ForceMode.Force);
         }
 
@@ -100,6 +106,8 @@ namespace climb0
         {
             isClimbing = false;
             rb.useGravity = true;
+            animator.SetBool("Is_Climb",false);
+      
 
         }
     }
