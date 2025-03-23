@@ -60,7 +60,7 @@ public class AnimationStateController : MonoBehaviour
     
      
 
-        Debug.Log("Attaque en cours, caméra figée !");
+    
         animator.SetTrigger("Attack");
     
         yield return new WaitForSeconds(attack_Delay);
@@ -68,7 +68,7 @@ public class AnimationStateController : MonoBehaviour
         
        
 
-        Debug.Log("Attaque terminée, caméra réactivée !");
+      
         is_Attacking = false;
     }
   
