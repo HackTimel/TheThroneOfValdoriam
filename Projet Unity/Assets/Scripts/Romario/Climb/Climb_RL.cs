@@ -129,7 +129,7 @@ namespace climb0
             }*/
            
                 rb.AddForce(Vector3.up * climbForce, ForceMode.Force);
-                rb.AddForce(-frontWallHit.normal * 0.15f, ForceMode.Acceleration);
+                rb.AddForce(-frontWallHit.normal * 0.25f, ForceMode.Force);
             
 
             animator.SetBool("Is_Climb", true);
