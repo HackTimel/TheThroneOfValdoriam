@@ -8,7 +8,7 @@ public class Enemy_Attack : Enemy_Base
 
     public override void Enter(Enemy_State msm)
     {
-        Debug.Log("Suspicious");
+        Debug.Log("Attack");
         player = GameObject.FindGameObjectWithTag("Player");
         msm.text.color = Color.red;
         msm.text.text = "!!!";

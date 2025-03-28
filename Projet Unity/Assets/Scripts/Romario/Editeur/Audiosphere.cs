@@ -9,7 +9,7 @@ public class Audiosphere : MonoBehaviour
     [SerializeField] public float spher_taille;
     void Start()
     {
-        
+        GetComponent<Renderer>().enabled = false;
     }
 
     // Update is called once per frame

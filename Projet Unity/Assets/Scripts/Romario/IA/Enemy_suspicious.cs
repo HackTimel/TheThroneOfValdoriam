@@ -10,8 +10,8 @@ public class Enemy_suspicious : Enemy_Base
     bool player_Detected = false;
     float Playerdistance;
     RaycastHit hit;
-    private float visonAngle = 45f;
-    private float visonRange = 0f;
+    private float visonAngle = 180f;
+    private float visonRange = 10f;
     
 
     public override void Enter(Enemy_State msm)
@@ -25,11 +25,11 @@ public class Enemy_suspicious : Enemy_Base
     public override void Invoked(Enemy_State msm)
     {
         msm.Agent.SetDestination(msm.suspiciousPos);
-        msm.idle_timer--;
+        /*msm.idle_timer--;
         if (msm.idle_timer <= 0)
         {
             msm.change_state(msm.Idle);
-        }
+        }*/
 
         DetectPlayer(msm);
     }
@@ -39,14 +39,19 @@ public class Enemy_suspicious : Enemy_Base
         playerDirection = target.transform.position-msm.transform.position;
         Playerdistance = Vector3.Distance(target.transform.position, msm.transform.position);
         float playerAngle = Vector3.Angle(playerDirection, msm.transform.forward);
+        Debug.Log("Prime");
         if (Mathf.Abs(playerAngle)<visonAngle&&(Playerdistance<visonRange))
         {
+            Debug.Log("Seconde");
             if (Physics.Raycast(msm.transform.position, playerDirection, out hit, Playerdistance))
             {
+                Debug.Log("Rayon Fonctionne ");
                 if (hit.transform.gameObject.tag == "Player")                          
                 {
+                    Debug.Log("Tout marche");
                     msm.change_state(msm.Attack);
                 }
+                
             }
         }
     }
