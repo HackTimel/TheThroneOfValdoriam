@@ -11,11 +11,13 @@ public class Enemy_State : MonoBehaviour
    public Enemy_Idl_State Idle;
    public Enemy_suspicious Suspicious;
    public Enemy_Attack Attack;
+   public Enemy_decisions Decisions;
+   public Enemy_combat Combat;
    [HideInInspector] public Vector3 suspiciousPos;
    [HideInInspector]public TMP_Text text;
    [HideInInspector] public NavMeshAgent Agent;
    [HideInInspector]public Vector3 initPos;
-   [HideInInspector] public int idle_timer;
+   [HideInInspector] public float idle_timer;
 
    void Awake()
    {
@@ -25,7 +27,7 @@ public class Enemy_State : MonoBehaviour
       currentstate = Idle;
       currentstate.Enter(this);
       InvokeRepeating("Invoked", 1f, 1f);
-      InvokeRepeating("Invoked0", 1f, 1.2f);
+      InvokeRepeating("Invoked0", 1.5f, 1.2f);
    }
 
    public void Invoked()
@@ -39,6 +41,7 @@ public class Enemy_State : MonoBehaviour
 
    public void change_state(Enemy_Base state)
    {
+      currentstate.Sortir(this);
       currentstate = state;
       currentstate.Enter(this);
    }

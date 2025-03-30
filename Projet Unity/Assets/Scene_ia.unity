@@ -1015,6 +1015,8 @@ MonoBehaviour:
   Idle: {fileID: 1208291319}
   Suspicious: {fileID: 1208291318}
   Attack: {fileID: 1208291320}
+  Decisions: {fileID: 0}
+  Combat: {fileID: 0}
   suspiciousPos: {x: 0, y: 0, z: 0}
   text: {fileID: 0}
   Agent: {fileID: 0}
@@ -1035,6 +1037,8 @@ MonoBehaviour:
   vitesse_marche: 1
   animator: {fileID: 0}
   val: {fileID: 0}
+  rayCount: 360
+  player: {fileID: 0}
 --- !u!114 &1208291319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,9 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190d076f29462fc408ee888bed83c020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 15
   animator: {fileID: 0}
-  val: {fileID: 0}
 --- !u!1001 &1221041499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1455,6 +1457,8 @@ MonoBehaviour:
   vitesse_marche: 1
   animator: {fileID: 0}
   val: {fileID: 0}
+  rayCount: 360
+  player: {fileID: 0}
 --- !u!114 &1421604704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,9 +1483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190d076f29462fc408ee888bed83c020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 15
   animator: {fileID: 0}
-  val: {fileID: 0}
 --- !u!114 &1421604706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,6 +1499,8 @@ MonoBehaviour:
   Idle: {fileID: 1421604704}
   Suspicious: {fileID: 1421604703}
   Attack: {fileID: 1421604705}
+  Decisions: {fileID: 0}
+  Combat: {fileID: 0}
   suspiciousPos: {x: 0, y: 0, z: 0}
   text: {fileID: 0}
   Agent: {fileID: 0}
@@ -2801,7 +2805,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: b44021df208f4834faee3a4440613dcd, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -2974,7 +2978,7 @@ Transform:
   m_GameObject: {fileID: 1361746135534709334}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.019999996, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4706,6 +4710,8 @@ GameObject:
   - component: {fileID: 1361746135534709340}
   - component: {fileID: 1361746135534709341}
   - component: {fileID: 1361746135534709342}
+  - component: {fileID: 1361746135534709344}
+  - component: {fileID: 1361746135534709343}
   m_Layer: 0
   m_Name: Character_Knight_01_Blue
   m_TagString: Mob
@@ -4728,6 +4734,8 @@ MonoBehaviour:
   vitesse_marche: 1
   animator: {fileID: 1361746135527378778}
   val: {fileID: 1361746135534709339}
+  rayCount: 360
+  player: {fileID: 4416926083347132227}
 --- !u!114 &1361746135534709336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4752,9 +4760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190d076f29462fc408ee888bed83c020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 15
   animator: {fileID: 1361746135527378778}
-  val: {fileID: 1361746135534709339}
 --- !u!114 &1361746135534709338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4770,6 +4776,8 @@ MonoBehaviour:
   Idle: {fileID: 1361746135534709336}
   Suspicious: {fileID: 1361746135534709335}
   Attack: {fileID: 1361746135534709337}
+  Decisions: {fileID: 1361746135534709343}
+  Combat: {fileID: 1361746135534709344}
   suspiciousPos: {x: 0, y: 0, z: 0}
   text: {fileID: 0}
   Agent: {fileID: 0}
@@ -4860,6 +4868,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footstepSource: {fileID: 1504068636}
+--- !u!114 &1361746135534709343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361746135534709334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18f234d9ae8cb34f855ee4c368112b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1361746135534709344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361746135534709334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50d4d0219b0c25468adb28925141877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1361746135527378778}
 --- !u!1 &1361746135534709970
 GameObject:
   m_ObjectHideFlags: 0

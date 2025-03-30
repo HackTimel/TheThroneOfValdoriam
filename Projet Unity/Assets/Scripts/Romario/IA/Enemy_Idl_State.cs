@@ -10,9 +10,7 @@ public class Enemy_Idl_State : Enemy_Base
         msm.text.text= "ZZZ";
         msm.text.color = Color.white;
         msm.Agent.SetDestination(msm.initPos);
-       
-
-
+        
     }
 
     public override void Invoked(Enemy_State msm)
@@ -22,6 +20,11 @@ public class Enemy_Idl_State : Enemy_Base
     }
 
     public override void Invoked0(Enemy_State msm)
+    {
+        return;
+    }
+
+    public override void Sortir(Enemy_State msm)
     {
         return;
     }

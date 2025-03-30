@@ -6,29 +6,39 @@ using UnityEngine.AI;
 public class Enemy_Attack : Enemy_Base
 {
     GameObject player;
-    public float vitesse = 4;
     [SerializeField]public Animator animator;
-    [SerializeField]public NavMeshAgent val;
+    
 
     public override void Enter(Enemy_State msm)
     {
       
         player = GameObject.FindGameObjectWithTag("Player");
         msm.text.color = Color.red;
-        msm.text.text = "!!!";
+        msm.text.text = "!";
         msm.Agent.SetDestination(player.transform.position);
-        msm.Agent.speed = vitesse;
+        
     }
 
     public override void Invoked(Enemy_State msm)
     {
+        msm.Agent.SetDestination(player.transform.position);
+        animator.SetBool("Poursuite",true);
         Debug.Log("Attack");
+        if (!msm.Agent.pathPending && msm.Agent.remainingDistance < 1.5f) // Vérifie que le chemin est bien calculé
+        {
+            msm.change_state(msm.Combat);
+        }
+
  
     }
 
     public override void Invoked0(Enemy_State msm)
     {
-        msm.Agent.SetDestination(player.transform.position);
-        animator.SetBool("Poursuite",true);
+        return;
+    }
+
+    public override void Sortir(Enemy_State msm)
+    {
+        animator.SetBool("Poursuite",false);
     }
 }
