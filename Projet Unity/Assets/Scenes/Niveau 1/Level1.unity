@@ -7932,6 +7932,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 782628376}
     m_Modifications:
+    - target: {fileID: 400260065350274696, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1079258086782115036, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
       propertyPath: m_IsKinematic
       value: 0
@@ -7988,10 +7992,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyIA (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1079258086782115036, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8036493290253694244, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1406605129}
   m_SourcePrefab: {fileID: 100100000, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
 --- !u!1001 &864124106
 PrefabInstance:
@@ -10419,6 +10427,25 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7460072722680865893, guid: 0679505a89680d94bb67645a1c5d49a0, type: 3}
   m_PrefabInstance: {fileID: 1083400530}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1112170759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8036493290253694244, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
+  m_PrefabInstance: {fileID: 6383011472047516854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1112170764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112170759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbb8fd4402b13c4bb20fecabe25c467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  Health: {fileID: 1674857231}
 --- !u!1001 &1120165568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39194,6 +39221,25 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7460072722680865893, guid: 0679505a89680d94bb67645a1c5d49a0, type: 3}
   m_PrefabInstance: {fileID: 1405742783}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1406605127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8036493290253694244, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
+  m_PrefabInstance: {fileID: 852703288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1406605129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406605127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbb8fd4402b13c4bb20fecabe25c467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  Health: {fileID: 1674857231}
 --- !u!1 &1419693058
 GameObject:
   m_ObjectHideFlags: 0
@@ -43265,6 +43311,10 @@ PrefabInstance:
       propertyPath: sprintMultiplier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1705758528987725292, guid: 34e1c17c87cc5f04ab225eab99f1f1e4, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3428151077823496794, guid: 34e1c17c87cc5f04ab225eab99f1f1e4, type: 3}
       propertyPath: m_Name
       value: PlayerCam
@@ -43292,6 +43342,10 @@ PrefabInstance:
     - target: {fileID: 6655782104528058257, guid: 34e1c17c87cc5f04ab225eab99f1f1e4, type: 3}
       propertyPath: m_Name
       value: Chevalier
+      objectReference: {fileID: 0}
+    - target: {fileID: 6655782104528058257, guid: 34e1c17c87cc5f04ab225eab99f1f1e4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6677966921204265161, guid: 34e1c17c87cc5f04ab225eab99f1f1e4, type: 3}
       propertyPath: rb
@@ -44867,6 +44921,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player OBJ
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84ee039070c065e4e9d398e5ab0bb980, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -44972,14 +45030,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'root'\n\tTransform 'c_thumb1.r'\n\tTransform
-    'c_middle1.r'\n\tTransform 'root'\n\tTransform 'arm_stretch.l'\n\tTransform 'spine_02.x'\n\tTransform
-    'spine_01.x'\n\tTransform 'thigh_stretch.r'\n\tTransform 'c_index2.r'\n\tTransform
-    'c_middle2.r'\n\tand more ...\n\tFrom animation clip 'Running'\n\tFrom animation
-    clip 'Walking'\n\tFrom animation clip 'Breathing Idle@Jumping'\n\tFrom animation
-    clip 'mixamo.com'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -46064,9 +46115,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 782628376}
     m_Modifications:
+    - target: {fileID: 400260065350274696, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1079258086782115036, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959666191614124597, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3904831095573273660, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
       propertyPath: poste
@@ -46120,10 +46179,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyIA
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1079258086782115036, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8036493290253694244, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1112170764}
   m_SourcePrefab: {fileID: 100100000, guid: 8715c4504aae94c489c1630b9dd02250, type: 3}
 --- !u!1001 &7879115045322774736
 PrefabInstance:
