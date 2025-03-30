@@ -10,9 +10,18 @@ public class Enemy_Idl_State : Enemy_Base
         msm.text.text= "ZZZ";
         msm.text.color = Color.white;
         msm.Agent.SetDestination(msm.initPos);
+       
+
+
     }
 
     public override void Invoked(Enemy_State msm)
+    {
+        Debug.Log("IDLE");
+        return;
+    }
+
+    public override void Invoked0(Enemy_State msm)
     {
         return;
     }
