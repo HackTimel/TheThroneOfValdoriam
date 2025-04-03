@@ -25,11 +25,16 @@ public class Enemy_State : MonoBehaviour
       currentstate = Idle;
       currentstate.Enter(this);
       InvokeRepeating("Invoked", 1f, 1f);
+      InvokeRepeating("Invoked0", 1f, 1.2f);
    }
 
    public void Invoked()
    {
       currentstate.Invoked(this);
+   }
+   public void Invoked0()
+   {
+      currentstate.Invoked0(this);
    }
 
    public void change_state(Enemy_Base state)
