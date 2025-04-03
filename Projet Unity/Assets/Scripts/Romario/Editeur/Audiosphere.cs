@@ -32,6 +32,7 @@ public class Audiosphere : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Mob"))
         {
+            Debug.Log("reperer");
             other.gameObject.SendMessage("PlayerDetected",transform.position);
         }
     }
