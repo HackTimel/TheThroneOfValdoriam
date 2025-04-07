@@ -25,41 +25,38 @@ public class EnemyIA : MonoBehaviour
     [SerializeField] private bool is_Attacking;
     [SerializeField] private float attack_Delay;
     [SerializeField] private float vit_rot;
-    /*if (Physics.Raycast(point_de_depart.position, orientation.forward, detectionLength0, playerMask))
-      {
-          Vector3 direction = player.position - transform.position;
-          direction.y = 0;
-          Quaternion targetRotation = Quaternion.LookRotation(direction);
-          transform.rotation = targetRotation;
-      }*/
-    // Update is called once per frame
+    private float distanceToPlayer = 0f;
+
+    void FixedUpdate()
+    {
+        distanceToPlayer = Vector3.Distance(player.position, transform.position);
+    }
     void Update()
     {
-        if (Vector3.Distance(player.position, transform.position) < combat_radius)
+        
+        if (distanceToPlayer < combat_radius)
         {
-            anim.SetBool("Combat",true);
-            agent.speed = vitesse_marche;
-            agent.SetDestination(player.position);
-            
-           
+            Debug.Log("cool0");
+            Combat();
+            agent.speed = 0;
         }
-         if (Vector3.Distance(player.position,transform.position)<detection_radius&&
-            Vector3.Distance(player.position,transform.position)>combat_radius)
+        else if (distanceToPlayer < detection_radius&&distanceToPlayer>combat_radius)
         {
-            anim.SetBool("Combat",false);
+           
             agent.speed = vitesse;
             agent.SetDestination(player.position);
         }
-        else
-        {
-            agent.SetDestination(poste.position);
-        }
-        animator.SetFloat("Speed",agent.velocity.magnitude);
-       
+
+        animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 
+    public void Combat()
+    {
+        StartCoroutine(attackPlayer());
+    }
     IEnumerator attackPlayer()
     {
+        Debug.Log("cool012");
         is_Attacking = true;
         agent.isStopped = true;
         animator.SetTrigger("Attack");
