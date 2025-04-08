@@ -22,12 +22,14 @@ public class Enemy_suspicious : Enemy_Base
         target = GameObject.FindGameObjectWithTag("Player");
         msm.text.text = "?";
         msm.text.color = Color.yellow;
+        msm.Agent.SetDestination(msm.suspiciousPos);
+
     }
     
   
     public override void Invoked(Enemy_State msm)
     {
-        msm.Agent.SetDestination(msm.suspiciousPos);
+        Debug.Log("Suspicious");
         msm.idle_timer--;
         if (msm.idle_timer <= 0)
         {
@@ -46,16 +48,17 @@ public class Enemy_suspicious : Enemy_Base
         playerDirection = target.transform.position-msm.transform.position;
         Playerdistance = Vector3.Distance(target.transform.position, msm.transform.position);
         float playerAngle = Vector3.Angle(playerDirection, msm.transform.forward);
-        Debug.Log("Prime");
+      
         if (Mathf.Abs(playerAngle)<visonAngle&&(Playerdistance<visonRange))
         {
-           Debug.Log("Seconde");
+          
             if (Physics.Raycast(msm.transform.position, playerDirection, out hit, Playerdistance))
             {
-                Debug.Log("Tertio");
+            
                 if (hit.transform.gameObject.tag == "Player")                          
                 {
-                    Debug.Log("Quadro");
+                
+                    Debug.Log("Player detecter");
                     msm.change_state(msm.Decisions);
                 }
                 
