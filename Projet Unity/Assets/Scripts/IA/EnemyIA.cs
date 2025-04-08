@@ -4,72 +4,189 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class EnemyIA : MonoBehaviour
-{
-    [Header("Reference")]
-    [SerializeField] public Transform player;
-    [SerializeField] public Transform poste;
-    [SerializeField]public NavMeshAgent agent;
-    [SerializeField] private Animator animator;
-    [SerializeField] private Transform orientation;
-    [SerializeField] private Transform point_de_depart;
-    [SerializeField] private LayerMask playerMask;
-    [SerializeField] private float detectionLength0;
-    [SerializeField] public Animator anim;
-    [Header("Stat")]
-    [SerializeField] private float detection_radius;
-    [SerializeField] private bool awaiting_distance;
-    [SerializeField] private float vitesse;
-    [SerializeField] private float vitesse_marche;
-    [SerializeField] private float combat_radius;
-    [SerializeField] private bool is_Attacking;
-    [SerializeField] private float attack_Delay;
-    [SerializeField] private float vit_rot;
-    private float distanceToPlayer = 0f;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
 
-    void FixedUpdate()
-    {
-        distanceToPlayer = Vector3.Distance(player.position, transform.position);
-    }
+public class EnemyAI : MonoBehaviour
+{
+    [Header("References")]
+
+    [SerializeField]
+    private NavMeshAgent agent;
+
+    [SerializeField]
+    private Animator animator;
+
+
+    [SerializeField]
+    public Transform player;
+   
+
+    [Header("Stats")]
+    
+
+    [SerializeField]
+    private float walkSpeed;
+
+    [SerializeField]
+    private float chaseSpeed;
+
+    [SerializeField]
+    private float detectionRadius;
+
+    [SerializeField]
+    private float attackRadius;
+
+    [SerializeField]
+    private float attackDelay;
+    
+    [SerializeField]
+    private float patrouille_delay;
+
+
+    [SerializeField]
+    private float rotationSpeed;
+    
+    [SerializeField]
+    private LayerMask whatIsPlayer;
+
+    
+    [SerializeField]
+    List<GameObject> tour_de_rond;
+
+    private bool hasDestination;
+    private bool isAttacking;
+    private bool poursuite = false;
+    
+
+
+    int i = 0;
     void Update()
     {
-        
-        if (distanceToPlayer < combat_radius)
+        if (poursuite)
         {
-            Debug.Log("cool0");
-            Combat();
-            agent.speed = 0;
+            i++;
+            Poursuite();
         }
-        else if (distanceToPlayer < detection_radius&&distanceToPlayer>combat_radius)
+        else if(i<1)
         {
-           
-            agent.speed = vitesse;
+            Garde();
+        }
+
+    }
+
+    private bool isPatrolling = false;
+
+    void Garde()
+    {
+       
+        if (!isPatrolling&&!poursuite)
+        {
+            StartCoroutine(GetNewDestination());
+        }
+    }
+    public void suspect(Transform player)
+    {
+        // Affichage d'un message pour le débogage
+        Debug.Log("Suspect");
+
+        // Calcul de la distance une seule fois
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // Si le joueur est à une certaine distance, commencer à se déplacer vers lui
+        if (distanceToPlayer > 3f)
+        {
+            Debug.Log("En chemin");
+            // On marche vers le joueur
+            agent.speed = walkSpeed;
             agent.SetDestination(player.position);
         }
+        else
+        {
+            Debug.Log("Arriver");
+            if (Vector3.Distance(player.position, transform.position) < detectionRadius)
+            {
+                poursuite = true;
+                Debug.Log("Valeur set !");
+            }
+        }
+
+        // Mettre à jour l'animation en fonction de la vitesse de l'agent
+        animator.SetFloat("Speed", agent.velocity.magnitude);
+    }
+
+    public void Poursuite()
+    {
+        Debug.Log("Poursuite");
+        if (Vector3.Distance(player.position, transform.position) < detectionRadius)
+        {
+            agent.speed = chaseSpeed;
+            Quaternion rot = Quaternion.LookRotation(player.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
+
+            if (!isAttacking)
+            {
+                if (Vector3.Distance(player.position, transform.position) < attackRadius)
+                {
+                    StartCoroutine(AttackPlayer());
+                }
+                else
+                {
+                    agent.SetDestination(player.position);  // Continue à poursuivre le joueur
+                }
+            }
+        }
+       /*else
+        {
+            if (!isPatrolling)  // Reprend la patrouille si la poursuite est terminée
+            {
+                agent.speed = walkSpeed;
+                StartCoroutine(GetNewDestination());
+            }
+        }*/
 
         animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 
-    public void Combat()
+
+    IEnumerator GetNewDestination()
     {
-        StartCoroutine(attackPlayer());
+        isPatrolling = true;
+        foreach (var VARIABLE in tour_de_rond)
+        {
+            agent.SetDestination(VARIABLE.transform.position);
+            agent.speed = walkSpeed;
+            while (agent.pathPending || agent.remainingDistance > 0.1f)
+            {
+                yield return null;  // Attendre jusqu'à ce que la destination soit atteinte
+            }
+            yield return new WaitForSeconds(patrouille_delay);
+        }
+        isPatrolling = false;
     }
-    IEnumerator attackPlayer()
+
+
+    IEnumerator AttackPlayer()
     {
-        Debug.Log("cool012");
-        is_Attacking = true;
+        isAttacking = true;
         agent.isStopped = true;
         animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(attack_Delay);
-        agent.isStopped = false;
-        is_Attacking = false;
+        yield return new WaitForSeconds(attackDelay);
+        if(agent.enabled)
+        {
+            agent.isStopped = false;
+        }
+        isAttacking = false;
     }
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detection_radius);
-        Gizmos.color = Color.black;
-        Gizmos.DrawWireSphere(transform.position, combat_radius);
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }
