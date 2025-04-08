@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
+
 
 
 using System.Collections;
@@ -51,8 +53,14 @@ public class EnemyAI : MonoBehaviour
     
     [SerializeField]
     private LayerMask whatIsPlayer;
+      
+    [SerializeField]
+    private float detente;
 
     
+    [SerializeField]
+    public TextMeshPro textElement;
+
     [SerializeField]
     List<GameObject> tour_de_rond;
 
@@ -81,40 +89,14 @@ public class EnemyAI : MonoBehaviour
 
     void Garde()
     {
-       
         if (!isPatrolling&&!poursuite)
         {
             StartCoroutine(GetNewDestination());
         }
     }
-    public void suspect(Transform player)
+    public void suspect(Transform player0)
     {
-        // Affichage d'un message pour le débogage
-        Debug.Log("Suspect");
-
-        // Calcul de la distance une seule fois
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Si le joueur est à une certaine distance, commencer à se déplacer vers lui
-        if (distanceToPlayer > 3f)
-        {
-            Debug.Log("En chemin");
-            // On marche vers le joueur
-            agent.speed = walkSpeed;
-            agent.SetDestination(player.position);
-        }
-        else
-        {
-            Debug.Log("Arriver");
-            if (Vector3.Distance(player.position, transform.position) < detectionRadius)
-            {
-                poursuite = true;
-                Debug.Log("Valeur set !");
-            }
-        }
-
-        // Mettre à jour l'animation en fonction de la vitesse de l'agent
-        animator.SetFloat("Speed", agent.velocity.magnitude);
+       StartCoroutine(Suspicious(player0));
     }
 
     public void Poursuite()
@@ -150,10 +132,45 @@ public class EnemyAI : MonoBehaviour
         animator.SetFloat("Speed", agent.velocity.magnitude);
     }
 
+    IEnumerator Suspicious(Transform player1)
+    {
+        textElement.text= "???";
+        textElement.color = Color.yellow;
+        yield return new WaitForSeconds(detente);
+        // Affichage d'un message pour le débogage
+        Debug.Log("Suspect");
+
+        // Calcul de la distance une seule fois
+        float distanceToPlayer = Vector3.Distance(transform.position, player1.position);
+
+        // Si le joueur est à une certaine distance, commencer à se déplacer vers lui
+        if (distanceToPlayer > 3f)
+        {
+            Debug.Log("En chemin");
+            // On marche vers le joueur
+            agent.speed = walkSpeed;
+            agent.SetDestination(player1.position);
+        }
+        else
+        {
+            Debug.Log("Arriver");
+            if (Vector3.Distance(player1.position, transform.position) < detectionRadius)
+            {
+                poursuite = true;
+                Debug.Log("Valeur set !");
+            }
+        }
+
+        // Mettre à jour l'animation en fonction de la vitesse de l'agent
+        animator.SetFloat("Speed", agent.velocity.magnitude);
+    }
+
 
     IEnumerator GetNewDestination()
     {
         isPatrolling = true;
+        textElement.text= "ZZZ";
+        textElement.color = Color.white;
         foreach (var VARIABLE in tour_de_rond)
         {
             agent.SetDestination(VARIABLE.transform.position);
@@ -170,6 +187,8 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator AttackPlayer()
     {
+        textElement.text= "!!!";
+        textElement.color = Color.red;
         isAttacking = true;
         agent.isStopped = true;
         animator.SetTrigger("Attack");
