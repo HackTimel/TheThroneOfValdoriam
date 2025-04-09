@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Barre_de_vie : MonoBehaviour
 {
+    /* a corriger pour le state text*/
     public Camera mainCamera;
 
     void Start()

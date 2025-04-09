@@ -13,6 +13,9 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header("PV")]
+    
+    
     [Header("References")]
 
     [SerializeField]
