@@ -113,8 +113,11 @@ public class EnemyAI : MonoBehaviour
 
             if (!isAttacking)
             {
+                Debug.Log("1");
+                
                 if (Vector3.Distance(player.position, transform.position) < attackRadius)
                 {
+                    Debug.Log("2");
                     StartCoroutine(AttackPlayer());
                 }
                 else
@@ -147,7 +150,7 @@ public class EnemyAI : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, player1.position);
 
         // Si le joueur est à une certaine distance, commencer à se déplacer vers lui
-        if (distanceToPlayer > 3f)
+        if (distanceToPlayer > attackRadius)
         {
             Debug.Log("En chemin");
             // On marche vers le joueur
@@ -166,6 +169,7 @@ public class EnemyAI : MonoBehaviour
 
         // Mettre à jour l'animation en fonction de la vitesse de l'agent
         animator.SetFloat("Speed", agent.velocity.magnitude);
+        Debug.Log(distanceToPlayer);
     }
 
 

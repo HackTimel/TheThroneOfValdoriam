@@ -9,6 +9,7 @@ public class Player_Script : MonoBehaviour
     public MainCameraController MCC;
     public float rotationSpeed;
     public Quaternion requirerot;
+    public bool attcking = false;
     [Header("Player Animator")]
     public Animator animator;
     [Header("Player Conllison")]
@@ -22,6 +23,24 @@ public class Player_Script : MonoBehaviour
     private void Update()
     {
         Player_Movement();
+        Attack();
+        
+    }
+
+    public void Attack()
+    {
+        if (Input.GetMouseButtonDown(0)&&!attcking)
+        {
+            StartCoroutine(Player_Attack());
+        }
+    }
+
+    IEnumerator Player_Attack()
+    {
+        attcking = true;
+        animator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.5f);
+        attcking = false;
     }
 
     void Player_Movement()

@@ -23,7 +23,7 @@ public class IAManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(pv);
     }
     
     public void TakeDamage(float damage)
