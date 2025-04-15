@@ -71,6 +71,9 @@ public class EnemyAI : MonoBehaviour
     private bool isAttacking;
     private bool poursuite = false;
     
+    
+//Pour faire les animations de l'ia j'utilise un blender tree base sur la vitesse.
+//Tout ce que t'a a comprendre c'est que selon la vitesse de l'ia , l'ia a differentes aniation.
 
 
     int i = 0;
@@ -92,6 +95,7 @@ public class EnemyAI : MonoBehaviour
 
     void Garde()
     {
+        //On envoie l'ia en tour de garde 
         if (!isPatrolling&&!poursuite)
         {
             StartCoroutine(GetNewDestination());
@@ -106,7 +110,7 @@ public class EnemyAI : MonoBehaviour
     {
         Debug.Log("Poursuite");
         if (Vector3.Distance(player.position, transform.position) < detectionRadius)
-        {
+        { //on fait tourner l'ia vers le joueur grace au quaternion
             agent.speed = chaseSpeed;
             Quaternion rot = Quaternion.LookRotation(player.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
@@ -126,14 +130,7 @@ public class EnemyAI : MonoBehaviour
                 }
             }
         }
-       /*else
-        {
-            if (!isPatrolling)  // Reprend la patrouille si la poursuite est terminée
-            {
-                agent.speed = walkSpeed;
-                StartCoroutine(GetNewDestination());
-            }
-        }*/
+       
 
         animator.SetFloat("Speed", agent.velocity.magnitude);
     }
@@ -175,6 +172,7 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator GetNewDestination()
     {
+        
         isPatrolling = true;
         textElement.text= "ZZZ";
         textElement.color = Color.white;
@@ -182,13 +180,16 @@ public class EnemyAI : MonoBehaviour
         {
             agent.SetDestination(VARIABLE.transform.position);
             agent.speed = walkSpeed;
+            animator.SetFloat("Speed", agent.velocity.magnitude);
             while (agent.pathPending || agent.remainingDistance > 0.1f)
             {
                 yield return null;  // Attendre jusqu'à ce que la destination soit atteinte
             }
             yield return new WaitForSeconds(patrouille_delay);
         }
+       
         isPatrolling = false;
+        
     }
 
 
