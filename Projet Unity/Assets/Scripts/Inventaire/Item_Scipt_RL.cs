@@ -17,7 +17,7 @@ public class Item_Scipt_RL : ScriptableObject
    public GameObject prefab;
    //C'est le prefab de l'item qui drop
    public Item_type type;
-   // C'est l'enul qui permet de dire le type de l'item
+   // C'est l'enum qui permet de dire le type de l'item
 }
 //L'enum qui represent les differents type d'item
 public enum Item_type
