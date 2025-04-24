@@ -28,4 +28,9 @@ public class Tool_Type_Trigger : MonoBehaviour,IPointerEnterHandler,IPointerExit
       
         Inventaire_RL.instance.Open_Action(item);
     }
+
+    public void Click_Slot_Equiped()
+    {
+        Inventaire_RL.instance.Open_Action_EQUIPED(item);
+    }
 }

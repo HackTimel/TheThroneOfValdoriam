@@ -27,8 +27,19 @@ public class Inventaire_RL : MonoBehaviour
     public Item_Scipt_RL _itemSciptRl_current; //public pour debug
     [SerializeField] public Sprite Transparent;
      [SerializeField] private Transform Drop_Point;
-     [SerializeField] private Transform Equiper_Point;
+     
+     /*
+      Champs pour le système d'équipement
+      */
 
+     private bool Is_Equip; //permet de savoir si on effectue les actions depuis le slot "équipé"
+     [SerializeField] private Transform Equiper_Point;
+     [SerializeField] private GameObject equip_panel; //pour l activer quand on équipe un objet
+     public Transform inventaire_slot_RL_EQUIP;
+     public Item_Scipt_RL _itemSciptRl_current_EQUIPED;
+     
+     [SerializeField] private GameObject action_Panel_EQUIP;
+    
     private void Awake()
     {
         instance = this;
@@ -108,6 +119,7 @@ public class Inventaire_RL : MonoBehaviour
 
         }
     }
+    
 
     public bool Is_Full()
     {
@@ -138,6 +150,20 @@ public class Inventaire_RL : MonoBehaviour
         }
         action_Panel.SetActive(true);
     }
+    
+    
+    public void Open_Action_EQUIPED(Item_Scipt_RL item)
+    {
+        _itemSciptRl_current_EQUIPED = item;
+        
+        if (item == null)
+        {
+            return; 
+        }
+        action_Panel_EQUIP.SetActive(true);
+        Is_Equip = true;
+
+    }
 
     public void Close_Action_Panel()
     {
@@ -145,8 +171,31 @@ public class Inventaire_RL : MonoBehaviour
         _itemSciptRl_current = null;
     }
 
+    public void Close_Action_EQUIP()
+    {
+        action_Panel_EQUIP.SetActive(false);
+        _itemSciptRl_current_EQUIPED = null;
+        Is_Equip = false;
+    }
+
     public void Poser_Action_Button()
     {
+        if (Is_Equip)
+        {
+            if (inventaire_slot_RL_EQUIP != null)
+            {
+                Tool_Type_Trigger slot_equip = inventaire_slot_RL_EQUIP.GetComponent<Tool_Type_Trigger>();
+                if (slot_equip != null && slot_equip.item == _itemSciptRl_current)
+                {
+                    slot_equip.item_visuel.sprite = Transparent;
+                    slot_equip.item_visuel.color = Color.clear;
+                    slot_equip.item = null;
+                }
+            }
+            _itemSciptRl_current_EQUIPED = null; //on supprime l'objet de la partie "équipé"
+            action_Panel_EQUIP.SetActive(false);
+            equip_panel.SetActive(false);
+        }
         if (_itemSciptRl_current == null)
         {
             Debug.LogError("_itemSciptRl_current est null !");
@@ -193,6 +242,20 @@ public class Inventaire_RL : MonoBehaviour
         {
             rb.useGravity = false;
             rb.isKinematic = true; 
+        }
+        
+        //on passe maintenant à ce qui se passe dans l'ui
+        
+        equip_panel.SetActive(true);
+        if (inventaire_slot_RL_EQUIP != null)
+        {
+            Tool_Type_Trigger slot_equip = inventaire_slot_RL_EQUIP.GetComponent<Tool_Type_Trigger>();
+            if (slot_equip != null)
+            {
+                slot_equip.item_visuel.sprite = _itemSciptRl_current.visuel;
+                slot_equip.item_visuel.color = Color.white; // assure la visibilité
+                slot_equip.item = _itemSciptRl_current;
+            }
         }
         
         /*
