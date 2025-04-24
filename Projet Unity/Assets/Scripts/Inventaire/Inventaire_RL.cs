@@ -24,9 +24,10 @@ public class Inventaire_RL : MonoBehaviour
     [SerializeField] private GameObject Equiper_Arme;
     [SerializeField] private GameObject Detruire;
     [SerializeField] private GameObject Consommer;
-    private Item_Scipt_RL _itemSciptRl_current;
+    public Item_Scipt_RL _itemSciptRl_current; //public pour debug
     [SerializeField] public Sprite Transparent;
      [SerializeField] private Transform Drop_Point;
+     [SerializeField] private Transform Equiper_Point;
 
     private void Awake()
     {
@@ -80,6 +81,7 @@ public class Inventaire_RL : MonoBehaviour
     public void Close_inventory()
     {
         inventoryPanel.SetActive(false);
+        action_Panel.SetActive(false);
         LockCursor(); // Verrouille le curseur quand l'inventaire se ferme
     }
 
@@ -145,7 +147,19 @@ public class Inventaire_RL : MonoBehaviour
 
     public void Poser_Action_Button()
     {
-        GameObject instantiate = Instantiate(_itemSciptRl_current.prefab);
+        if (_itemSciptRl_current == null)
+        {
+            Debug.LogError("_itemSciptRl_current est null !");
+            return;
+        }
+
+        if (_itemSciptRl_current.prefab == null)
+        {
+            Debug.LogError("_itemSciptRl_current.prefab est null !");
+            return;
+        }
+        
+        GameObject instantiate = Instantiate(_itemSciptRl_current.prefab); 
         instantiate.transform.position = Drop_Point.position;
         content.Remove(_itemSciptRl_current);
         Refresh_content_RL();
@@ -164,7 +178,26 @@ public class Inventaire_RL : MonoBehaviour
     }
     public void Equiper_Arme_Action_Button()
     {
+        
+        
+        GameObject instantiate = Instantiate(_itemSciptRl_current.prefab); 
+        
+        instantiate.transform.SetParent(Equiper_Point, false);
+        
+        instantiate.transform.localPosition = Vector3.zero;
+        instantiate.transform.localRotation = Quaternion.Euler(240f, 0f, 0f);
+        
+        
+        Rigidbody rb = instantiate.GetComponent<Rigidbody>(); //quand c'est équipé, c'est soumis au bras, pas a la gravité (sinon l objet tombe)
+        if (rb != null)
+        {
+            rb.useGravity = false;
+            rb.isKinematic = true; 
+        }
+        
+        /*
         Close_Action_Panel();
+        */
     }
    
 }
