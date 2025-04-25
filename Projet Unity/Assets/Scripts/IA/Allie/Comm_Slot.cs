@@ -7,10 +7,12 @@ using UnityEngine.UI;
 
 public class Comm_Slot : MonoBehaviour
 {
-    public Sprite item_visuel;
+    public Image item_visuel;
     public Allies2 allies0;
+    public Manger_Commadement val;
     public  void Click_Slot()
     {
-        Manger_Commadement.instance0.Open_Action2(allies0);
+        Debug.Log("Click_Slot");
+         val.Open_Action2(allies0);
     }
 }
