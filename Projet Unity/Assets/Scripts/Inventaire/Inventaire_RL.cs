@@ -94,6 +94,7 @@ public class Inventaire_RL : MonoBehaviour
         inventoryPanel.SetActive(false);
         action_Panel.SetActive(false);
         LockCursor(); // Verrouille le curseur quand l'inventaire se ferme
+        equip_panel.SetActive(false);
     }
 
     public void AddItem(Item_Scipt_RL item)

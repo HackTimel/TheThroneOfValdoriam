@@ -9,6 +9,7 @@ TagManager:
   - Item
   - Mob
   - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX

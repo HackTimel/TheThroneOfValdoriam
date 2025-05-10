@@ -16,28 +16,28 @@ public class PickUpItem_RL : MonoBehaviour
 
     void Update()
     {
-        // Lancer un SphereCast
-        RaycastHit hit;
-        if (Physics.SphereCast(transform.position, sphereRadius, transform.forward, out hit, pickUpRange, layerMask0))
+
+        Collider[] colliders = Physics.OverlapSphere(transform.position, pickUpRange, layerMask0);
+        Debug.Log(colliders.Length);
+        if (colliders.Length > 0)
         {
-            Debug.Log("Tu pointes l'item : " + hit.transform.name);
-            if (hit.transform.CompareTag("Item"))
+            foreach (Collider col in colliders)
             {
-                texte.SetActive(true);
+                Debug.Log(col.gameObject.name);
+            }
+            texte.SetActive(true);
+            foreach (var VARIABLE in colliders)
+            {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (inventaire.Is_Full())
                     {
                         return;
                     }
-                    inventaire.content.Add(hit.transform.gameObject.GetComponent<Item_RL>().item);
-                    Destroy(hit.transform.gameObject);
-                    Debug.Log("Objet ramassé : ");
+                    inventaire.content.Add(VARIABLE.transform.gameObject.GetComponent<Item_RL>().item);
+                    Destroy(VARIABLE.transform.gameObject);
+                    
                 }
-            }
-            else
-            {
-                Debug.Log("L'objet pointé n'a pas de script Item_RL !");
             }
         }
         else

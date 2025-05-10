@@ -11,9 +11,20 @@ public class Player_Script : MonoBehaviour
     public Quaternion requirerot;
     public bool attcking = false;
     [Header("Player Animator")]
-    public Animator animator;
+    public Animator animator; 
+    public float speed = 5f;
+    public float gravity = -9.81f;
+    public float jumpHeight = 2f;
+    [SerializeField] public Rigidbody rb;
 
-    [Header("Player Conllison")] public CharacterController controller;
+    private Vector3 velocity;
+    private bool isGrounded = false;
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+
+ 
 
     public bool moving = true;
 
@@ -27,12 +38,36 @@ public class Player_Script : MonoBehaviour
         if (moving)
         {
             
-            Player_Movement();        }
+            Player_Movement();
+            
+        }
         
 
         Attack();
         
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.CompareTag("Ground"))
+        {
+            Debug.Log("on touche");
+            rb.isKinematic = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        
+        if (other.CompareTag("Ground"))
+        {
+            Debug.Log("on sort");
+            rb.isKinematic = false;
+        }
+    }
+    
+    
 
     public void Attack()
     {
@@ -59,7 +94,7 @@ public class Player_Script : MonoBehaviour
         var movementDirection = MCC.flatRotation * movementInput;
         if (movementAmount>0)
         {
-           controller.Move(movementDirection * movement_speed * Time.deltaTime);
+            rb.AddForce(movementDirection * movementAmount, ForceMode.Impulse);
             requirerot = Quaternion.LookRotation(movementDirection);
 
         }
