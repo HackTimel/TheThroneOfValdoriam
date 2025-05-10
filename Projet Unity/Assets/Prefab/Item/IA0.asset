@@ -15,4 +15,4 @@ MonoBehaviour:
   name: Allies
   description: mage
   visuel: {fileID: 21300000, guid: 014ae2940ad6c8344add93e0d233006b, type: 3}
-  prefab: {fileID: 5943473529282930017, guid: 82b07912f47c37f4f8befbce23107aa8, type: 3}
+  prefab: {fileID: 5240542235865846778, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}

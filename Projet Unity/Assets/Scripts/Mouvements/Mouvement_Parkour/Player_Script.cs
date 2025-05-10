@@ -12,8 +12,10 @@ public class Player_Script : MonoBehaviour
     public bool attcking = false;
     [Header("Player Animator")]
     public Animator animator;
-    [Header("Player Conllison")]
-    public CharacterController controller;
+
+    [Header("Player Conllison")] public CharacterController controller;
+
+    public bool moving = true;
 
     public void Start()
     {
@@ -22,7 +24,12 @@ public class Player_Script : MonoBehaviour
 
     private void Update()
     {
-        Player_Movement();
+        if (moving)
+        {
+            
+            Player_Movement();        }
+        
+
         Attack();
         
     }

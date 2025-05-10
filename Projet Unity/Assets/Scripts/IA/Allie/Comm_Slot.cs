@@ -9,10 +9,10 @@ public class Comm_Slot : MonoBehaviour
 {
     public Image item_visuel;
     public Allies2 allies0;
-    public Manger_Commadement val;
+    public GameObject allies1;
+ 
     public  void Click_Slot()
     {
-        Debug.Log("Click_Slot");
-         val.Open_Action2(allies0);
+         Manger_Commadement.instance0.Open_Action2(allies0,allies1);
     }
 }
