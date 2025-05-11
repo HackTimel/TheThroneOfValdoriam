@@ -78,9 +78,9 @@ public class PauseScript : MonoBehaviour
         }
         else
         {
-            // Masquer l'objet et éventuellement décharger la scène "MainMenu"
+            // masquer l'objet et éventuellement décharger la scène "MainMenu"
             optionsMenuContainer.SetActive(false);
-            SceneManager.UnloadSceneAsync("MainMenu"); // Décharger la scène si elle n'est plus nécessaire
+            SceneManager.UnloadSceneAsync("MainMenu"); // decharger la scène si elle n'est plus nécessaire PEUT POSER SOUCIS
             isOptionsMenuVisible = false;
         }
     }

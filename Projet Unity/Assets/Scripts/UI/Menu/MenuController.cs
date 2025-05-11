@@ -17,6 +17,7 @@ public class MenuController : MonoBehaviour
     [SerializeField] public AudioMixer audioMixer;
     [SerializeField]public float defaultVolume = 0.6f;
     [SerializeField] public float volumeChanged = 0.6f;
+    public PersistentManager persistentManager;
 
     
     MusicManager manager = new MusicManager();
@@ -37,7 +38,7 @@ public class MenuController : MonoBehaviour
     public void Start() //Pour la musique
     {
         //LoadVolume(); //plus tard pour le système de sauvegarde des paramètres
-        MusicManager.Instance.PlayMusic("Menu");
+        //MusicManager.Instance.PlayMusic("Menu");
         
     }
     
@@ -49,11 +50,13 @@ public class MenuController : MonoBehaviour
         int milliseconds = 2000;
         Thread.Sleep(milliseconds);
     }
-    //public void Play()
-    //{
-        //SceneManager.LoadScene(_newGameLevel, "Cross Fade");
+    public void Play()
+    {
+        persistentManager.Start = false;
+        SceneManager.LoadScene("Level_beta");
+        
         //MusicManager.Instance.PlayMusic("Menu");
-    //}
+    }
     // Pour la transition Menu => jeu plus tard
     
 

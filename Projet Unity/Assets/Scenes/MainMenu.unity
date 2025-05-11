@@ -7168,10 +7168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbfa0eafda31594589831cc7bdb2337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicLibrary: {fileID: 1037004573}
   musicSource: {fileID: 1037004574}
   volumeSlider: {fileID: 1921220919}
   sfxSlider: {fileID: 1657473410}
+  persistentManager: {fileID: 2144938556}
+  volume: 0
 --- !u!114 &1037004573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7184,11 +7185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b1034eea6303541a225a1a6edb47d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tracks:
-  - trackName: Menu
-    clip: {fileID: 8300000, guid: c2ed2f42f1824614dbb78268ca17cb37, type: 3}
-  - trackName: Level1 Theme
-    clip: {fileID: 8300000, guid: dee6b889b8f761d419dd6787db80b371, type: 3}
+  audioClip1: {fileID: 8300000, guid: c2ed2f42f1824614dbb78268ca17cb37, type: 3}
 --- !u!82 &1037004574
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11563,6 +11560,7 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 3a51d18daa8baf34a957fe9cd908d7c2, type: 2}
   defaultVolume: 50
   volumeChanged: 0
+  persistentManager: {fileID: 2144938556}
   ConfirmationPrompt: {fileID: 1662674536}
   _newGameLevel: Level1
 --- !u!1 &1921220917
@@ -12445,6 +12443,8 @@ MonoBehaviour:
   - 0
   savedHealth: 0
   hasLoaded: 0
+  volume: 0
+  Start: 1
 --- !u!4 &2144938557
 Transform:
   m_ObjectHideFlags: 0
@@ -13821,6 +13821,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 758261236243769091}
     m_Modifications:
+    - target: {fileID: 5643076052931226249, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
+      propertyPath: m_text
+      value: Commencer
+      objectReference: {fileID: 0}
     - target: {fileID: 5761966688138803523, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13902,9 +13906,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7103559329736862498, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103559329736862498, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103559329736862498, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7248239596187410549}
+      objectReference: {fileID: 1919061840}
     - target: {fileID: 7103559329736862498, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -13917,6 +13929,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1919061840}
+    - target: {fileID: 7103559329736862498, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103559329736862498, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103559329736862498, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7103559329736862498, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8187410817930971009, guid: 20eb108e32c77a04eb7586209c8fd823, type: 3}
       propertyPath: m_Name
       value: ng+ button

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MULTI_test/scene_multi.unity
     guid: 5818f83658640044ebe0e52aa4f14ae4
   - enabled: 1
-    path: Assets/Scenes/Scene_Vitale/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 195b5a4e04a5bea49a7cc8c056600891
   - enabled: 0
     path: Assets/Scenes/MULTI_test/scene_multi.unity
@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Level1.unity
     guid: c512b9616dfbc284d88c44639d2991d5
   - enabled: 1
-    path: Assets/Scenes/Scene_Vitale/Level1.unity
+    path: Assets/Scenes/Niveau 1/Level1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: Assets/Scenes/Multi.unity
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Invenatire_RL.unity
     guid: 3121c7765c2a782418ec9eb246f5cd8d
+  - enabled: 1
+    path: Assets/Scenes/Niveau 1/Level_beta.unity
+    guid: db829db5d9cb9904eba584c47bc846ce
   m_configObjects: {}

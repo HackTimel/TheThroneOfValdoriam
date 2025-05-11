@@ -5,56 +5,40 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class MusicManager : MonoBehaviour
+public class MusicManager : MonoBehaviour //va gérer le volume
 {
-    public static MusicManager Instance;
- 
-    [SerializeField]
-    private MusicLibrary musicLibrary;
+    
+
     [SerializeField]
     public AudioSource musicSource;
 
     [SerializeField] public  Slider volumeSlider;//permet de stocker les changements en jeu
     [SerializeField] public  Slider sfxSlider;
+    public PersistentManager persistentManager;
+    public float volume;
     
-/*
-    public void SaveSound()
-    {
-        SaveScript.SaveMenuSound(this);
-    }
+    //public PersistentManager persistentManager; //pour faire transiter les informations
     
-    public void LoadVolume() //permet de garder les paramètres entre les scènes et donc le menu pause
-
-    public void LoadSound()
+    
+    public void Start()
     {
-        MenuData data = SaveScript.LoadMenuSound();
-        volumeSlider = data.musicVolume;
-        sfxSlider = data.sfxVolume;
-    }
-
-    private void Start()
-    {
-        LoadSound();
-    }
-    */
-    public Slider GetVolumeSlider()
+        
+        if (persistentManager != null && !persistentManager.Start) //si on revient au menu
         {
-            return volumeSlider;
+            volume = persistentManager.volume;
         }
-    
-    public void Awake()
-    {
-        float volume = PlayerPrefs.GetFloat("MusicVolume");
-        //volumeSlider.value = volume;
-            if (Instance != null)
+        else
+        {
+            volume = PlayerPrefs.GetFloat("MusicVolume");
+            volumeSlider.value = volume; //on remet les pendules à l'heure
+
+            if (musicSource.clip != null)
             {
-                Destroy(gameObject);
+                musicSource.Play();
             }
-            else
-            {
-                Instance = this;
-                //DontDestroyOnLoad(gameObject);
-            }
+        }
+        
+        
         
             //LoadVolume(); //charge les paramètres lorsque l'on entre dans une nouvelle scène
     }
@@ -62,52 +46,18 @@ public class MusicManager : MonoBehaviour
     void Update() //pour enregistrer la valeur
     {
         SetVolume(volumeSlider.value);
+        //persistentManager.volume = volumeSlider.value;
     }
 
-    public void SetVolume(float volume)
-    {
-        SetMusicVolume(volume);
-        PlayerPrefs.SetFloat("MusicVolume", volume);
-    }
- 
-    public void PlayMusic(string trackName, float fadeDuration = 0.5f)
-    {
-        if (musicSource.isPlaying)
-        {
-            musicSource.Stop(); // Arrête la musique précédente
-        }
-        AudioClip nexttrack = musicLibrary.GetClipFromName(trackName); //on prend la musique en paramètre
-        musicSource.clip = nexttrack;
-        SetVolume(PlayerPrefs.GetFloat("MusicVolume"));
-        musicSource.Play();
-    }
- 
-    IEnumerator AnimateMusicCrossfade(AudioClip nextTrack, float fadeDuration = 0.5f) //pour tenter un effet de morphose entre les différents thèmes
-    {
-        float percent = 0;
-        while (percent < 1)
-        {
-            percent += Time.deltaTime * 1 / fadeDuration;
-            yield return null;
-        }
- 
-        musicSource.clip = nextTrack;
-        musicSource.Play();
- 
-        percent = 0;
-        while (percent < 1)
-        {
-            percent += Time.deltaTime * 1 / fadeDuration;
-            yield return null;
-        }
-    }
-    
-    public void SetMusicVolume(float volume)
+    public void SetVolume(float volume_)
     {
         if (musicSource != null)
         {
-            musicSource.volume = volume;
+            musicSource.volume = volume_;
+            volume = volume_;
+            persistentManager.volume = volume_;
         }
+        PlayerPrefs.SetFloat("MusicVolume", volume);
     }
 
     

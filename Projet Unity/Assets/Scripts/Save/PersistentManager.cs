@@ -11,6 +11,8 @@ public class PersistentManager : MonoBehaviour
     public float[] savedPosition = new float[3];
     public float savedHealth;
     public bool hasLoaded = false; // Indique si une sauvegarde est chargée
+    public float volume;
+    public bool Start = true;
 
     private void Awake()
     {
@@ -28,6 +30,7 @@ public class PersistentManager : MonoBehaviour
 
     public void LoadGame(string saveName)
     {
+        Start = false;
         string path = Application.persistentDataPath + "/" + $"{saveName}.json";
         if (File.Exists(path))
         {
