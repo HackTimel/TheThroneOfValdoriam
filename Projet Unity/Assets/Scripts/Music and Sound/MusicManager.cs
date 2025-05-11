@@ -22,25 +22,22 @@ public class MusicManager : MonoBehaviour //va gérer le volume
     
     public void Start()
     {
-        
-        if (persistentManager != null && !persistentManager.Start) //si on revient au menu
+        persistentManager = GameObject.Find("PersistentManager").GetComponent<PersistentManager>();
+        if (!persistentManager.Start)
         {
             volume = persistentManager.volume;
         }
         else
         {
             volume = PlayerPrefs.GetFloat("MusicVolume");
-            volumeSlider.value = volume; //on remet les pendules à l'heure
-
-            if (musicSource.clip != null)
-            {
-                musicSource.Play();
-            }
         }
-        
-        
-        
-            //LoadVolume(); //charge les paramètres lorsque l'on entre dans une nouvelle scène
+       
+        volumeSlider.value = volume; //on remet les pendules à l'heure
+
+        if (musicSource.clip != null)
+        {
+            musicSource.Play();
+        }   //LoadVolume(); //charge les paramètres lorsque l'on entre dans une nouvelle scène
     }
 
     void Update() //pour enregistrer la valeur
@@ -64,4 +61,3 @@ public class MusicManager : MonoBehaviour //va gérer le volume
 }
 
 
-//yt : Raycastly
