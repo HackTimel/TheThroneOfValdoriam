@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3573952902029484841}
   - component: {fileID: 1360820929069546599}
   - component: {fileID: 2928410360880253795}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Nique
   m_TagString: Item
   m_Icon: {fileID: 0}

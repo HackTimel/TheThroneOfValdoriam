@@ -16,27 +16,24 @@ public class PickUpItem_RL : MonoBehaviour
 
     void Update()
     {
-
         Collider[] colliders = Physics.OverlapSphere(transform.position, pickUpRange, layerMask0);
-        Debug.Log(colliders.Length);
+        
         if (colliders.Length > 0)
         {
-            foreach (Collider col in colliders)
-            {
-                Debug.Log(col.gameObject.name);
-            }
             texte.SetActive(true);
-            foreach (var VARIABLE in colliders)
+
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                foreach (var VARIABLE in colliders)
                 {
-                    if (inventaire.Is_Full())
-                    {
-                        return;
-                    }
-                    inventaire.content.Add(VARIABLE.transform.gameObject.GetComponent<Item_RL>().item);
+                    if (inventaire.Is_Full()) return;
+
+                    var itemComponent = VARIABLE.transform.gameObject.GetComponent<Item_RL>();
+                    if (itemComponent == null) continue;
+
+                    inventaire.AddItem(itemComponent.item);
                     Destroy(VARIABLE.transform.gameObject);
-                    
+                    break; // On ne prend qu’un objet par appui
                 }
             }
         }
@@ -45,5 +42,6 @@ public class PickUpItem_RL : MonoBehaviour
             texte.SetActive(false);
         }
     }
+    
 }
 
