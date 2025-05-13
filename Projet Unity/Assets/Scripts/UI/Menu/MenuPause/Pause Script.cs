@@ -14,6 +14,8 @@ public class PauseScript : MonoBehaviour
     
     public GameObject optionsMenuContainer ;//=  GameObject.Find("OptionsMenuContainer"); // objet à afficher (OptionsMenuContainer)
     private bool isOptionsMenuVisible = false; //menu au debut fermé.
+    public GameObject Inventaire;
+    public bool InventaireActive = false;
     
     
     void Start()
@@ -49,7 +51,9 @@ public class PauseScript : MonoBehaviour
         paused = true;
         Time.timeScale = 0; //on freeze le jeu
         Cursor.lockState = CursorLockMode.None;
-        
+        Inventaire_RL inventaire = Inventaire.GetComponent<Inventaire_RL>();
+        InventaireActive = inventaire.Keep_open;
+        inventaire.Close_inventory();
     }
 
     public void ResumeGame()
@@ -58,6 +62,12 @@ public class PauseScript : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1; //on remet les pendules à l'heure.
         paused = false;
+        if (InventaireActive)
+        {
+            Inventaire_RL inventaire = Inventaire.GetComponent<Inventaire_RL>();
+            inventaire.Open_inventory();
+        }
+       
     }
 
     public void Options() //explicite pour les autres et pour l'inspector

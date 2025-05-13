@@ -9364,6 +9364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 619639410}
   optionsMenuContainer: {fileID: 0}
+  Inventaire: {fileID: 2140204717}
+  InventaireActive: 0
 --- !u!4 &1060860936
 Transform:
   m_ObjectHideFlags: 0
@@ -17641,10 +17643,12 @@ MonoBehaviour:
   _itemSciptRl_current: {fileID: 0}
   Transparent: {fileID: 21300000, guid: 057543a0d3c63b84f841dd9e3e2d87b5, type: 3}
   Drop_Point: {fileID: 1604982146}
+  Is_Equip: 0
   Equiper_Point: {fileID: 1943995446}
   equip_panel: {fileID: 1647582869}
   inventaire_slot_RL_EQUIP: {fileID: 347351520}
   _itemSciptRl_current_EQUIPED: {fileID: 0}
+  Keep_open: 0
   action_Panel_EQUIP: {fileID: 478093221}
 --- !u!4 &4779234983811643414
 Transform:

@@ -37,6 +37,7 @@ public class Inventaire_RL : MonoBehaviour
      [SerializeField] private GameObject equip_panel; //pour l activer quand on équipe un objet
      public Transform inventaire_slot_RL_EQUIP;
      public Item_Scipt_RL _itemSciptRl_current_EQUIPED;
+     public bool Keep_open; //permet de fermer puis réouvrir l'inventaire lors d'une pause
      
      [SerializeField] private GameObject action_Panel_EQUIP;
     
@@ -91,6 +92,7 @@ public class Inventaire_RL : MonoBehaviour
             equip_panel.SetActive(true);
         }
         UnlockCursor(); // Déverrouille le curseur quand l'inventaire s'ouvre
+        Keep_open = true;
     }
 
     public void Close_inventory()
@@ -99,6 +101,7 @@ public class Inventaire_RL : MonoBehaviour
         action_Panel.SetActive(false);
         LockCursor(); // Verrouille le curseur quand l'inventaire se ferme
         equip_panel.SetActive(false);
+        Keep_open = false;
     }
 
     public void AddItem(Item_Scipt_RL item)
