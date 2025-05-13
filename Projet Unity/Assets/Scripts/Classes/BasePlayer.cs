@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using playermov;
 
-public class BasePlayer : PlayerMovement
+public class BasePlayer : playermov.PlayerMovement
 {
     [Header("Player Stats")]
     public string Name;
@@ -22,7 +21,8 @@ public class BasePlayer : PlayerMovement
 
     void Start()
     {
-        // Initialize player stats
+        base.Start(); // Appelle Start() de PlayerMovement
+
         Name = "Hero";
         MaxPv = 100;
         Pv = MaxPv;
@@ -31,13 +31,8 @@ public class BasePlayer : PlayerMovement
         Alive = true;
         DamageMultiplicator = 1;
         Lvl = 1;
-        base.rb = GetComponent<Rigidbody>();
-        base.rb.freezeRotation = true;
+        moveSpeed = 5;
 
-        // Use the inherited moveSpeed from PlayerMovement
-        base.moveSpeed = 5;
-
-        // Initialize XP thresholds
         XpDictionary = new Dictionary<int, float>
         {
             { 1, 100 },
@@ -47,20 +42,15 @@ public class BasePlayer : PlayerMovement
             { 5, 800 }
         };
 
-        // Example respawn position
         RespawnPosition = transform.position;
     }
 
     void Update()
     {
-        // Call parent update methods (movement and other inherited logic)
-        base.Update();
-        base.FixedUpdate();
+        base.Update(); // Appelle le Update() de PlayerMovement
 
-        // Check if the player is alive
         if (!Alive)
         {
-            // Example death handling logic
             Debug.Log($"{Name} is dead!");
         }
     }
@@ -121,9 +111,9 @@ public class BasePlayer : PlayerMovement
     public void LevelUp()
     {
         Lvl++;
-        MaxPv += 10;  // Example stat increase on level up
+        MaxPv += 10;
         MaxMana += 5;
-        Pv = MaxPv;   // Restore health on level up
+        Pv = MaxPv;
         Mana = MaxMana;
 
         Debug.Log($"{Name} leveled up to Level {Lvl}!");
