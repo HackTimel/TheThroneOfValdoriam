@@ -32,7 +32,7 @@ public class Inventaire_RL : MonoBehaviour
       Champs pour le système d'équipement
       */
 
-     private bool Is_Equip; //permet de savoir si on effectue les actions depuis le slot "équipé"
+     public bool Is_Equip; //permet de savoir si on effectue les actions depuis le slot "équipé"
      [SerializeField] private Transform Equiper_Point;
      [SerializeField] private GameObject equip_panel; //pour l activer quand on équipe un objet
      public Transform inventaire_slot_RL_EQUIP;
@@ -86,6 +86,10 @@ public class Inventaire_RL : MonoBehaviour
     public void Open_inventory()
     {
         inventoryPanel.SetActive(true);
+        if (Is_Equip)
+        {
+            equip_panel.SetActive(true);
+        }
         UnlockCursor(); // Déverrouille le curseur quand l'inventaire s'ouvre
     }
 
@@ -99,6 +103,7 @@ public class Inventaire_RL : MonoBehaviour
 
     public void AddItem(Item_Scipt_RL item)
     {
+        Debug.Log("Ajout de: " + item.name + " | ID: " + item.GetInstanceID());
         content.Add(item);
     }
 
@@ -127,14 +132,14 @@ public class Inventaire_RL : MonoBehaviour
         return INVENTAIRE_SIZE == content.Count;
     }
 
-    public void Open_Action(Item_Scipt_RL item)
+    public void Open_Action(Item_Scipt_RL item, GameObject slotGO)
     {
         _itemSciptRl_current = item;
-        
+
         if (item == null)
-        {
-           return; 
-        }
+            return;
+
+        // gestion des boutons selon type
         switch (item.type)
         {
             case Item_type.Arme:
@@ -147,9 +152,23 @@ public class Inventaire_RL : MonoBehaviour
             case Item_type.Consomable:
                 Equiper_Arme.SetActive(false);
                 break;
-           
         }
+        
         action_Panel.SetActive(true);
+
+        RectTransform panelRect = action_Panel.GetComponent<RectTransform>();
+        RectTransform canvasRect = action_Panel.transform.parent.GetComponent<RectTransform>();
+        RectTransform slotRect = slotGO.GetComponent<RectTransform>();
+
+        // On convertit la position du slot (pivot) en point local dans le canvas
+        Vector2 anchoredPos = slotRect.anchoredPosition;
+
+        // Décale vers le bas (dans l'espace local du canvas)
+        anchoredPos.y += 200f; // à ajuster selon la hauteur de ton panneau
+        anchoredPos.x -= 100f;
+
+        // Positionne le panel d'action
+        panelRect.anchoredPosition = anchoredPos;
     }
     
     
@@ -226,7 +245,7 @@ public class Inventaire_RL : MonoBehaviour
     {
         Close_Action_Panel();
     }
-    public void Equiper_Arme_Action_Button()
+    public void Equiper_Arme_Action_Button() 
     {
         
         
@@ -236,6 +255,7 @@ public class Inventaire_RL : MonoBehaviour
         
         instantiate.transform.localPosition = Vector3.zero;
         instantiate.transform.localRotation = Quaternion.Euler(240f, 0f, 0f);
+        instantiate.layer = LayerMask.NameToLayer("Default"); //pour évter de pouvoir le ramasser
         
         
         Rigidbody rb = instantiate.GetComponent<Rigidbody>(); //quand c'est équipé, c'est soumis au bras, pas a la gravité (sinon l objet tombe)
@@ -245,9 +265,11 @@ public class Inventaire_RL : MonoBehaviour
             rb.isKinematic = true; 
         }
         
+        
         //on passe maintenant à ce qui se passe dans l'ui
         
         equip_panel.SetActive(true);
+        action_Panel_EQUIP.SetActive(false);
         if (inventaire_slot_RL_EQUIP != null)
         {
             Tool_Type_Trigger slot_equip = inventaire_slot_RL_EQUIP.GetComponent<Tool_Type_Trigger>();
@@ -258,10 +280,22 @@ public class Inventaire_RL : MonoBehaviour
                 slot_equip.item = _itemSciptRl_current;
             }
         }
+        Detruire_Action_Button();
         
         /*
         Close_Action_Panel();
         */
+        Is_Equip = true;
+    }
+
+
+    public void Desequip()
+    {
+        AddItem(_itemSciptRl_current_EQUIPED);
+        _itemSciptRl_current_EQUIPED = null;
+        Destroy(Equiper_Point.GetChild(0).gameObject);
+        equip_panel.SetActive(false);
+        Is_Equip = false;
     }
    
 }

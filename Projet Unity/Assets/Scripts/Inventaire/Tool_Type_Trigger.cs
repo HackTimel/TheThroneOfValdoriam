@@ -25,8 +25,7 @@ public class Tool_Type_Trigger : MonoBehaviour,IPointerEnterHandler,IPointerExit
 
     public void Click_Slot()
     {
-      
-        Inventaire_RL.instance.Open_Action(item);
+        Inventaire_RL.instance.Open_Action(item, this.gameObject);
     }
 
     public void Click_Slot_Equiped()
