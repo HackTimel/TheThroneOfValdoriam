@@ -70,6 +70,7 @@ public class EnemyAI : MonoBehaviour
     private bool hasDestination;
     private bool isAttacking;
     private bool poursuite = false;
+    private bool is_poursuite = false;
     
 
 
@@ -99,7 +100,11 @@ public class EnemyAI : MonoBehaviour
     }
     public void suspect(Transform player0)
     {
-       StartCoroutine(Suspicious(player0));
+        if (!is_poursuite)
+        {
+            StartCoroutine(Suspicious(player0));
+        }
+       
     }
 
     public void Poursuite()
@@ -147,7 +152,7 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("Suspect");
 
         // Calcul de la distance une seule fois
-        float distanceToPlayer = Vector3.Distance(transform.position, player1.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         // Si le joueur est à une certaine distance, commencer à se déplacer vers lui
         if (distanceToPlayer > attackRadius)
@@ -155,14 +160,15 @@ public class EnemyAI : MonoBehaviour
             Debug.Log("En chemin");
             // On marche vers le joueur
             agent.speed = walkSpeed;
-            agent.SetDestination(player1.position);
+            agent.SetDestination(player.position);
         }
         else
         {
             Debug.Log("Arriver");
-            if (Vector3.Distance(player1.position, transform.position) < detectionRadius)
+            if (Vector3.Distance(player.position, transform.position) < detectionRadius)
             {
                 poursuite = true;
+                is_poursuite = true;
                 Debug.Log("Valeur set !");
             }
         }

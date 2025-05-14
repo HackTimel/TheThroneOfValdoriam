@@ -16,7 +16,7 @@ public class Manger_Commadement : MonoBehaviour
     [SerializeField] 
     private Transform commandement_slot;
     public Sprite transparent0;
-    [SerializeField] private List<(Allies2, GameObject)> allies = new List<(Allies2, GameObject)>();
+    [SerializeField] public List<(Allies2, GameObject)> allies = new List<(Allies2, GameObject)>();
     public  Allies2 Allies_current;
     public GameObject allies1_Current;
     [SerializeField] public GameObject action_panel0;
@@ -30,9 +30,10 @@ public class Manger_Commadement : MonoBehaviour
     private bool suivre = false;
     [SerializeField] public GameObject drapeau;
     private bool active;
-    [SerializeField] public Player_Script mouvement;
+    [SerializeField] public BasePlayer mouvement;
     private bool activation;
     private GameObject val;
+    public Collider[] colliders;
     
     
 
@@ -100,7 +101,12 @@ public class Manger_Commadement : MonoBehaviour
     }
     void ajout()
     {
-        Collider[] colliders = Physics.OverlapSphere(player.transform.position, radius, layer);
+      colliders = Physics.OverlapSphere(player.transform.position, radius, layer);
+        
+    }
+    void ajout0()
+    {
+         colliders = Physics.OverlapSphere(player.transform.position, radius, layer);
         
         for (int i = 0; i < colliders.Length ; i++)
         {
@@ -111,6 +117,7 @@ public class Manger_Commadement : MonoBehaviour
            
         }
     }
+
 
     void recherche()
     {
@@ -166,8 +173,18 @@ public class Manger_Commadement : MonoBehaviour
 
     public void Active_Suivre_Player()
     {
+        
         IA_Allie_Comportement val = allies1_Current.GetComponent<IA_Allie_Comportement>();
-        val.Is_Suivre = true;
+        if ( val.Is_Suivre)
+        {
+            val.Is_Suivre = false;
+        }
+        else
+        {
+            val.Is_Suivre = true;
+            val.Is_Suivre0 = false;  
+        }
+     
         Close_Action_Panel2();
     }
 
@@ -211,6 +228,7 @@ public class Manger_Commadement : MonoBehaviour
             IA_Allie_Comportement val0 = allies1_Current.GetComponent<IA_Allie_Comportement>();
             val0.Objectif = obj.transform;
             val0.Is_Suivre0 = true;
+            val0.Is_Suivre = false;
             val.GetComponent<MeshRenderer>().enabled = false;
             mouvement.enabled = true;
             Debug.Log("ACRI");
