@@ -9561,6 +9561,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 561012951530852193, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8506508
+      objectReference: {fileID: 0}
+    - target: {fileID: 561012951530852193, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.52573115
+      objectReference: {fileID: 0}
+    - target: {fileID: 755737798336295633, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 35c44a97c30e4e946a0f4d3310613b95, type: 3}
+    - target: {fileID: 755737798336295633, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'root'\n\tTransform 'c_thumb1.r'\n\tTransform
+        'c_middle1.r'\n\tTransform 'root'\n\tTransform 'arm_stretch.l'\n\tTransform
+        'spine_02.x'\n\tTransform 'spine_01.x'\n\tTransform 'thigh_stretch.r'\n\tTransform
+        'c_index2.r'\n\tTransform 'c_middle2.r'\n\tand more ...\n\tFrom animation
+        clip 'Breathing Idle'\n\tFrom animation clip 'Running'\n\tFrom animation
+        clip 'Walking'\n\tFrom animation clip 'Breathing Idle@Jumping'\n\tFrom animation
+        clip 'mixamo.com'"
+      objectReference: {fileID: 0}
     - target: {fileID: 1858112650155132428, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
       propertyPath: m_Name
       value: Mage
@@ -9627,7 +9651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8491151104730780638, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.48562506
+      value: 0.48562512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9642,6 +9666,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1443900430}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1858112650155132428, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8411352124831090687}
     - targetCorrespondingSourceObject: {fileID: 3595070107369286674, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2143479977}
@@ -9649,11 +9676,35 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2143479976}
   m_SourcePrefab: {fileID: 100100000, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
+--- !u!1 &8411352124831090683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1858112650155132428, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
+  m_PrefabInstance: {fileID: 8411352124831090682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8411352124831090684 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 755737798336295633, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
+  m_PrefabInstance: {fileID: 8411352124831090682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8411352124831090686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2618416227516809307, guid: 3eb5358252c408340b392dcdb13e3ed4, type: 3}
   m_PrefabInstance: {fileID: 8411352124831090682}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8411352124831090687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8411352124831090683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881bd9667ea98ad48adc91f57822a6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attcking: 0
+  animator: {fileID: 8411352124831090684}
 --- !u!114 &8448885316612362679
 MonoBehaviour:
   m_ObjectHideFlags: 0
