@@ -8,6 +8,14 @@ public class Zone_de_parole : MonoBehaviour
 {
     public GameObject bulle_de_dialogue; //a activer lors de la présence d'un joueur
 
+    public void Start() //rendre la zone transparente
+    {
+        Renderer renderer = GetComponent<Renderer>();
+        Color color = renderer.material.color;
+        color.a = 0f; // alpha entre 0 (invisible) et 1 (opaque)
+        renderer.material.color = color;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
