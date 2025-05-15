@@ -43,7 +43,6 @@ public class AnimationStateController : MonoBehaviour
         {
             animator.SetBool("isJump", sauter);
         }
-        Attack_player0();
      
     }
 

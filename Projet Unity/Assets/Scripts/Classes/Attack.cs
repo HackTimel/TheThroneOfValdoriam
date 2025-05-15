@@ -13,7 +13,8 @@ public class Attack : MonoBehaviour
     }
     public void Attack0()
     {
-        if (Input.GetMouseButtonDown(0)&&!attcking)
+        
+        if (Input.GetMouseButtonDown(0))
         {
             StartCoroutine(Player_Attack());
         }
