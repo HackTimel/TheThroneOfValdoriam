@@ -8003,6 +8003,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       insertIndex: -1
       addedObject: {fileID: 943942984}
+    - targetCorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 943942987}
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
 --- !u!4 &943942980 stripped
 Transform:
@@ -8078,6 +8081,44 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &943942987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943942983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9581bf731e9792e418002f24947c3a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 75
+  HPRegen: 2
+  NextHP: 25
+  NextHpRegen: 0
+  force: 25
+  NextForce: 15
+  xpToLevelUp: 100
+  Lvl: 1
+  Xp: 0
+  passifXP: 2
+  Mana: 100
+  MaxMana: 100
+  ManaSec: 5
+  NextLvlMana: 50
+  healthManager: {fileID: 1747519285}
+  player: {fileID: 943942983}
+  IsInvisible: 0
+  distanceForward: 3
+  characterController: {fileID: 943942992}
+  HP: 100
+  playerManager: {fileID: 1155666161}
+--- !u!143 &943942992 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 4416926081852918491, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+  m_PrefabInstance: {fileID: 943942979}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &949320750
 GameObject:
   m_ObjectHideFlags: 0
@@ -14760,6 +14801,7 @@ MonoBehaviour:
   healthBar: {fileID: 762749270}
   pointdevie_temporaire: 100
   playerManager: {fileID: 1155666161}
+  maxHealth: 100
 --- !u!4 &1747519286
 Transform:
   m_ObjectHideFlags: 0

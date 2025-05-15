@@ -30,7 +30,7 @@ public class Manger_Commadement : MonoBehaviour
     private bool suivre = false;
     [SerializeField] public GameObject drapeau;
     private bool active;
-    [SerializeField] public BasePlayer mouvement;
+    [SerializeField] public BasePlayers mouvement;
     private bool activation;
     private GameObject val;
     public Collider[] colliders;

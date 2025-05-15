@@ -10,6 +10,7 @@ TagManager:
   - Mob
   - Enemy
   - Ground
+  - invisible
   layers:
   - Default
   - TransparentFX

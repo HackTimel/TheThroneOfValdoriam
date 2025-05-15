@@ -1,51 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class BasePlayers : MonoBehaviour
+public class Assassin : MonoBehaviour
 {
-
-    public float MaxHP = 100f;
+    public float MaxHP = 75f;
     public float HPRegen = 2f;
-    public float force = 25f;
     public float NextHP = 25f; //hp gagner quand on lvl up
     public float NextHpRegen = 0f; // montant d'hp regenerer en plus quand on lvl up
+    
+    public float force = 25f;
+
     public float NextForce = 15f; //force gagner quand on lvl up
     public float xpToLevelUp = 100f; //montant d'xp a avoir pour lvl up 
     public int Lvl = 1;
     public float Xp = 0f;
     public float passifXP = 2f; //montant gagner par seconde 
     private float xpMultiplicator = 1.5f; // ce qui va multiplier le montant d'xp a obtenir pour level up
+    
     public float Mana = 100f;
     public float MaxMana = 100f;
     public float ManaSec = 5f;
     public float NextLvlMana = 50f; // Mana gagner quand on level up 
-    [SerializeField] public Image healthBar;
+    
+    public HealthManager healthManager;
+
+    public GameObject player; //pour le rendre invisible etc
+    public bool IsInvisible = false;
+    
+    
+    public float distanceForward = 3.0f; // distance à téléporter devant (augmente à chaque levelup)
+    public CharacterController characterController; //si on utilise ça pour le tp
+    
+
 
     public float HP = 100f;
     [SerializeField] public PlayerManager playerManager;
 
-
-    // Start is called before the first frame update
+    // Update is called once per frame
     void Start()
     {
-
-
+        healthManager.maxHealth = MaxHP;
+        healthManager.pointdevie_temporaire = MaxHP;
+        if (player == null)
+        {
+            Debug.LogError("Player reference is null!");
+            return;
+        }
     }
-
-    // Update is called once per frame
     void Update()
     {
-
-
         if (playerManager.health_change)
         {
             if (playerManager.healthpriority < 100f)
             {
-                TakeDamage(100f - playerManager.healthpriority);
+                healthManager.TakeDamage(100f - playerManager.healthpriority);
             }
 
             playerManager.health_change = false;
@@ -53,19 +65,18 @@ public class BasePlayers : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.U))
         {
-            TakeDamage(20f);
+            healthManager.TakeDamage(10f);
         }
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-            Heal(20f);
+            healthManager.Heal(10f);
         }
 
         if (HP <= 0) //cas de mort. (Temporaire car nocheckpoint)
         {
             SceneManager.LoadScene("Level1");
             HP = 100f;
-            healthBar.fillAmount = HP / 100f;
         }
 
         Xp += passifXP * Time.deltaTime; // fait gagner passifXp toute les secondes actuellement 2 a modifier si besoin 
@@ -95,19 +106,16 @@ public class BasePlayers : MonoBehaviour
             HP = MaxHP;
         }
 
-    }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Invisible();
+        }
 
-    public void TakeDamage(float damage)
-    {
-        HP -= damage;
-        healthBar.fillAmount = HP / 100f;
-    }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Teleport_Rush();
+        }
 
-    public void Heal(float heal)
-    {
-        HP += heal;
-        HP = Mathf.Clamp(HP, 0f, 100f);
-        healthBar.fillAmount = HP / 100f;
     }
 
 
@@ -158,4 +166,49 @@ public class BasePlayers : MonoBehaviour
         }
 
     }
+    
+    
+    /////////////////////////////////////////////////////////////////
+
+
+    public void Invisible()
+    {
+        if (!IsInvisible)
+        {
+            IsInvisible = true;
+            player.tag = "invisible";
+           /* Renderer renderer = player.GetComponent<Renderer>();
+            Color color = renderer.material.color;
+            color.a = 0.4f; // alpha entre 0 (invisible) et 1 (opaque)
+            renderer.material.color = color;
+            */
+            
+        }
+
+        if (IsInvisible)
+        {
+            IsInvisible = false;
+            player.tag = "Player";
+            /*
+            Renderer renderer = player.GetComponent<Renderer>();
+            Color color = renderer.material.color;
+            color.a = 1f; // alpha entre 0 (invisible) et 1 (opaque)
+            renderer.material.color = color;
+            */
+            
+        }
+    }
+
+    public void Teleport_Rush()
+    {
+        Debug.Log("Teleporting Rush");
+        Vector3 forward = player.transform.forward; // Direction du joueur
+        Vector3 newPosition = player.transform.position + forward.normalized * distanceForward;
+        player.transform.position = newPosition;
+        characterController.Move(forward.normalized * distanceForward);
+
+    }
+    
+    
 }
+
