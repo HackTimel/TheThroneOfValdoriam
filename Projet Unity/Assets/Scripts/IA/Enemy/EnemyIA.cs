@@ -25,9 +25,6 @@ public class EnemyAI : MonoBehaviour
     private Animator animator;
 
 
-    [SerializeField]
-    public Transform player;
-   
 
     [Header("Stats")]
     
@@ -75,8 +72,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float maxLostTime = 10f; // Temps avant de retourner en patrouille
     private bool suspect0;
 
-    
-
+   
 
     int i = 0;
     void Update()
@@ -87,6 +83,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         Garde();
+    
 
 
 
@@ -110,29 +107,70 @@ public class EnemyAI : MonoBehaviour
         }
        
     }
+    public int IndiceMin(List<float> liste)
+    {
+      
+
+        int indiceMin = 0;
+        float valeurMin = liste[0];
+
+        for (int i = 1; i < liste.Count; i++)
+        {
+            if (liste[i] < valeurMin)
+            {
+                valeurMin = liste[i];
+                indiceMin = i;
+            }
+        }
+
+        return indiceMin;
+    }
+
+
+    public Transform detection()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRadius,whatIsPlayer);
+        if (colliders.Length<=0)
+        {
+            return null;
+        }
+        List<float> val = new List<float>();
+        foreach (var VARIABLE in colliders)
+        {
+            float distance = Vector3.Distance(VARIABLE.transform.position, transform.position);
+            val.Add(distance);
+            
+        }
+        return colliders[IndiceMin(val)].gameObject.transform;
+        
+    }
 
     public void Poursuite()
     {
+       
+        Transform player6 = detection();
         Debug.Log("Poursuite");
-        if (Vector3.Distance(player.position, transform.position) < detectionRadius)
+        if (Vector3.Distance(player6.position, transform.position) < detectionRadius)
         {
+           
             // Le joueur est encore détecté
             timeSinceLastSeen = 0f;
 
             // Reste de ta logique actuelle…
             agent.speed = chaseSpeed;
-            Quaternion rot = Quaternion.LookRotation(player.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
+            Quaternion rot = Quaternion.LookRotation(player6.position - transform.position);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
+           
 
             if (!isAttacking)
             {
-                if (Vector3.Distance(player.position, transform.position) < attackRadius)
+                if (Vector3.Distance(player6.position, transform.position) < attackRadius)
                 {
                     StartCoroutine(AttackPlayer());
                 }
                 else
                 {
-                    agent.SetDestination(player.position);
+                    agent.SetDestination(player6.position);
                 }
             }
         }
@@ -140,6 +178,7 @@ public class EnemyAI : MonoBehaviour
         {
             textElement.text= "ZZZ";
             textElement.color = Color.white;
+            agent.updateRotation = true;
             // Le joueur n'est plus vu
             timeSinceLastSeen += Time.deltaTime;
 
@@ -169,6 +208,12 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Suspicious(Transform player1)
     {
+        Transform player6 = detection();
+        if (player6 == null)
+        {
+            // Arrête la coroutine
+            yield break;
+        }
         textElement.text = "???";
         textElement.color = Color.yellow;
         Debug.Log("Suspect");
@@ -182,7 +227,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (!agent.enabled) yield break;
 
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            float distanceToPlayer = Vector3.Distance(transform.position, player6.position);
           
 
 
@@ -192,6 +237,7 @@ public class EnemyAI : MonoBehaviour
                 poursuite = true;
                 is_poursuite = true;
                 suspect0 = false;
+                agent.updateRotation = false;
                 yield break;
             }
 

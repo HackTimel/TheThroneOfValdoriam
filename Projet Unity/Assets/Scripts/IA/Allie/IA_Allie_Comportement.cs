@@ -19,9 +19,24 @@ public class IA_Allie_Comportement : MonoBehaviour
     [SerializeField] public GameObject Text;
     [SerializeField] public GameObject Text0;
     [SerializeField] public Allies2 Allies_current;
+    [SerializeField] public LayerMask Mask_enemies;
     public bool Is_Suivre= false;
     public Transform Objectif;
     public bool Is_Suivre0 = false;
+    public bool isAttacking;
+    [SerializeField] public float attackDelay;
+    [SerializeField] public float detectionRadius;
+    [SerializeField] public float rotationSpeed;
+    [SerializeField]public float chaseSpeed;
+    [SerializeField] public float attackRadius;
+    public bool isAttack;
+    void Start()
+    {
+        agent.acceleration = 999f;
+        agent.angularSpeed = 720f;
+        agent.stoppingDistance = 1f;
+    }
+
     public void Update()
     {
         if (Is_Suivre)
@@ -31,6 +46,11 @@ public class IA_Allie_Comportement : MonoBehaviour
         if (Is_Suivre0)
         {
             deplcement();
+        }
+
+        if (isAttack)
+        {
+            Attack_Allie();
         }
         recrutement();
     }
@@ -58,6 +78,7 @@ public class IA_Allie_Comportement : MonoBehaviour
             Debug.Log("Suivre1");
             animator.SetBool("Suivre", false);
         }
+        animator.SetFloat("Speed", agent.velocity.magnitude);
        
        
     }
@@ -91,11 +112,11 @@ public class IA_Allie_Comportement : MonoBehaviour
 
     public void recrutement()
     {
-        Debug.Log("0");
+        
         (Allies2, GameObject) val = (Allies_current, toi);
         if (manager_alli.allies.Contains(val))
         {
-            Debug.Log("ERREUR");
+        
             
                 if (Vector3.Distance(transform.position,player.transform.position) < 5)
                 {
@@ -116,13 +137,13 @@ public class IA_Allie_Comportement : MonoBehaviour
         }
         else
         {
-            Debug.Log("1");
+        
             if (manager_alli.colliders.Contains(Allie_Collider))
             {
-                Debug.Log("2");
+             
                 if (Vector3.Distance(transform.position,player.transform.position) < 5)
                 {
-                    Debug.Log("3");
+                  
                     Text.SetActive(true);
                     if (Input.GetKey(KeyCode.R))
                     {
@@ -140,5 +161,64 @@ public class IA_Allie_Comportement : MonoBehaviour
         }
       
     }
+
+    public void Attack_Allie()
+    {
+        Collider[] colliders = Physics.OverlapSphere(agent.transform.position, detectionRadius,Mask_enemies);
+        if (colliders.Length >0)
+        {
+            foreach (var VARIABLE in colliders)
+            {
+                Poursuite(VARIABLE.gameObject);
+            }
+        }
+    }
+    public void Poursuite(GameObject obj)
+    {
+        
+        float distance = Vector3.Distance(obj.transform.position, transform.position);
+
+        if (distance < detectionRadius)
+        {
+            Vector3 direction = (obj.transform.position - transform.position).normalized;
+
+            // Rotation fluide
+            if (direction != Vector3.zero)
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+            }
+
+            // Si trop proche, attaquer
+            if (distance <= attackRadius && !isAttacking)
+            {
+                StartCoroutine(AttackPlayer());
+                agent.SetDestination(transform.position);
+                agent.speed = 0;
+            
+            }
+            // Sinon suivre
+            else if (!isAttacking)
+            {
+               
+                agent.speed = chaseSpeed;
+                agent.SetDestination(obj.transform.position);
+               
+            }
+            animator.SetFloat("Blend", agent.velocity.magnitude);
+        }
+        
+    }
+
+    IEnumerator AttackPlayer()
+    {
+        isAttacking = true;
+        animator.SetTrigger("Attack");
+
+        yield return new WaitForSeconds(attackDelay);
+
+        isAttacking = false;
+    }
+
 
 }
