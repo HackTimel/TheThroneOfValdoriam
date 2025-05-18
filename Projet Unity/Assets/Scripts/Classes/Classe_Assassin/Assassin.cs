@@ -32,8 +32,12 @@ public class Assassin : MonoBehaviour
     public bool IsInvisible = false;
     
     
-    public float distanceForward = 3.0f; // distance à téléporter devant (augmente à chaque levelup)
+    public float distanceForward; // distance à téléporter devant (augmente à chaque levelup)
     public CharacterController characterController; //si on utilise ça pour le tp
+    public GameObject ParticleSystem;
+    public GameObject icone_dash;
+    public bool canDash = true;
+    public int delay;
     
 
 
@@ -50,7 +54,11 @@ public class Assassin : MonoBehaviour
             Debug.LogError("Player reference is null!");
             return;
         }
+
+        distanceForward = 20f + Lvl;
+        icone_dash.SetActive(true);
     }
+    
     void Update()
     {
         if (playerManager.health_change)
@@ -113,9 +121,36 @@ public class Assassin : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Teleport_Rush();
+            if (canDash)
+            {
+                Teleport_Rush();
+            }
+            
         }
 
+        if (!canDash)
+        {
+            delay++;
+            if (delay % 600 == 0)
+            {
+                canDash = true;
+                delay = 0;
+                Dash_available();
+            }
+        }
+
+    }
+
+    public void Dash_available()
+    {
+        Image image = icone_dash.GetComponent<Image>();
+        image.color = Color.white;
+    }
+
+    public void Dash_unavailable()
+    {
+        Image image = icone_dash.GetComponent<Image>();
+        image.color = Color.grey;
     }
 
 
@@ -202,11 +237,29 @@ public class Assassin : MonoBehaviour
     public void Teleport_Rush()
     {
         Debug.Log("Teleporting Rush");
-        Vector3 forward = player.transform.forward; // Direction du joueur
-        Vector3 newPosition = player.transform.position + forward.normalized * distanceForward;
-        player.transform.position = newPosition;
-        characterController.Move(forward.normalized * distanceForward);
+        Vector3 forward = player.transform.forward.normalized;
+        Vector3 offset = forward * distanceForward;
+        Debug.DrawRay(player.transform.position, forward * distanceForward, Color.red, 10f);
 
+        // Calcule la direction
+       
+
+        // Désactive temporairement le CharacterController pour forcer la téléportation
+        characterController.enabled = false;
+        player.transform.position += offset;
+        characterController.enabled = true;
+
+        // Crée la particule à l'ancienne position (avant déplacement)
+        GameObject clone = Instantiate(ParticleSystem, player.transform.position - offset, Quaternion.identity);
+        clone.SetActive(true);
+        clone.tag = "smoke";
+
+        Debug.Log("Forward: " + forward + ", distance: " + distanceForward);
+        Debug.Log("New Position: " + player.transform.position);
+        Debug.Log("distanceForward = " + distanceForward);
+        canDash = false;
+        Dash_unavailable();
+        
     }
     
     
