@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode moveRight = KeyCode.D;
     public KeyCode moveLeft = KeyCode.A;
     public static KeyCode pause = KeyCode.Escape;
+    public KeyCode Capa1 = KeyCode.Q;
+    public KeyCode Capa2 = KeyCode.T;
 
     public KeyCode jump
     {
