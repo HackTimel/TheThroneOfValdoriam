@@ -1610,11 +1610,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8504148339475748731}
   - component: {fileID: 6211545533474123948}
-  - component: {fileID: -6006997828281188720}
   - component: {fileID: 8383974067973590977}
   - component: {fileID: 6296672342718147250}
   - component: {fileID: 6089230292902448870}
   - component: {fileID: 3920812204479218152}
+  - component: {fileID: -6006997828281188720}
   - component: {fileID: 5740184679456691458}
   m_Layer: 0
   m_Name: Player
@@ -1669,27 +1669,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &-6006997828281188720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4507658808362366837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2793014264
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &8383974067973590977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,6 +1842,27 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-6006997828281188720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4507658808362366837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2793014264
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &5740184679456691458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1875,9 +1875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6426e535d29a2a4d8a6fd729f1dd00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  input: {fileID: 0}
-  cameraRoot: {fileID: 0}
+  playerController: {fileID: 0}
+  playerCam: {fileID: 0}
 --- !u!1 &4619501626718021751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,7 +2285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e028c6f110a40b459a9d8a8aa6e8ccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack_Delay: 0
 --- !u!95 &9141978635560903938
 Animator:
   serializedVersion: 5

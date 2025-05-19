@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<<< HEAD:Projet Unity_clone_0/Packages/packages-lock.json
     "com.unity.ai.navigation": {
       "version": "1.1.5",
       "depth": 0,
@@ -12,6 +13,11 @@
     "com.unity.burst": {
       "version": "1.8.17",
       "depth": 1,
+========
+    "com.unity.burst": {
+      "version": "1.8.17",
+      "depth": 2,
+>>>>>>>> Merge0:Projet Unity_clone_1/Packages/packages-lock.json
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -109,7 +115,11 @@
     },
     "com.unity.mathematics": {
       "version": "1.2.6",
+<<<<<<<< HEAD:Projet Unity_clone_0/Packages/packages-lock.json
       "depth": 1,
+========
+      "depth": 2,
+>>>>>>>> Merge0:Projet Unity_clone_1/Packages/packages-lock.json
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -165,6 +175,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<<< HEAD:Projet Unity_clone_0/Packages/packages-lock.json
     "com.unity.render-pipelines.core": {
       "version": "14.0.11",
       "depth": 1,
@@ -203,6 +214,8 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+========
+>>>>>>>> Merge0:Projet Unity_clone_1/Packages/packages-lock.json
     "com.unity.settings-manager": {
       "version": "2.0.1",
       "depth": 2,
@@ -277,6 +290,7 @@
       },
       "url": "https://packages.unity.com"
     },
+<<<<<<<< HEAD:Projet Unity_clone_0/Packages/packages-lock.json
     "com.unity.toolchain.win-x86_64-linux-x86_64": {
       "version": "2.0.10",
       "depth": 0,
@@ -287,6 +301,8 @@
       },
       "url": "https://packages.unity.com"
     },
+========
+>>>>>>>> Merge0:Projet Unity_clone_1/Packages/packages-lock.json
     "com.unity.transport": {
       "version": "1.5.0",
       "depth": 1,

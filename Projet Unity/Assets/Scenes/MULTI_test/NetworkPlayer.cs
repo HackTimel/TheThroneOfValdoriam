@@ -1,20 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
-using StarterAssets;
+using playermov;
 
 public class NetworkPlayer : NetworkBehaviour
 {
-    public BasePlayer controller;
-    public StarterAssetsInputs input;
-    public GameObject cameraRoot;
+
+    public PlayerMovement playerController;
+    public Cinemachine.CinemachineVirtualCamera playerCam;
 
     public override void OnNetworkSpawn()
     {
-        bool isLocal = IsOwner;
+        base.OnNetworkSpawn();
 
-        controller.enabled = true; // Toujours actif, mais ne fera rien si pas local (voir BasePlayer)
-        input.enabled = isLocal;
-        cameraRoot.SetActive(isLocal);
+        playerController.enabled = IsOwner;
+        playerCam.Priority = IsOwner ? 1 : 0;
     }
 }
-

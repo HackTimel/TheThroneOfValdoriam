@@ -1,8 +1,10 @@
-// PlayerMovement.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+namespace playermov{
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -15,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask groundLayer;
-    public bool grounded { get; private set; } // Exposed for AnimationStateController
+    public bool grounded { get; private set; }
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -25,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     public KeyCode moveRight = KeyCode.D;
     public KeyCode moveLeft = KeyCode.A;
     public static KeyCode pause = KeyCode.Escape;
+    public KeyCode Capa1 = KeyCode.Q;
+    public KeyCode Capa2 = KeyCode.T;
 
     public KeyCode jump
     {
@@ -32,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
         set => jumpKey = value;
     }
 
-    // Re-adding old directional key references
     public KeyCode devant => moveForward;
     public KeyCode derriere => moveBackward;
     public KeyCode gauche => moveLeft;
@@ -43,12 +46,16 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody rb;
     private Vector3 moveDirection;
-    private bool readyToJump = true;
+    public bool readyToJump = true;
 
-    void Start()
+    public void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+        UpdateKeyBindings();
     }
 
     public void Update()
@@ -86,14 +93,38 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (moveDirection.magnitude > 0)
+        if (moveDirection.magnitude > 0.1f)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed, ForceMode.Force);
-        
-        Vector3 lookDirection = moveDirection.normalized;
-        Quaternion targetRotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+            float currentSpeed = Input.GetKey(sprintKey) ? moveSpeed * sprintMultiplier : moveSpeed;
+            Vector3 targetVelocity = moveDirection.normalized * currentSpeed;
+            Vector3 currentVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            Vector3 velocityChange = targetVelocity - currentVelocity;
+
+            rb.AddForce(velocityChange, ForceMode.VelocityChange);
+
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection.normalized, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
         }
+        else if (grounded)
+        {
+            Vector3 horizontalVelocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+            Vector3 counterForce = -horizontalVelocity * 5f;
+            rb.AddForce(counterForce, ForceMode.Acceleration);
+        }
+
+
+
+
+        if (moveDirection.magnitude < 0.1f && grounded)
+        {
+    Vector3 currentVelocity = rb.velocity;
+    rb.velocity = new Vector3(
+        Mathf.Lerp(currentVelocity.x, 0, Time.fixedDeltaTime * 10f),
+        currentVelocity.y,
+        Mathf.Lerp(currentVelocity.z, 0, Time.fixedDeltaTime * 10f)
+    );
+        }
+
     }
 
     private void Jump()
@@ -109,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void CheckGroundStatus()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayer);
+        grounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, playerHeight * 0.5f + 0.3f, groundLayer);
     }
 
     private void ApplyDrag()
@@ -128,4 +159,15 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(limitedVelocity.x, rb.velocity.y, limitedVelocity.z);
         }
     }
+
+    public void UpdateKeyBindings()
+    {
+        moveForward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerAvancer", "W"));
+        moveBackward = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerArriere", "S"));
+        moveRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerDroite", "D"));
+        moveLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("PlayerGauche", "A"));
+    }
+}
+
+
 }

@@ -10,7 +10,7 @@ public class HealthManager : MonoBehaviour
 
     public float pointdevie_temporaire = 100f; //temporaire car doit être affecté à la classe joueur qui sera bientot implémenté
     [SerializeField] public PlayerManager playerManager;
-    
+    public float maxHealth = 100f;
     // Start is called before the first frame update
     
 
@@ -19,28 +19,32 @@ public class HealthManager : MonoBehaviour
     {
         if (playerManager.health_change)
         {
-            if (playerManager.healthpriority < 100f)
+            if (playerManager.healthpriority < maxHealth) //changement 100f -> maxHealth
             {
-                TakeDamage(100f - playerManager.healthpriority);
+                TakeDamage(maxHealth - playerManager.healthpriority);
             }
             playerManager.health_change = false;
         } //forcer l application des pv sauvegardés !!
+        /*
         
         if (Input.GetKeyDown(KeyCode.U))
         {
+            Debug.Log($"degat inflifé : {20f}");
             TakeDamage(20f);
         }
 
         if (Input.GetKeyDown(KeyCode.V))
         {
+            Debug.Log($"pv recu : {20f}");
             Heal(20f);
         }
+        */ //n'est plus nécéssaire car les appels se font depuis les classes
 
         if (pointdevie_temporaire <= 0) //cas de mort. (Temporaire car nocheckpoint)
         {
             SceneManager.LoadScene("Level1");
-            pointdevie_temporaire = 100f;
-            healthBar.fillAmount = pointdevie_temporaire / 100f;
+            pointdevie_temporaire = maxHealth;
+            healthBar.fillAmount = pointdevie_temporaire / maxHealth;
         }
         
         
@@ -51,13 +55,13 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         pointdevie_temporaire -= damage;
-        healthBar.fillAmount = pointdevie_temporaire / 100f;
+        healthBar.fillAmount = pointdevie_temporaire / maxHealth;
     }
 
     public void Heal(float heal)
     {
         pointdevie_temporaire += heal;
-        pointdevie_temporaire = Mathf.Clamp(pointdevie_temporaire, 0f, 100f);
-        healthBar.fillAmount = pointdevie_temporaire / 100f;
+        pointdevie_temporaire = Mathf.Clamp(pointdevie_temporaire, 0f, maxHealth);
+        healthBar.fillAmount = pointdevie_temporaire / maxHealth;
     }
 }
