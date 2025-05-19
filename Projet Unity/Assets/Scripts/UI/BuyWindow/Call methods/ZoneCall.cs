@@ -9,10 +9,8 @@ namespace UI.BuyWindow.Call_methods
         
         public void Start() //rendre la zone transparente
         {
-            Renderer renderer = GetComponent<Renderer>();
-            Color color = renderer.material.color;
-            color.a = 0f; // alpha entre 0 (invisible) et 1 (opaque)
-            renderer.material.color = color;
+           
+            GetComponent<MeshRenderer>().enabled = false;
         }
         private void OnTriggerEnter(Collider other)
         {

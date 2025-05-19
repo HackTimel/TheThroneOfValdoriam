@@ -10,10 +10,8 @@ public class TeleportZone: MonoBehaviour
     public int compteur;
     void Start()
     {
-        Renderer renderer = GetComponent<Renderer>();
-        Color color = renderer.material.color;
-        color.a = 0.1f; // alpha entre 0 (invisible) et 1 (opaque)
-        renderer.material.color = color;
+        
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
     // Update is called once per frame
