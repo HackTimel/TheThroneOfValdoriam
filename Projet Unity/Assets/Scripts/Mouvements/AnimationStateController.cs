@@ -9,16 +9,17 @@ public class AnimationStateController : MonoBehaviour
 {
     
     Animator animator;
-    PlayerMovement touche;
+    BasePlayer touche;
     private bool is_Attacking;
     public float attack_Delay;
+    public GameObject mage;
     
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        touche = GameObject.Find("Mage").GetComponent<PlayerMovement>();
+        touche = mage.GetComponent<BasePlayer>();
     }
 
     // Update is called once per frame
