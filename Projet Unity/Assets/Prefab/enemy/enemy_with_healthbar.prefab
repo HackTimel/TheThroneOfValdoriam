@@ -1235,25 +1235,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a284458f541e94cb2281145712ca16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  poste: {fileID: 0}
   agent: {fileID: 8261781913612906512}
   animator: {fileID: 2261015409110465425}
-  orientation: {fileID: 0}
-  point_de_depart: {fileID: 0}
-  playerMask:
+  player: {fileID: 0}
+  walkSpeed: 0
+  chaseSpeed: 0
+  detectionRadius: 0
+  attackRadius: 0
+  attackDelay: 0
+  patrouille_delay: 0
+  rotationSpeed: 0
+  whatIsPlayer:
     serializedVersion: 2
     m_Bits: 0
-  detectionLength0: 0
-  anim: {fileID: 0}
-  detection_radius: 11.4
-  awaiting_distance: 0
-  vitesse: 4
-  vitesse_marche: 0
-  combat_radius: 0
-  is_Attacking: 0
-  attack_Delay: 2.2
-  vit_rot: 120
+  detente: 0
+  textElement: {fileID: 0}
+  tour_de_rond: []
 --- !u!65 &6705976191184813008
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -10,8 +10,12 @@ TagManager:
   - Mob
   - Enemy
   - Ground
+<<<<<<< HEAD
   - invisible
   - smoke
+=======
+  - Fire
+>>>>>>> origin/Branche-du-Prefab-qui-Marche
   layers:
   - Default
   - TransparentFX
@@ -26,7 +30,7 @@ TagManager:
   - Layer
   - Allies
   - Allies_Comm
-  - 
+  - Terrain
   - 
   - 
   - 

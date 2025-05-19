@@ -223,4 +223,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_visuel: {fileID: 5844008379372423812}
   allies0: {fileID: 0}
-  val: {fileID: 0}
+  allies1: {fileID: 0}

@@ -2328,6 +2328,8 @@ MonoBehaviour:
   moveBackward: 115
   moveRight: 100
   moveLeft: 97
+  Capa1: 113
+  Capa2: 116
   orientation: {fileID: 182254746}
   rb: {fileID: 182254747}
   readyToJump: 1
@@ -3966,7 +3968,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -5562,10 +5564,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbbfa0eafda31594589831cc7bdb2337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicLibrary: {fileID: 0}
   musicSource: {fileID: 0}
   volumeSlider: {fileID: 0}
   sfxSlider: {fileID: 0}
+  persistentManager: {fileID: 0}
+  volume: 0
 --- !u!4 &535563438
 Transform:
   m_ObjectHideFlags: 0
@@ -6573,6 +6576,8 @@ MonoBehaviour:
   moveBackward: 115
   moveRight: 100
   moveLeft: 97
+  Capa1: 113
+  Capa2: 116
   orientation: {fileID: 235358443}
   rb: {fileID: 660242412}
   readyToJump: 1
@@ -15593,9 +15598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b1034eea6303541a225a1a6edb47d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tracks:
-  - trackName: Level1
-    clip: {fileID: 8300000, guid: dee6b889b8f761d419dd6787db80b371, type: 3}
+  audioClip1: {fileID: 0}
 --- !u!4 &1501328280
 Transform:
   m_ObjectHideFlags: 0
