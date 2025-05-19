@@ -20,7 +20,7 @@ public class Level1 : MonoBehaviour
         "Pour avancer, appuie sur la touche z",
         "Super, maintenant recule avec s",
         "Ensuite à droite avec d",
-        "Et enfin à gauche avec g",
+        "Et enfin à gauche avec q",
         "Devant toi, cette chose... c'est un ennemi, attaque le avec clic gauche !",
         "Bon, on dirait que j'ai plus besoin de t'apprendre quoique ce soit, libère les villagois, et bon courage..."
     };
@@ -83,7 +83,7 @@ public class Level1 : MonoBehaviour
         }
         if (instrcution_index == 3)
         {
-            if (Input.GetKeyDown(KeyCode.G))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 instructions.text = next_instruction;
             }

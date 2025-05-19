@@ -46,7 +46,6 @@ public class Manger_Commadement : MonoBehaviour
     void Start()
     {
         commandeGameObjectPanel.SetActive(false);
-        LockCursor(); // S'assurer que le jeu commence avec le curseur caché
     }
     public void Update()
     {

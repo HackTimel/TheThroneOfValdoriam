@@ -46,14 +46,13 @@ public class PauseScript : MonoBehaviour
 
     public void PauseGame()
     {
-        UnlockCursor();
         pauseMenu.SetActive(true); //rend l'objet menu actif (on voit les options)
         paused = true;
         Time.timeScale = 0; //on freeze le jeu
-        Cursor.lockState = CursorLockMode.None;
         Inventaire_RL inventaire = Inventaire.GetComponent<Inventaire_RL>();
         InventaireActive = inventaire.Keep_open;
         inventaire.Close_inventory();
+        UnlockCursor();
     }
 
     public void ResumeGame()
