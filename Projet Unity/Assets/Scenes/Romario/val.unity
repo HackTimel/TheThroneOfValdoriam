@@ -310,6 +310,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scr: {fileID: 1771394615}
   spher_taille: 5
+  Player: {fileID: 0}
+  sphereSize: 0
+  detectionRadius: 0
 --- !u!1 &495131917
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +374,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -726,6 +730,8 @@ MonoBehaviour:
   Idle: {fileID: 1208291319}
   Suspicious: {fileID: 1208291318}
   Attack: {fileID: 1208291320}
+  Combat: {fileID: 0}
+  Decisions: {fileID: 0}
   suspiciousPos: {x: 0, y: 0, z: 0}
   text: {fileID: 0}
   Agent: {fileID: 0}
@@ -743,6 +749,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73377745dc0cf542bb650f355afa610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vitesse_marche: 1
+  animator: {fileID: 0}
+  val: {fileID: 0}
 --- !u!114 &1208291319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190d076f29462fc408ee888bed83c020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vitesse: 4
+  animator: {fileID: 0}
 --- !u!1 &1231640754
 GameObject:
   m_ObjectHideFlags: 0

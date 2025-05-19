@@ -698,7 +698,7 @@ Terrain:
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -764,8 +764,16 @@ MonoBehaviour:
   Equiper_Arme: {fileID: 423779648}
   Detruire: {fileID: 1521248752}
   Consommer: {fileID: 1929892571}
+  _itemSciptRl_current: {fileID: 0}
   Transparent: {fileID: 21300000, guid: 14eaaad4db20fca40a5570e650400a8c, type: 3}
   Drop_Point: {fileID: 836870595}
+  Is_Equip: 0
+  Equiper_Point: {fileID: 0}
+  equip_panel: {fileID: 0}
+  inventaire_slot_RL_EQUIP: {fileID: 0}
+  _itemSciptRl_current_EQUIPED: {fileID: 0}
+  Keep_open: 0
+  action_Panel_EQUIP: {fileID: 0}
 --- !u!4 &373806821
 Transform:
   m_ObjectHideFlags: 0
@@ -1701,6 +1709,7 @@ MonoBehaviour:
   moveLeft: 97
   orientation: {fileID: 235358443}
   rb: {fileID: 660242412}
+  readyToJump: 1
   Name: 
   Pv: 0
   Mana: 0
@@ -6179,6 +6188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e028c6f110a40b459a9d8a8aa6e8ccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack_Delay: 0
 --- !u!224 &1681169215 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7460072722680865893, guid: 0679505a89680d94bb67645a1c5d49a0, type: 3}

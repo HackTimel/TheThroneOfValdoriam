@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_visuel: {fileID: 2723526339149913405}
   allies0: {fileID: 0}
-  val: {fileID: 0}
+  allies1: {fileID: 0}
 --- !u!1 &1936448956927042655
 GameObject:
   m_ObjectHideFlags: 0

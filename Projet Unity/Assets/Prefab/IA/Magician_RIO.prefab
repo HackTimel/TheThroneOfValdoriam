@@ -315,7 +315,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 4686423086862358097}
   animator: {fileID: 8926207126672977118}
-  player: {fileID: 0}
   walkSpeed: 2
   chaseSpeed: 4
   detectionRadius: 10
