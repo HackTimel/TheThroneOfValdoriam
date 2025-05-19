@@ -9,10 +9,20 @@ public class TutorialManager : MonoBehaviour
 
     public void StartClient(){
         NetworkManager.Singleton.StartClient();
-		
+        if (uiCanvas != null)
+        {
+            uiCanvas.SetActive(false); // Cache le Canvas
+        }
     }
 
     public void StartHost(){
+        if (Camera.main != null)
+            Camera.main.gameObject.SetActive(false);
+
         NetworkManager.Singleton.StartHost();
+        if (uiCanvas != null)
+        {
+            uiCanvas.SetActive(false); // Cache le Canvas
+        }
     }
 }

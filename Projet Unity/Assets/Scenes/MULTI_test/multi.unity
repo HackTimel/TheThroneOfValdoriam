@@ -1265,9 +1265,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.2
-  far clip plane: 500
-  field of view: 40
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 50
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -1293,8 +1293,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 483.59003, y: 1.375, z: 540.8}
+  m_LocalRotation: {x: 0.52573115, y: 0, z: 0, w: 0.85065085}
+  m_LocalPosition: {x: 5.01, y: 12.621, z: 0.5999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 1106206420}
-    PlayerPrefab: {fileID: 4478480108486210126, guid: 08b26821001c5e143ac49be70b6be707, type: 3}
+    PlayerPrefab: {fileID: 4478480108486210126, guid: 78b0cfbade8492d45bdec795f763f994, type: 3}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: 85f061f719aebc74289bc1bf76d0fa2a, type: 2}
@@ -1622,7 +1622,7 @@ Transform:
   m_GameObject: {fileID: 1106206419}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9145c0237db571d45aac4b01d752c761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiCanvas: {fileID: 1426959700}
+  uiCanvas: {fileID: 0}
 --- !u!114 &1426959702
 MonoBehaviour:
   m_ObjectHideFlags: 0
