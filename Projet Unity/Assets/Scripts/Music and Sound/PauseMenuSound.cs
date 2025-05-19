@@ -66,8 +66,6 @@ public class PauseMenuSound : MonoBehaviour
         {
             musicSource.Stop(); // Arrête la musique précédente
         }
-        AudioClip nexttrack = musicLibrary.GetClipFromName(trackName); //on prend la musique en paramètre
-        musicSource.clip = nexttrack;
         SetVolume(PlayerPrefs.GetFloat("MusicVolume"));
         musicSource.Play();
     }

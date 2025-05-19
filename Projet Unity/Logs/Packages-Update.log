@@ -49,3 +49,21 @@ Update Mode: mergeDefaultDependencies
 
 The following packages were added:
   com.unity.nuget.newtonsoft-json@3.2.1
+
+=== Thu Feb  6 14:11:36 2025
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.cinemachine from version 2.9.7 to 2.10.1
+  com.unity.inputsystem from version 1.5.1 to 1.7.0
+  com.unity.render-pipelines.universal from version 14.0.7 to 14.0.11
+
+=== Thu Feb  6 14:11:36 2025
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.render-pipelines.universal@14.0.11
