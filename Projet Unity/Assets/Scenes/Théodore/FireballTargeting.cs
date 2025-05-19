@@ -2,19 +2,20 @@ using UnityEngine;
 
 public class FireballTargeting : MonoBehaviour
 {
-    public Camera playerCamera;         // À assigner dans l’inspecteur
-    public GameObject fireballPrefab;
-    public LayerMask terrainLayer;
-
+    public GameObject fireballPrefab; // À assigner dans l'inspecteur
+    public LayerMask terrainLayer;    // Le layer de ton terrain (ex. "Terrain")
     private bool isTargeting = false;
 
     void Start()
     {
-        LockCursor();
+        // Verrouille la souris au début
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
     {
+        // Active le mode ciblage avec T
         if (Input.GetKeyDown(KeyCode.T))
         {
             EnterTargetingMode();
@@ -22,23 +23,23 @@ public class FireballTargeting : MonoBehaviour
 
         if (isTargeting)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Y))
             {
-                Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);  // ← ici
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
                 if (Physics.Raycast(ray, out hit, 100f, terrainLayer))
                 {
-                    Debug.Log("Hit at: " + hit.point);
-                    Instantiate(fireballPrefab, hit.point + Vector3.up * 0.5f, Quaternion.identity);
+                    Debug.Log("Terrain cliqué à : " + hit.point);
+
+                    Vector3 spawnPos = hit.point + Vector3.up * 0.5f;
+                    Instantiate(fireballPrefab, spawnPos, Quaternion.identity);
+
                     ExitTargetingMode();
-                }
-                else
-                {
-                    Debug.Log("Raycast missed");
                 }
             }
 
+            // Permet d’annuler avec clic droit (optionnel)
             if (Input.GetMouseButtonDown(1))
             {
                 ExitTargetingMode();
@@ -56,11 +57,6 @@ public class FireballTargeting : MonoBehaviour
     void ExitTargetingMode()
     {
         isTargeting = false;
-        LockCursor();
-    }
-
-    void LockCursor()
-    {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
