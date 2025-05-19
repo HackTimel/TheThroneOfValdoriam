@@ -3,34 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - SaveButton
-  - CinemachineTarget
-  - Item
-  - Mob
-  - Enemy
-  - Ground
-<<<<<<< HEAD
-  - invisible
-  - smoke
-=======
-  - Fire
->>>>>>> origin/Branche-du-Prefab-qui-Marche
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - whatIsGround
+  - 
   - Water
   - UI
-  - Wall
-  - Item
-  - Item0
-  - Climpable
-  - Layer
-  - Allies
-  - Allies_Comm
-  - Terrain
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
