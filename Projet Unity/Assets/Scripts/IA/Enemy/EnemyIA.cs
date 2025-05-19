@@ -69,7 +69,7 @@ public class EnemyAI : MonoBehaviour
     private bool poursuite = false;
     private bool is_poursuite = false;
     private float timeSinceLastSeen = 0f;
-    [SerializeField] private float maxLostTime = 10f; // Temps avant de retourner en patrouille
+    [SerializeField] private float maxLostTime = 20f; // Temps avant de retourner en patrouille
     private bool suspect0;
 
    
