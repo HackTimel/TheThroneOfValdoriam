@@ -25,9 +25,6 @@ public class EnemyAI : MonoBehaviour
     private Animator animator;
 
 
-    [SerializeField]
-    public Transform player;
-   
 
     [Header("Stats")]
     
@@ -71,21 +68,24 @@ public class EnemyAI : MonoBehaviour
     private bool isAttacking;
     private bool poursuite = false;
     private bool is_poursuite = false;
-    
+    private float timeSinceLastSeen = 0f;
+    [SerializeField] private float maxLostTime = 10f; // Temps avant de retourner en patrouille
+    private bool suspect0;
 
+   
 
     int i = 0;
     void Update()
     {
         if (poursuite)
         {
-            i++;
             Poursuite();
         }
-        else if(i<1)
-        {
-            Garde();
-        }
+
+        Garde();
+    
+
+
 
     }
 
@@ -93,44 +93,107 @@ public class EnemyAI : MonoBehaviour
 
     void Garde()
     {
-        if (!isPatrolling&&!poursuite)
+        if (!isPatrolling&&!poursuite&&!suspect0)
         {
             StartCoroutine(GetNewDestination());
         }
     }
     public void suspect(Transform player0)
     {
+        suspect0 = true;
         if (!is_poursuite)
         {
             StartCoroutine(Suspicious(player0));
         }
        
     }
+    public int IndiceMin(List<float> liste)
+    {
+      
+
+        int indiceMin = 0;
+        float valeurMin = liste[0];
+
+        for (int i = 1; i < liste.Count; i++)
+        {
+            if (liste[i] < valeurMin)
+            {
+                valeurMin = liste[i];
+                indiceMin = i;
+            }
+        }
+
+        return indiceMin;
+    }
+
+
+    public Transform detection()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRadius,whatIsPlayer);
+        if (colliders.Length<=0)
+        {
+            return null;
+        }
+        List<float> val = new List<float>();
+        foreach (var VARIABLE in colliders)
+        {
+            float distance = Vector3.Distance(VARIABLE.transform.position, transform.position);
+            val.Add(distance);
+            
+        }
+        return colliders[IndiceMin(val)].gameObject.transform;
+        
+    }
 
     public void Poursuite()
     {
+       
+        Transform player6 = detection();
         Debug.Log("Poursuite");
-        if (Vector3.Distance(player.position, transform.position) < detectionRadius)
+        if (Vector3.Distance(player6.position, transform.position) < detectionRadius)
         {
+           
+            // Le joueur est encore détecté
+            timeSinceLastSeen = 0f;
+
+            // Reste de ta logique actuelle…
             agent.speed = chaseSpeed;
-            Quaternion rot = Quaternion.LookRotation(player.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
+            Quaternion rot = Quaternion.LookRotation(player6.position - transform.position);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
+           
 
             if (!isAttacking)
             {
-                Debug.Log("1");
-                
-                if (Vector3.Distance(player.position, transform.position) < attackRadius)
+                if (Vector3.Distance(player6.position, transform.position) < attackRadius)
                 {
-                    Debug.Log("2");
                     StartCoroutine(AttackPlayer());
                 }
                 else
                 {
-                    agent.SetDestination(player.position);  // Continue à poursuivre le joueur
+                    agent.SetDestination(player6.position);
                 }
             }
         }
+        else
+        {
+            textElement.text= "ZZZ";
+            textElement.color = Color.white;
+            agent.updateRotation = true;
+            // Le joueur n'est plus vu
+            timeSinceLastSeen += Time.deltaTime;
+
+            if (timeSinceLastSeen > maxLostTime)
+            {
+                // Le joueur est perdu de vue, retour à la patrouille
+                poursuite = false;
+                is_poursuite = false;
+                suspect0 = false;
+                timeSinceLastSeen = 0f;
+                StartCoroutine(GetNewDestination());
+            }
+        }
+
+        
        /*else
         {
             if (!isPatrolling)  // Reprend la patrouille si la poursuite est terminée
@@ -145,57 +208,92 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Suspicious(Transform player1)
     {
-        textElement.text= "???";
+        Transform player6 = detection();
+        if (player6 == null)
+        {
+            // Arrête la coroutine
+            yield break;
+        }
+        textElement.text = "???";
         textElement.color = Color.yellow;
-        yield return new WaitForSeconds(detente);
-        // Affichage d'un message pour le débogage
         Debug.Log("Suspect");
 
-        // Calcul de la distance une seule fois
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        float followTime = 10f; // Durée pendant laquelle l'ennemi suit le joueur en mode suspect
+        float timer = 0f;
 
-        // Si le joueur est à une certaine distance, commencer à se déplacer vers lui
-        if (distanceToPlayer > attackRadius)
+        agent.speed = walkSpeed;
+
+        while (timer < followTime)
         {
-            Debug.Log("En chemin");
-            // On marche vers le joueur
-            agent.speed = walkSpeed;
-            agent.SetDestination(player.position);
-        }
-        else
-        {
-            Debug.Log("Arriver");
-            if (Vector3.Distance(player.position, transform.position) < detectionRadius)
+            if (!agent.enabled) yield break;
+
+            float distanceToPlayer = Vector3.Distance(transform.position, player6.position);
+          
+
+
+            // Si le joueur est dans le rayon de détection, passe en poursuite
+            if (distanceToPlayer < detectionRadius)
             {
                 poursuite = true;
                 is_poursuite = true;
-                Debug.Log("Valeur set !");
+                suspect0 = false;
+                agent.updateRotation = false;
+                yield break;
             }
+
+            // Sinon continue à suivre le joueur en marchant
+            Vector3 direction = (player1.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, rotationSpeed * Time.deltaTime);
+            agent.SetDestination(player1.position);
+            animator.SetFloat("Speed", agent.velocity.magnitude);
+
+            timer += Time.deltaTime;
+            yield return null;
         }
 
-        // Mettre à jour l'animation en fonction de la vitesse de l'agent
-        animator.SetFloat("Speed", agent.velocity.magnitude);
-        Debug.Log(distanceToPlayer);
+        // Fin du mode suspect : retour au calme ou patrouille
+        textElement.text= "ZZZ";
+        textElement.color = Color.white;
+        poursuite = false;
+        is_poursuite = false;
+        suspect0 = false;
+        if (!isPatrolling)
+        {
+            StartCoroutine(GetNewDestination());
+        }
+        
     }
+
 
 
     IEnumerator GetNewDestination()
     {
         isPatrolling = true;
-        textElement.text= "ZZZ";
+        textElement.text = "ZZZ";
         textElement.color = Color.white;
+
         foreach (var VARIABLE in tour_de_rond)
         {
             agent.SetDestination(VARIABLE.transform.position);
             agent.speed = walkSpeed;
+
+            // Tant que le déplacement n'est pas terminé
             while (agent.pathPending || agent.remainingDistance > 0.1f)
             {
-                yield return null;  // Attendre jusqu'à ce que la destination soit atteinte
+                // Met à jour l'animation à chaque frame
+                animator.SetFloat("Speed", agent.velocity.magnitude);
+                yield return null;
             }
+
+            // Stop l'animation de marche quand le point est atteint
+            animator.SetFloat("Speed", 0f);
             yield return new WaitForSeconds(patrouille_delay);
         }
+
         isPatrolling = false;
     }
+
 
 
     IEnumerator AttackPlayer()

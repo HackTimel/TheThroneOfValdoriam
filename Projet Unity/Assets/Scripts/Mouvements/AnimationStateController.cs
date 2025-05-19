@@ -29,32 +29,20 @@ public class AnimationStateController : MonoBehaviour
         bool courrir = Input.GetKey(touche.sprintKey) && avancer; // Le sprint nécessite d'avancer
         bool grimper = Input.GetKey(KeyCode.E);
         bool sauter = Input.GetKey(touche.jumpKey);
-        bool Capa1 = Input.GetKey(touche.Capa1);
-        bool Capa2 = Input.GetKey(touche.Capa2);
 
         // Mettre à jour les états dans l'Animator
-        //if (!grimper)
+        if (!grimper)
         {
             animator.SetBool("isWalking", avancer);
         }
-        //if (!grimper)
+        if (!grimper)
         {
             animator.SetBool("isRunning", courrir);
         }
-        //if (!grimper)
+        if (!grimper)
         {
             animator.SetBool("isJump", sauter);
         }
-
-        //if(!grimper)
-        {
-            animator.SetBool("Capa1", Capa1);
-        }
-        //if(!grimper)
-        {
-            animator.SetBool("Capa2", Capa2);
-        }
-        //Attack_player0();
      
     }
 

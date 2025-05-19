@@ -181,6 +181,24 @@ public class Manger_Commadement : MonoBehaviour
         else
         {
             val.Is_Suivre = true;
+            val.Is_Suivre0 = false;
+            val.isAttack = false;
+        }
+     
+        Close_Action_Panel2();
+    }
+
+    public void action_attack()
+    {
+        IA_Allie_Comportement val = allies1_Current.GetComponent<IA_Allie_Comportement>();
+        if ( val.isAttack)
+        {
+            val.isAttack= false;
+        }
+        else
+        {
+            val.isAttack = true;
+            val.Is_Suivre = false;
             val.Is_Suivre0 = false;  
         }
      
@@ -196,6 +214,7 @@ public class Manger_Commadement : MonoBehaviour
         deplcement_Object(val);
         Close_Action_Panel2();
     }
+    
 
     public void deplcement_Object(GameObject obj)
     {
@@ -228,6 +247,7 @@ public class Manger_Commadement : MonoBehaviour
             val0.Objectif = obj.transform;
             val0.Is_Suivre0 = true;
             val0.Is_Suivre = false;
+            val0.isAttack = false;
             val.GetComponent<MeshRenderer>().enabled = false;
             mouvement.enabled = true;
             Debug.Log("ACRI");

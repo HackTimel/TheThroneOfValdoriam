@@ -3,22 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SaveButton
+  - CinemachineTarget
+  - Item
+  - Mob
+  - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - whatIsGround
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - Item
+  - Item0
+  - Climpable
+  - Layer
+  - Allies
+  - Allies_Comm
+  - Player
   - 
   - 
   - 
