@@ -20,7 +20,11 @@ public class Quets : MonoBehaviour
     public bool Passer_porte = false;  
     public bool porte_baisser0 = false;
     public bool porte_passer2 = false;
-    private IAManager Health;
+    [SerializeField] public GameObject PorteSysGameObject;
+    public bool est_mort = false;
+    public bool code_bon = false;
+    
+    
 
     public bool fin_quetes1 = false;
     // Start is called before the first frame update
@@ -51,6 +55,11 @@ public class Quets : MonoBehaviour
         if (Etape3)
         {
             Quetes_Fuite_Etape_3();
+        }
+
+        if (Etape4)
+        {
+            Quetes_Fuite_Etape_4();
         }
        
     }
@@ -83,18 +92,31 @@ public class Quets : MonoBehaviour
         }
     }
 
+    
     public void Quetes_Fuite_Etape_3()
     {
-        texte.text = "Le premier rempart a cede sous l'armee." +
-                     "Trouver le code dans le chateau pour fermer le" +
-                     "deuxieme rempart";
-        texte.fontSize = 15;
-        Boss.SetActive(true);
-        Health = Boss.GetComponent<IAManager>();
-        if (Health.pv<=0)
+        if (est_mort)
         {
+            Debug.Log("est mort");
             Etape3 = false;
             Etape4 = true;
+            return; // ← Arrête l'exécution ici
         }
+
+        texte.text = "Le premier rempart a cédé sous l'armée des morts.\n" +
+                     "Trouvez le code dans le château pour fermer le second rempart.";
+        texte.fontSize = 15;
+
+        if (Boss != null)
+        {
+            Boss.SetActive(true);
+        }
+    }
+
+    public void Quetes_Fuite_Etape_4()
+    {
+        Debug.Log("Etape4");
+        Destroy(Boss);
+        texte.text = "Pour sauver la ville noter le code dans le chateau,et utilise le pour fermer la porte du second rempart";
     }
 }

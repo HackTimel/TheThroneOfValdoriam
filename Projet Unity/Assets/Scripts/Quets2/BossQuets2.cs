@@ -46,13 +46,24 @@ public class BossQuets2 : MonoBehaviour
     private float timeSinceLastSeen = 0f;
     private bool suspect0;
     private bool invoking = false;
+    [SerializeField] public IAManager Health;
+    [SerializeField] public Quets Quetes2;
 
     int i = 0;
+
+    void Start()
+    {
+        Health = this.GetComponent<IAManager>();
+    }
 
     void Update()
     {
        
             Poursuite();
+            if (Health.pv <= 100)
+            {
+                Quetes2.est_mort = true;
+            }
         
     }
 
@@ -97,7 +108,7 @@ public class BossQuets2 : MonoBehaviour
 
         if (player6 == null) return;
 
-        Debug.Log("Poursuite");
+      
 
         if (Vector3.Distance(player6.position, transform.position) < detectionRadius)
         {

@@ -16,5 +16,13 @@ public class Joueur_Damage : MonoBehaviour //classe mère dont heriteront les ar
                 Health.TakeDamage(base_damage); //et boom dégâts
             }
         }
+        if (other.CompareTag("Boss"))
+        {
+            Health = other.GetComponent<IAManager>(); //alors je choppe son instance de IAManager
+            if (Health != null)
+            {
+                Health.TakeDamage(base_damage); //et boom dégâts
+            }
+        }
     }
 }

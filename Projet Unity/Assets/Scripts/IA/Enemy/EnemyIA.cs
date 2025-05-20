@@ -216,8 +216,7 @@ public class EnemyAI : MonoBehaviour
         }
         textElement.text = "???";
         textElement.color = Color.yellow;
-        Debug.Log("Suspect");
-
+      
         float followTime = 5f; // Durée pendant laquelle l'ennemi suit le joueur en mode suspect
         float timer = 0f;
 

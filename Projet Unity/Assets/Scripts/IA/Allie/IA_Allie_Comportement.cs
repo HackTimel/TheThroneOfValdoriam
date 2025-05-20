@@ -71,11 +71,11 @@ public class IA_Allie_Comportement : MonoBehaviour
             agent.speed = IA_Speed;
             agent.SetDestination(direction);
             animator.SetBool("Suivre", true);
-            Debug.Log("Suivre0");
+          
         }
         if (Vector3.Distance(agent.transform.position, player.transform.position) <distance+1 )
         {
-            Debug.Log("Suivre1");
+          
             animator.SetBool("Suivre", false);
         }
 

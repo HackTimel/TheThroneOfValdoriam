@@ -35,7 +35,7 @@ public class PorteSys : MonoBehaviour
         {
             if (!porte_baisser)
             {
-                Debug.Log("A"+Quetes2.porte_baisser0);
+           
                 Monter0.SetActive(true);
                 Baisser0.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.V))

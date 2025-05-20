@@ -11,6 +11,7 @@ public class IAManager : MonoBehaviour
      */
     [SerializeField] Image healthBar; //2.13 plus haut
     
+    
     public float pv = 100f;
     
     
@@ -25,13 +26,16 @@ public class IAManager : MonoBehaviour
     {
         if (pv<=0)
         {
-          Destroy(this.gameObject);  
+            if (!CompareTag("Boss"))
+            {
+                Destroy(this.gameObject);
+            }
+           ;  
         }
     }
 
     // Update is called once per frame
-   
-    
+  
     public void TakeDamage(float damage)
     {
         pv -= damage;

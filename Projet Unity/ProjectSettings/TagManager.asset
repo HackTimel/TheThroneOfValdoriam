@@ -12,6 +12,7 @@ TagManager:
   - Ground
   - Allie
   - Player_Finale
+  - Boss
   layers:
   - Default
   - TransparentFX

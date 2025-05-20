@@ -30,7 +30,7 @@
         {
             if (other.gameObject.CompareTag("Mob"))
             {
-                Debug.Log("reperer");
+              
                 other.gameObject.SendMessage("suspect",Player);
             }
         }
