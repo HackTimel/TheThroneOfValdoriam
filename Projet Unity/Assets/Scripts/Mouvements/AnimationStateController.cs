@@ -9,17 +9,16 @@ public class AnimationStateController : MonoBehaviour
 {
     
     Animator animator;
-    BasePlayer touche;
+    public PlayerMovement_solo touche;
     private bool is_Attacking;
     public float attack_Delay;
-    public GameObject mage;
     
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        touche = mage.GetComponent<BasePlayer>();
+        //touche = touche.GetComponent<PlayerMovement_solo>();
     }
 
     // Update is called once per frame
@@ -30,20 +29,28 @@ public class AnimationStateController : MonoBehaviour
         bool courrir = Input.GetKey(touche.sprintKey) && avancer; // Le sprint nécessite d'avancer
         bool grimper = Input.GetKey(KeyCode.E);
         bool sauter = Input.GetKey(touche.jumpKey);
+        bool Capa1 = Input.GetKey(touche.Capa1);
+        bool Capa2 = Input.GetKey(touche.Capa2);
 
         // Mettre à jour les états dans l'Animator
-        if (!grimper)
+        //if (!grimper)
         {
             animator.SetBool("isWalking", avancer);
         }
-        if (!grimper)
+        //if (!grimper)
         {
             animator.SetBool("isRunning", courrir);
         }
-        if (!grimper)
+        //if (!grimper)
         {
             animator.SetBool("isJump", sauter);
         }
+
+        
+            animator.SetBool("Capa1", Capa1);
+
+            animator.SetBool("Capa2", Capa2);
+        
      
     }
 
