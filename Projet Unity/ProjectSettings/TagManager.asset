@@ -10,6 +10,7 @@ TagManager:
   - Mob
   - Enemy
   - Ground
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

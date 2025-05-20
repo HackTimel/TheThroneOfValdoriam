@@ -39,6 +39,9 @@ public class MultiAnimationStateController : NetworkBehaviour
         bool courrir = Input.GetKey(touche.sprintKey) && avancer;
         bool grimper = Input.GetKey(KeyCode.E);
         bool sauter = Input.GetKey(touche.jumpKey);
+        bool capa1 = Input.GetKey(KeyCode.A);
+        bool capa2 = Input.GetKey(KeyCode.Mouse1);
+        bool basicattack = Input.GetKey(KeyCode.Mouse0);
 
         // BlendTree (facultatif)
         float targetVelocity = courrir ? maxVelocity : (avancer ? maxVelocity / 2f : 0f);
@@ -51,6 +54,9 @@ public class MultiAnimationStateController : NetworkBehaviour
             animator.SetBool("isWalking", avancer);
             animator.SetBool("isRunning", courrir);
             animator.SetBool("isJump", sauter);
+            animator.SetBool("Capa1", capa1);
+            animator.SetBool("Capa2", capa2);
+            animator.SetBool("Basic Attack", basicattack);
         }
 
         if (Input.GetMouseButtonDown(0))

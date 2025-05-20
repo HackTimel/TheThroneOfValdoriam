@@ -5,12 +5,8 @@ using UnityEngine;
 public class Barre_de_vie : MonoBehaviour
 {
     /* a corriger pour le state text*/
-    public Camera mainCamera;
-
-    void Start()
-    {
-        mainCamera = Camera.main; // récupère la caméra principale au démarrage
-    }
+    public Camera mainCamera; //la cam du prefab pour l'instant
+    
 
     void LateUpdate()
     {
