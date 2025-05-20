@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Netcode;
 
-public class BasePlayer : playermov.PlayerMovement
+public class BasePlayer : playermov.PlayerMovement_solo
 {
     [Header("Player Stats")]
     public string Name;
@@ -47,7 +46,6 @@ public class BasePlayer : playermov.PlayerMovement
 
     public override void Update()
     {
-        if (!IsOwner) return;
         base.Update();
 
         if (!Alive)
@@ -55,12 +53,7 @@ public class BasePlayer : playermov.PlayerMovement
             Debug.Log($"{Name} is dead!");
         }
     }
-
-    public override void FixedUpdate()
-    {
-        if (!IsOwner) return;
-        base.FixedUpdate();
-    }
+    
 
     public void TakeDamage(float damage)
     {

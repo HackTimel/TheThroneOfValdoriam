@@ -10,6 +10,7 @@ public class HealthManager : MonoBehaviour
 
     public float pointdevie_temporaire = 100f; //temporaire car doit être affecté à la classe joueur qui sera bientot implémenté
     [SerializeField] public PlayerManager playerManager;
+    public float maxHealth = 100f; //important selon la classe après
     
     // Start is called before the first frame update
     
