@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class IAManager : MonoBehaviour
      */
     [SerializeField] Image healthBar; //2.13 plus haut
     
+    
     public float pv = 100f;
     
     
@@ -17,15 +19,23 @@ public class IAManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+    }
+
+    private void Update()
+    {
+        if (pv<=0)
+        {
+            if (!CompareTag("Boss"))
+            {
+                Destroy(this.gameObject);
+            }
+           ;  
+        }
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(pv);
-    }
-    
+  
     public void TakeDamage(float damage)
     {
         pv -= damage;

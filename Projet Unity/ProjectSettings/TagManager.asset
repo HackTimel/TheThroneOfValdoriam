@@ -10,7 +10,9 @@ TagManager:
   - Mob
   - Enemy
   - Ground
-  - SpawnPoint
+  - Allie
+  - Player_Finale
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -2672,7 +2672,7 @@ MonoBehaviour:
   drop: {fileID: 1727965124}
   IA_Speed: 10
   drapeau: {fileID: 191442, guid: 20a79b55466cdb84da379ae63fc30867, type: 3}
-  mouvement: {fileID: 2064796583}
+  mouvement: {fileID: 0}
   colliders: []
 --- !u!1 &1845525277
 GameObject:
@@ -3256,17 +3256,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6263559901496225846, guid: 48d6e9ef99632c54998a7c0ba7ff5035, type: 3}
   m_PrefabInstance: {fileID: 427019377}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2064796583 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1590650208934235291, guid: 48d6e9ef99632c54998a7c0ba7ff5035, type: 3}
-  m_PrefabInstance: {fileID: 427019377}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 427019378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8199049812683648b1d42cbd91819c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &2064796586
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3361,13 +3350,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3716999562634666938, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7600809644837535786, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
 --- !u!1001 &5022956460673410503
 PrefabInstance:

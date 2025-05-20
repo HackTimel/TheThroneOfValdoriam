@@ -4803,7 +4803,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2079171045255230699}
   animator: {fileID: 8150864848795041642}
-  player: {fileID: 0}
   walkSpeed: 0
   chaseSpeed: 0
   detectionRadius: 0

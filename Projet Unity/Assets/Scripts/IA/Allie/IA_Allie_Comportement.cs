@@ -71,15 +71,14 @@ public class IA_Allie_Comportement : MonoBehaviour
             agent.speed = IA_Speed;
             agent.SetDestination(direction);
             animator.SetBool("Suivre", true);
-            Debug.Log("Suivre0");
+          
         }
         if (Vector3.Distance(agent.transform.position, player.transform.position) <distance+1 )
         {
-            Debug.Log("Suivre1");
+          
             animator.SetBool("Suivre", false);
         }
-        animator.SetFloat("Speed", agent.velocity.magnitude);
-       
+
        
     }
     public  void ChangeLayer(GameObject obj, int newLayer)
@@ -190,22 +189,28 @@ public class IA_Allie_Comportement : MonoBehaviour
             }
 
             // Si trop proche, attaquer
-            if (distance <= attackRadius && !isAttacking)
+            if (distance <= attackRadius )
             {
-                StartCoroutine(AttackPlayer());
-                agent.SetDestination(transform.position);
-                agent.speed = 0;
+                animator.SetBool("Suivre",false);
+                if (!isAttacking)
+                {
+                    StartCoroutine(AttackPlayer()); 
+                }
+
+  //              agent.SetDestination(transform.position);
+//agent.speed = 0;
             
             }
             // Sinon suivre
-            else if (!isAttacking)
+            else 
             {
                
                 agent.speed = chaseSpeed;
                 agent.SetDestination(obj.transform.position);
+                animator.SetBool("Suivre", true);
+                
                
             }
-            animator.SetFloat("Blend", agent.velocity.magnitude);
         }
         
     }
