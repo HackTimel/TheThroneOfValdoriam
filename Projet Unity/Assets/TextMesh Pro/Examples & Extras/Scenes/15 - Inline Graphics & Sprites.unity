@@ -97,7 +97,11 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
+<<<<<<< HEAD
   m_LightingSettings: {fileID: 4890085278179872738, guid: 477a36fa2c01ca84aafb5d3a306133a4, type: 2}
+=======
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 5144fc84be47928478c84e682a77fdbf, type: 2}
+>>>>>>> Branche-du-Prefab-qui-Marche
 --- !u!196 &5
 NavMeshSettings:
   serializedVersion: 2
@@ -258,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 0.05}
   m_AnchorMax: {x: 0.95, y: 0.95}
-  m_AnchoredPosition: {x: -0.024963379, y: 0}
+  m_AnchoredPosition: {x: -0.024902344, y: 0}
   m_SizeDelta: {x: 0.050049, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323282594

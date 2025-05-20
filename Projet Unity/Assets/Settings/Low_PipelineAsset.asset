@@ -17,7 +17,11 @@ MonoBehaviour:
   m_RendererType: 1
   m_RendererData: {fileID: 0}
   m_RendererDataList:
+<<<<<<< HEAD
   - {fileID: 11400000, guid: 1d2a5b8eb1a302f4f944765ea7a8e11a, type: 2}
+=======
+  - {fileID: 11400000, guid: 873cf600388a2f54aa1244f5b1650da4, type: 2}
+>>>>>>> Branche-du-Prefab-qui-Marche
   m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 0

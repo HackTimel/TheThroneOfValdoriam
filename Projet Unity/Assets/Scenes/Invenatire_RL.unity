@@ -767,12 +767,18 @@ MonoBehaviour:
   _itemSciptRl_current: {fileID: 0}
   Transparent: {fileID: 21300000, guid: 14eaaad4db20fca40a5570e650400a8c, type: 3}
   Drop_Point: {fileID: 836870595}
+<<<<<<< HEAD
   Is_Equip: 0
+=======
+>>>>>>> Branche-du-Prefab-qui-Marche
   Equiper_Point: {fileID: 0}
   equip_panel: {fileID: 0}
   inventaire_slot_RL_EQUIP: {fileID: 0}
   _itemSciptRl_current_EQUIPED: {fileID: 0}
+<<<<<<< HEAD
   Keep_open: 0
+=======
+>>>>>>> Branche-du-Prefab-qui-Marche
   action_Panel_EQUIP: {fileID: 0}
 --- !u!4 &373806821
 Transform:
@@ -1707,6 +1713,8 @@ MonoBehaviour:
   moveBackward: 115
   moveRight: 100
   moveLeft: 97
+  Capa1: 113
+  Capa2: 116
   orientation: {fileID: 235358443}
   rb: {fileID: 660242412}
   readyToJump: 1

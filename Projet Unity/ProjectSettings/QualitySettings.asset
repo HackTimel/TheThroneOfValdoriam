@@ -44,7 +44,11 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
+<<<<<<< HEAD
     customRenderPipeline: {fileID: 11400000, guid: 214ee70d18e34604a9a76257c473f9a9, type: 2}
+=======
+    customRenderPipeline: {fileID: 11400000, guid: 6bc2944863f128f4da6fd1b6ba2f0aae, type: 2}
+>>>>>>> Branche-du-Prefab-qui-Marche
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1
@@ -93,7 +97,11 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
+<<<<<<< HEAD
     customRenderPipeline: {fileID: 11400000, guid: 075ed10e5b5eaf64084b2c3aef939f3f, type: 2}
+=======
+    customRenderPipeline: {fileID: 11400000, guid: e8a81b1ca3a3f4b47989cc44538ce2ed, type: 2}
+>>>>>>> Branche-du-Prefab-qui-Marche
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1
@@ -142,7 +150,11 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
+<<<<<<< HEAD
     customRenderPipeline: {fileID: 11400000, guid: 313c5449cbc348c48be10a100c9b8b9a, type: 2}
+=======
+    customRenderPipeline: {fileID: 11400000, guid: 4a73bbc7bf6f8ad43ab81525f9d83ded, type: 2}
+>>>>>>> Branche-du-Prefab-qui-Marche
     terrainQualityOverrides: 0
     terrainPixelError: 1
     terrainDetailDensityScale: 1

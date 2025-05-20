@@ -97,7 +97,11 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
+<<<<<<< HEAD
   m_LightingSettings: {fileID: 4890085278179872738, guid: 07a7c5df2dbd7ab41b0b00552ffac88e, type: 2}
+=======
+  m_LightingSettings: {fileID: 4890085278179872738, guid: ce224dc0cbfd9714fb580db09c6d5e7a, type: 2}
+>>>>>>> Branche-du-Prefab-qui-Marche
 --- !u!196 &5
 NavMeshSettings:
   serializedVersion: 2

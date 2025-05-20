@@ -10,8 +10,12 @@ TagManager:
   - Mob
   - Enemy
   - Ground
+<<<<<<< HEAD
   - Allie
   - Player_Finale
+=======
+  - Fire
+>>>>>>> Branche-du-Prefab-qui-Marche
   layers:
   - Default
   - TransparentFX
@@ -26,7 +30,11 @@ TagManager:
   - Layer
   - Allies
   - Allies_Comm
+<<<<<<< HEAD
   - Player
+=======
+  - Terrain
+>>>>>>> Branche-du-Prefab-qui-Marche
   - 
   - 
   - 

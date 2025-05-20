@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d2d71548857a17f438e7d17e1bd87d1e
+=======
+guid: 70e95d5c7c0dbeb43a9309110a56ee36
+>>>>>>> Branche-du-Prefab-qui-Marche
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

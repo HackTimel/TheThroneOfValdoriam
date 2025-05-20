@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 214ee70d18e34604a9a76257c473f9a9
+=======
+guid: 6bc2944863f128f4da6fd1b6ba2f0aae
+>>>>>>> Branche-du-Prefab-qui-Marche
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

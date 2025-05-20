@@ -2328,6 +2328,8 @@ MonoBehaviour:
   moveBackward: 115
   moveRight: 100
   moveLeft: 97
+  Capa1: 113
+  Capa2: 116
   orientation: {fileID: 182254746}
   rb: {fileID: 182254747}
   readyToJump: 1
@@ -6574,6 +6576,8 @@ MonoBehaviour:
   moveBackward: 115
   moveRight: 100
   moveLeft: 97
+  Capa1: 113
+  Capa2: 116
   orientation: {fileID: 235358443}
   rb: {fileID: 660242412}
   readyToJump: 1
