@@ -4,7 +4,7 @@ using playermov;
 using Unity.Netcode;
 using UnityEngine;
 
-public class MultiBasePlayer : NetworkBehaviour
+public class MultiBasePlayer : PlayerMovement
 {
     [Header("Player Stats")]
     public string Name;
@@ -19,7 +19,6 @@ public class MultiBasePlayer : NetworkBehaviour
     public float DamageMultiplicator;
     
     
-    public PlayerMovement movement;
 
     [Header("XP System")]
     public Dictionary<int, float> XpDictionary;
@@ -27,14 +26,21 @@ public class MultiBasePlayer : NetworkBehaviour
     void Awake()
     {
         if (!IsOwner) return;
-
-        movement = GetComponent<PlayerMovement>();
+        
+    }
+    public override void OnNetworkSpawn()
+    {
+        if (IsOwner)
+        {
+            Vector3 pos = new Vector3(0, 5, 0); //faire spawn plus haut
+            this.transform.position += pos;
+        }
     }
     void Start()
     {
         if (!IsOwner) return;
 
-        movement.Start();
+        base.Start();
 
         Name = "Hero";
         MaxPv = 100;
@@ -44,7 +50,7 @@ public class MultiBasePlayer : NetworkBehaviour
         Alive = true;
         DamageMultiplicator = 1;
         Lvl = 1;
-        movement.moveSpeed = 5;
+        base.moveSpeed = 5;
 
         XpDictionary = new Dictionary<int, float>
         {
@@ -55,13 +61,13 @@ public class MultiBasePlayer : NetworkBehaviour
             { 5, 800 }
         };
 
-        RespawnPosition = transform.position;
+        //RespawnPosition = transform.position;
     }
 
     public void Update()
     {
         if (!IsOwner) return;
-        movement.Update();
+        base.Update();
 
         if (!Alive)
         {
@@ -72,7 +78,7 @@ public class MultiBasePlayer : NetworkBehaviour
     public  void FixedUpdate()
     {
         if (!IsOwner) return;
-        movement.FixedUpdate();
+        base.FixedUpdate();
     }
 
     public void TakeDamage(float damage)

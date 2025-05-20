@@ -1766,6 +1766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiCanvas: {fileID: 0}
+  playerPrefab: {fileID: 4478480108486210126, guid: 78b0cfbade8492d45bdec795f763f994, type: 3}
 --- !u!114 &1426959702
 MonoBehaviour:
   m_ObjectHideFlags: 0

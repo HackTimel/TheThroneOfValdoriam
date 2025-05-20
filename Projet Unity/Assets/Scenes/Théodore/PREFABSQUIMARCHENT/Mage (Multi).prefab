@@ -313,13 +313,13 @@ PrefabInstance:
       addedObject: {fileID: -9062370495824547917}
     - targetCorrespondingSourceObject: {fileID: 5784536748067655063, guid: a0e753c26133c444c8ba758013c932a9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4548067378752378307}
-    - targetCorrespondingSourceObject: {fileID: 5784536748067655063, guid: a0e753c26133c444c8ba758013c932a9, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2616988417628386803}
     - targetCorrespondingSourceObject: {fileID: 5784536748067655063, guid: a0e753c26133c444c8ba758013c932a9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1322369338781824634}
+    - targetCorrespondingSourceObject: {fileID: 5784536748067655063, guid: a0e753c26133c444c8ba758013c932a9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3840030673051825410}
     - targetCorrespondingSourceObject: {fileID: 3688120439254135257, guid: a0e753c26133c444c8ba758013c932a9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6082185174808938424}
@@ -368,46 +368,6 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &4548067378752378307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4478480108486210126}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a333a2fe5b0eb044fb205ca4e2dbcbfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1.89
-  groundDrag: 0
-  jumpForce: 0
-  jumpCooldown: 0
-  sprintMultiplier: 2.58
-  playerHeight: 0
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  jumpKey: 32
-  sprintKey: 304
-  moveForward: 119
-  moveBackward: 115
-  moveRight: 100
-  moveLeft: 97
-  orientation: {fileID: 983257222685077714}
-  rb: {fileID: 613264460091355785}
-  readyToJump: 1
-  Name: 
-  Pv: 0
-  Mana: 0
-  MaxPv: 0
-  MaxMana: 0
-  Alive: 0
-  Xp: 0
-  Lvl: 0
-  RespawnPosition: {x: 0, y: 0, z: 0}
-  DamageMultiplicator: 0
 --- !u!114 &2616988417628386803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +394,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0edf700be081614ea198d889ce7a6a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
+  groundDrag: 0
+  jumpForce: 0
+  jumpCooldown: 0
+  sprintMultiplier: 1.89
+  playerHeight: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpKey: 32
+  sprintKey: 304
+  moveForward: 119
+  moveBackward: 115
+  moveRight: 100
+  moveLeft: 97
+  orientation: {fileID: 983257222685077714}
+  rb: {fileID: 613264460091355785}
+  readyToJump: 1
   Name: 
   Pv: 0
   Mana: 0
@@ -444,7 +422,37 @@ MonoBehaviour:
   Lvl: 0
   RespawnPosition: {x: 0, y: 0, z: 0}
   DamageMultiplicator: 0
-  movement: {fileID: 4548067378752378307}
+--- !u!114 &3840030673051825410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4478480108486210126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
 --- !u!114 &6239656988545689390 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4104954715822987511, guid: a0e753c26133c444c8ba758013c932a9, type: 3}

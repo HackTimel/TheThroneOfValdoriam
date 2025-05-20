@@ -48,6 +48,7 @@ namespace playermov
 
         public virtual void Start()
         {
+            if (!IsOwner) return;
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
             rb.interpolation = RigidbodyInterpolation.Interpolate;

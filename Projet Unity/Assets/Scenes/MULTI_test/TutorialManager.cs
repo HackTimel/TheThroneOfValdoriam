@@ -6,6 +6,7 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     public GameObject uiCanvas;
+    public GameObject playerPrefab;
 
     public void StartClient(){
         NetworkManager.Singleton.StartClient();
@@ -13,6 +14,13 @@ public class TutorialManager : MonoBehaviour
         {
             uiCanvas.SetActive(false); // Cache le Canvas
         }
+        NetworkManager.Singleton.OnClientConnectedCallback += (id) =>
+        {
+            if (NetworkManager.Singleton.LocalClientId == id)
+            {
+                Debug.Log("Client connecté");
+            }
+        };
     }
 
     public void StartHost(){
