@@ -6,9 +6,10 @@ public class Degat_ennemi : MonoBehaviour
 {
     public int damageAmount = 10; //degat exemple
     [SerializeField] public GameObject Health;
+    [SerializeField] public IAManager Health0;
 
     
-    private void OnTriggerEnter(Collider other)
+    public  void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -18,5 +19,14 @@ public class Degat_ennemi : MonoBehaviour
                 playerHealthScript.TakeDamage(damageAmount);
             }
         }
+        if (other.CompareTag("Allie"))
+        {
+            Health0 = other.GetComponent<IAManager>(); //alors je choppe son instance de IAManager
+            if (Health0 != null)
+            {
+                Health0.TakeDamage(damageAmount); //et boom dégâts
+            }
+        }
+        
     }
 }

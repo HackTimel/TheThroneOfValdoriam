@@ -149,7 +149,6 @@ public class EnemyAI : MonoBehaviour
     {
        
         Transform player6 = detection();
-        Debug.Log("Poursuite");
         if (Vector3.Distance(player6.position, transform.position) < detectionRadius)
         {
            
@@ -176,15 +175,16 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            textElement.text= "ZZZ";
-            textElement.color = Color.white;
-            agent.updateRotation = true;
+         
             // Le joueur n'est plus vu
+            agent.updateRotation = true;
             timeSinceLastSeen += Time.deltaTime;
 
             if (timeSinceLastSeen > maxLostTime)
             {
                 // Le joueur est perdu de vue, retour à la patrouille
+                textElement.text= "ZZZ";
+                textElement.color = Color.white;
                 poursuite = false;
                 is_poursuite = false;
                 suspect0 = false;
@@ -218,7 +218,7 @@ public class EnemyAI : MonoBehaviour
         textElement.color = Color.yellow;
         Debug.Log("Suspect");
 
-        float followTime = 10f; // Durée pendant laquelle l'ennemi suit le joueur en mode suspect
+        float followTime = 5f; // Durée pendant laquelle l'ennemi suit le joueur en mode suspect
         float timer = 0f;
 
         agent.speed = walkSpeed;

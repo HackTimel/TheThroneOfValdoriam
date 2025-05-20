@@ -8924,6 +8924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 10
   Health: {fileID: 1674857231}
+  Health0: {fileID: 0}
 --- !u!1001 &1120165568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37727,6 +37728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 10
   Health: {fileID: 1674857231}
+  Health0: {fileID: 0}
 --- !u!1 &1419693058
 GameObject:
   m_ObjectHideFlags: 0

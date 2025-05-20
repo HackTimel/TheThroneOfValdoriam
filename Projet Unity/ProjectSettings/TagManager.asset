@@ -10,6 +10,8 @@ TagManager:
   - Mob
   - Enemy
   - Ground
+  - Allie
+  - Player_Finale
   layers:
   - Default
   - TransparentFX

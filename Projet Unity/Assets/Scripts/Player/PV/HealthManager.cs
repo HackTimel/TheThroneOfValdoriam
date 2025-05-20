@@ -38,7 +38,7 @@ public class HealthManager : MonoBehaviour
 
         if (pointdevie_temporaire <= 0) //cas de mort. (Temporaire car nocheckpoint)
         {
-            SceneManager.LoadScene("Level1");
+           
             pointdevie_temporaire = 100f;
             healthBar.fillAmount = pointdevie_temporaire / 100f;
         }
