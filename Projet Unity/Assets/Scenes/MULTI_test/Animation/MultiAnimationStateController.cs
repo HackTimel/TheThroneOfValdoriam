@@ -1,75 +1,70 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;using Cinemachine; // N'oublie pas d'importer Cinemachine
-using playermov;
+using UnityEngine;
 using Unity.Netcode;
-
+using playermov;
+using Unity.Netcode.Components;
 
 public class MultiAnimationStateController : NetworkBehaviour
 {
-    
     public Animator animator;
-    MultiBasePlayer touche;
-    private bool is_Attacking;
+    public MultiBasePlayer touche;
     public float attack_Delay;
     public GameObject mage;
-    
 
-    // Start is called before the first frame update
+    private bool is_Attacking;
+    private float velocity;
+
+    public float acceleration = 0.1f;
+    public float deceleration = 0.5f;
+    public float maxVelocity = 1f;
+
     void Start()
     {
+        var netAnim = mage.GetComponent<NetworkAnimator>();
+        if (netAnim.Animator == animator)
+        {
+            Debug.Log("Animator match !");
+        }
+
         if (!IsOwner) return;
         if (animator == null) animator = GetComponent<Animator>();
         if (touche == null) touche = GetComponent<MultiBasePlayer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (IsOwner)
+        if (!IsOwner) return;
+
+        bool avancer = Input.GetKey(touche.devant) || Input.GetKey(touche.gauche) || Input.GetKey(touche.droite) || Input.GetKey(touche.derriere);
+        bool courrir = Input.GetKey(touche.sprintKey) && avancer;
+        bool grimper = Input.GetKey(KeyCode.E);
+        bool sauter = Input.GetKey(touche.jumpKey);
+
+        // BlendTree (facultatif)
+        float targetVelocity = courrir ? maxVelocity : (avancer ? maxVelocity / 2f : 0f);
+        velocity = Mathf.MoveTowards(velocity, targetVelocity, (targetVelocity > velocity ? acceleration : deceleration) * Time.deltaTime);
+        animator.SetFloat("Velocity", velocity); // BlendTree, si tu l'utilises
+
+        // Paramètres directs pour transitions booléennes
+        if (!grimper)
         {
-            // input local
-            bool avancer = Input.GetKey(touche.devant) || Input.GetKey(touche.gauche) || Input.GetKey(touche.droite) || Input.GetKey(touche.derriere);
-            bool courrir = Input.GetKey(touche.sprintKey) && avancer;
-            bool grimper = Input.GetKey(KeyCode.E);
-            bool sauter = Input.GetKey(touche.jumpKey);
-
-            // envoyer anims réseau
-            if (!grimper)
-            {
-                animator.SetBool("isWalking", avancer);
-                animator.SetBool("isRunning", courrir);
-                animator.SetBool("isJump", sauter);
-            }
+            animator.SetBool("isWalking", avancer);
+            animator.SetBool("isRunning", courrir);
+            animator.SetBool("isJump", sauter);
         }
-     
-    }
 
-    public void Attack_player0()
-    {
-        if (IsOwner && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             StartCoroutine(Attack());
         }
     }
+
     IEnumerator Attack()
     {
         is_Attacking = true;
-    
-     
-
-    
         animator.SetTrigger("Attack");
-    
         yield return new WaitForSeconds(attack_Delay);
-    
-        
-       
-
-      
         is_Attacking = false;
     }
-  
-    
-    
 }
+
