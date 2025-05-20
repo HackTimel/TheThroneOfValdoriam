@@ -5682,15 +5682,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7915605989744577472, guid: a0e753c26133c444c8ba758013c932a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.01
+      value: 48.24
       objectReference: {fileID: 0}
     - target: {fileID: 7915605989744577472, guid: a0e753c26133c444c8ba758013c932a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6.4799995
       objectReference: {fileID: 0}
     - target: {fileID: 7915605989744577472, guid: a0e753c26133c444c8ba758013c932a9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.6
+      value: 55.410004
       objectReference: {fileID: 0}
     - target: {fileID: 7915605989744577472, guid: a0e753c26133c444c8ba758013c932a9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5805,7 +5805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2896355494
+  GlobalObjectIdHash: 692564280
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -5912,9 +5912,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 100
+  currentHealth:
+    m_InternalValue: 100
   healthBar: {fileID: 9023177280341819162}
-  deathEffectPrefab: {fileID: 5637636186511770475}
   spawnPoint: {fileID: 0}
   model: {fileID: 1924784333495487750}
   delay: 0
