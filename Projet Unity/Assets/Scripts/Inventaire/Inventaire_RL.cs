@@ -49,7 +49,7 @@ public class Inventaire_RL : MonoBehaviour
     void Start()
     {
         inventoryPanel.SetActive(false);
-        LockCursor(); // S'assurer que le jeu commence avec le curseur caché
+        
     }
 
     void LockCursor()
