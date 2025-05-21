@@ -12,7 +12,7 @@ public class MultiCam : NetworkBehaviour
 
     public GameObject target; //ce qu'on veut regarder
 
-    void Start()
+    public override void OnNetworkSpawn()//void Start()
     {
         if (IsOwner)
         {

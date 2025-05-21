@@ -7,17 +7,28 @@ public class TutorialManager : MonoBehaviour
 {
     
     public GameObject playerPrefab;
-
-    public void StartClient(){
-        NetworkManager.Singleton.StartClient();
-        
+    private void Start()
+    {
         NetworkManager.Singleton.OnClientConnectedCallback += (id) =>
         {
             if (NetworkManager.Singleton.LocalClientId == id)
             {
-                Debug.Log("Client connecté");
+                Debug.Log("✅ Client connecté !");
             }
         };
+
+        NetworkManager.Singleton.OnClientDisconnectCallback += (id) =>
+        {
+            if (NetworkManager.Singleton.LocalClientId == id)
+            {
+                Debug.LogWarning("❌ Client déconnecté !");
+            }
+        };
+    }
+
+    public void StartClient(){
+        NetworkManager.Singleton.StartClient();
+        Debug.Log("censé etre co la");
     }
 
     public void StartHost(){

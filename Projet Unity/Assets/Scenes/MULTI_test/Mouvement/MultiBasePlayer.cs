@@ -22,15 +22,10 @@ public class MultiBasePlayer : PlayerMovement
 
     [Header("XP System")]
     public Dictionary<int, float> XpDictionary;
-
-    void Awake()
-    {
-        if (!IsOwner) return;
-        
-    }
+    
     public override void OnNetworkSpawn()
     {
-        
+        if (!IsOwner) return;
         if (IsOwner)
         {
             /*Vector3 Position = new Vector3(48,7,71);

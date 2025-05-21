@@ -13,7 +13,7 @@ public class MultiPlayerPlayer : NetworkBehaviour
 
     [SerializeField] Image healthBar;
 
-    public Transform spawnPoint;
+    //public Transform spawnPoint;
     public GameObject model;
     public int delay;
     public bool dead;
@@ -25,11 +25,12 @@ public class MultiPlayerPlayer : NetworkBehaviour
 
     private void Start()
     {
-        spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint")?.transform;
-        if (spawnPoint == null)
+        //spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint")?.transform;
+        /*if (spawnPoint == null)
         {
             Debug.LogWarning("No Spawn Point");
         }
+        */
 
         // update l'UI quand la value changes
         currentHealth.OnValueChanged += (oldValue, newValue) =>
@@ -125,7 +126,7 @@ public class MultiPlayerPlayer : NetworkBehaviour
 
     public void Respawn()
     {
-        transform.position = spawnPoint.position;
+        //transform.position = spawnPoint.position;
         currentHealth.Value = maxHealth;
         SetModelActiveClientRpc(true); //tout le monde voit le respawn
         SetParticuleActiveClientRpc(false);
