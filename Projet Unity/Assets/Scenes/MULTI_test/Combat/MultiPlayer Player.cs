@@ -17,6 +17,11 @@ public class MultiPlayerPlayer : NetworkBehaviour
     public GameObject model;
     public int delay;
     public bool dead;
+    public GameObject Particule;
+    public GameObject LightSource;
+    public GameObject touché;
+    public int Delay2;
+    public bool hit;
 
     private void Start()
     {
@@ -30,6 +35,7 @@ public class MultiPlayerPlayer : NetworkBehaviour
         currentHealth.OnValueChanged += (oldValue, newValue) =>
         {
             healthBar.fillAmount = newValue / maxHealth;
+            HitClientRpc();
         };
     }
 
@@ -69,6 +75,17 @@ public class MultiPlayerPlayer : NetworkBehaviour
                 Respawn();
             }
         }
+        if(hit)
+        {
+            if (Delay2 % 200 == 0)
+            {
+                Delay2 = 0;
+                hit = false;
+                hitnoneClientRpc();
+            }
+        }
+
+        
     }
     
     [ClientRpc]
@@ -77,9 +94,33 @@ public class MultiPlayerPlayer : NetworkBehaviour
         model.SetActive(isActive);
     }
 
+    [ClientRpc]
+    void SetParticuleActiveClientRpc(bool isActive)
+    {
+        Particule.SetActive(isActive);
+        LightSource.SetActive(isActive);
+    }
+    [ClientRpc]
+    public void HitClientRpc()
+    {
+        if(hit == false)
+        {
+        touché.SetActive(true);
+        hit = true;
+        }
+    }
+
+    [ClientRpc]
+    void hitnoneClientRpc()
+    {
+        touché.SetActive(false);
+    }
+
     public void Death()
     {
         SetModelActiveClientRpc(false); //tout le monde voit la mort
+        SetParticuleActiveClientRpc(true);
+
     }
 
     public void Respawn()
@@ -87,5 +128,6 @@ public class MultiPlayerPlayer : NetworkBehaviour
         transform.position = spawnPoint.position;
         currentHealth.Value = maxHealth;
         SetModelActiveClientRpc(true); //tout le monde voit le respawn
+        SetParticuleActiveClientRpc(false);
     }
 }

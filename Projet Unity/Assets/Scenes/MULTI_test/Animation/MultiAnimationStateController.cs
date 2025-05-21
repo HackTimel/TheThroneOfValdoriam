@@ -39,7 +39,7 @@ public class MultiAnimationStateController : NetworkBehaviour
         bool courrir = Input.GetKey(touche.sprintKey) && avancer;
         bool grimper = Input.GetKey(KeyCode.E);
         bool sauter = Input.GetKey(touche.jumpKey);
-        bool capa1 = Input.GetKey(KeyCode.A);
+        bool capa1 = Input.GetKey(KeyCode.Q);
         bool capa2 = Input.GetKey(KeyCode.Mouse1);
         bool basicattack = Input.GetKey(KeyCode.Mouse0);
 

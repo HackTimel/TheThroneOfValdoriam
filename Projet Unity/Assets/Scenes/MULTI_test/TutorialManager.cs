@@ -5,15 +5,12 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
-    public GameObject uiCanvas;
+    
     public GameObject playerPrefab;
 
     public void StartClient(){
         NetworkManager.Singleton.StartClient();
-        if (uiCanvas != null)
-        {
-            uiCanvas.SetActive(false); // Cache le Canvas
-        }
+        
         NetworkManager.Singleton.OnClientConnectedCallback += (id) =>
         {
             if (NetworkManager.Singleton.LocalClientId == id)
@@ -28,9 +25,6 @@ public class TutorialManager : MonoBehaviour
             Camera.main.gameObject.SetActive(false);
 
         NetworkManager.Singleton.StartHost();
-        if (uiCanvas != null)
-        {
-            uiCanvas.SetActive(false); // Cache le Canvas
-        }
+        
     }
 }

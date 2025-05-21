@@ -30,6 +30,7 @@ public class EpeeDegat_Multi : NetworkBehaviour
         }
     }
 
+    
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger");

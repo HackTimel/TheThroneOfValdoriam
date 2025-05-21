@@ -30,11 +30,18 @@ public class MultiBasePlayer : PlayerMovement
     }
     public override void OnNetworkSpawn()
     {
+        
         if (IsOwner)
         {
-            Vector3 pos = new Vector3(0, 5, 0); //faire spawn plus haut
-            this.transform.position += pos;
+            /*Vector3 Position = new Vector3(48,7,71);
+            transform.position = Position;*/
+
+            Vector3 pos = new Vector3(48, 8, 65); //faire spawn plus haut
+            this.transform.position = pos;
         }
+        
+
+        
     }
     void Start()
     {
@@ -64,6 +71,7 @@ public class MultiBasePlayer : PlayerMovement
         //RespawnPosition = transform.position;
     }
 
+    
     public void Update()
     {
         if (!IsOwner) return;
