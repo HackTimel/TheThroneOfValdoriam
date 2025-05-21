@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PorteSys : MonoBehaviour
+public class pORTEbIS3 : MonoBehaviour
 {
-    [SerializeField] public GameObject Player;
+     [SerializeField] public GameObject Player;
      [SerializeField] public float Distance;
-     public bool porte_baisser = false;
+     public bool porte_baisser03 = false;
      [SerializeField] public GameObject Monter;
      [SerializeField] public GameObject Baisser;
      [SerializeField] public GameObject Monter0;
@@ -21,20 +21,21 @@ public class PorteSys : MonoBehaviour
     {
        
         Ouverture_Port();
-        if (porte_baisser)
+        if (porte_baisser03)
         {
-            Quetes2.porte_baisser0 = true;
+            Quetes2.porte_baisser1 = true;
         }
         else
         {
-            Quetes2.porte_baisser0 = false;
+            Quetes2.porte_baisser1 = false;
         }
     }
     public void Ouverture_Port()
     {
         if (Vector3.Distance(Player.transform.position, Localisation.transform.position) < Distance)
         {
-            if (!porte_baisser)
+            Debug.Log("Ca marche");
+            if (!porte_baisser03)
             {
            
                 Monter0.SetActive(true);
@@ -43,7 +44,7 @@ public class PorteSys : MonoBehaviour
                 {
                     Debug.Log("B"+Quetes2.porte_baisser0);
                   
-                    porte_baisser = true;
+                    porte_baisser03 = true;
                     Debug.Log("C"+Quetes2.porte_baisser0);
                     Vector3 position = PorteGameObject.transform.position;
                     position.y = -0.7f; 
@@ -62,7 +63,7 @@ public class PorteSys : MonoBehaviour
                 if(Input.GetKeyDown(KeyCode.B))
                 {
                 
-                    porte_baisser = false;
+                    porte_baisser03 = false;
                     Vector3 position = PorteGameObject.transform.position;
                     position.y = 4.7f; 
                     PorteGameObject.transform.position = position;
@@ -80,5 +81,4 @@ public class PorteSys : MonoBehaviour
             Baisser0.SetActive(false);
         }
     }
-    
 }

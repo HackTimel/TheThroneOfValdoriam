@@ -19,6 +19,7 @@ public class Quets : MonoBehaviour
      [SerializeField] public GameObject Boss;
     public bool Passer_porte = false;  
     public bool porte_baisser0 = false;
+    public bool porte_baisser1 = false;
     public bool porte_passer2 = false;
     [SerializeField] public GameObject PorteSysGameObject;
     public bool est_mort = false;
@@ -36,6 +37,9 @@ public class Quets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // Debug.Log(Passer_porte+"A");
+        //Debug.Log(porte_baisser0+"b");
+        
         if (fin_quetes1)
         {
             activation_Quets = true;
@@ -60,6 +64,11 @@ public class Quets : MonoBehaviour
         if (Etape4)
         {
             Quetes_Fuite_Etape_4();
+        }
+
+        if (Etape5)
+        {
+            Quetes_Fuite_Etape_5();
         }
        
     }
@@ -115,8 +124,19 @@ public class Quets : MonoBehaviour
 
     public void Quetes_Fuite_Etape_4()
     {
-        Debug.Log("Etape4");
+       
         Destroy(Boss);
         texte.text = "Pour sauver la ville noter le code dans le chateau,et utilise le pour fermer la porte du second rempart";
+        if (porte_baisser1)
+        {
+            Etape4= false;
+            Etape5 = true;
+            
+        }
+    }
+
+    public void Quetes_Fuite_Etape_5()
+    {
+        texte.text = "Fin De Quetes";
     }
 }
