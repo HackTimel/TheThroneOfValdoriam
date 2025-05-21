@@ -4,7 +4,7 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseScript : MonoBehaviour
+public class MultiPauseScript : MonoBehaviour
 {
 
     [SerializeField]public GameObject pauseMenu; 
@@ -13,9 +13,6 @@ public class PauseScript : MonoBehaviour
     public static bool paused = false; //permet à la touche échap de pouvoir entrer et quitter le menu pause et static permet d'avoir son statut pour arreter correctement les inputs du jeu
     
     public GameObject optionsMenuContainer ;//=  GameObject.Find("OptionsMenuContainer"); // objet à afficher (OptionsMenuContainer)
-    private bool isOptionsMenuVisible = false; //menu au debut fermé.
-    public GameObject Inventaire;
-    public bool InventaireActive = false;
     
     
     void Start()
@@ -23,7 +20,7 @@ public class PauseScript : MonoBehaviour
         optionsMenuContainer =  GameObject.Find("OptionsMenuContainer"); // objet à afficher (OptionsMenuContainer)
         pauseMenu.SetActive(false); //rend l'objet inactif aka le menu pause au démarrage (on commence pas en pause)
         //PauseMenuSound.Instance.PlayMusic("Level1");
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked; dans l'original c'est le cas mais la on a besoin de pouvoir séléctionner le mode
     }
 
     // Update is called once per frame
@@ -48,10 +45,7 @@ public class PauseScript : MonoBehaviour
     {
         pauseMenu.SetActive(true); //rend l'objet menu actif (on voit les options)
         paused = true;
-        Time.timeScale = 0; //on freeze le jeu
-        Inventaire_RL inventaire = Inventaire.GetComponent<Inventaire_RL>();
-        InventaireActive = inventaire.Keep_open;
-        inventaire.Close_inventory();
+        //Time.timeScale = 0; //on freeze le jeu
         UnlockCursor();
     }
 
@@ -59,40 +53,11 @@ public class PauseScript : MonoBehaviour
     {
         LockCursor();
         pauseMenu.SetActive(false);
-        Time.timeScale = 1; //on remet les pendules à l'heure.
+        //Time.timeScale = 1; //on remet les pendules à l'heure.
         paused = false;
-        if (InventaireActive)
-        {
-            Inventaire_RL inventaire = Inventaire.GetComponent<Inventaire_RL>();
-            inventaire.Open_inventory();
-        }
        
     }
-
-    public void Options() //explicite pour les autres et pour l'inspector
-    {
-        ToggleOptionsMenu();
-    }
     
-    public void ToggleOptionsMenu() //en cours
-    {
-        if (!isOptionsMenuVisible)
-        {
-            // charger la scène "MainMenu" en mode additive (remplace pas la scène actuelle)
-            SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
-            
-            //on trouve l'objet "OptionsMenuContainer" dans la scène "MainMenu"
-            optionsMenuContainer.SetActive(true); // Afficher l'objet dans la scène
-            isOptionsMenuVisible = true;
-        }
-        else
-        {
-            // masquer l'objet et éventuellement décharger la scène "MainMenu"
-            optionsMenuContainer.SetActive(false);
-            SceneManager.UnloadSceneAsync("MainMenu"); // decharger la scène si elle n'est plus nécessaire PEUT POSER SOUCIS
-            isOptionsMenuVisible = false;
-        }
-    }
 
 
     public void GoMenu()

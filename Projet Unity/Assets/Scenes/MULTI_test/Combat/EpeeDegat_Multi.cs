@@ -22,7 +22,7 @@ public class EpeeDegat_Multi : NetworkBehaviour
         if (hit)
         {
             delay++;
-            if (delay % 200 == 0)
+            if (delay % 50 == 0)
             {
                 delay = 0;
                 hit = false;

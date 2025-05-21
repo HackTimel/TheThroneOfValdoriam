@@ -13,6 +13,8 @@ public class MultiPlayerPlayer : NetworkBehaviour
 
     [SerializeField] Image healthBar;
 
+    private bool firsthit = true;
+
     //public Transform spawnPoint;
     public GameObject model;
     public int delay;
@@ -45,7 +47,9 @@ public class MultiPlayerPlayer : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        currentHealth.Value -= damage;
+        if (!firsthit) currentHealth.Value -= damage;
+        
+        else firsthit = false;
     }
 
     [ServerRpc]

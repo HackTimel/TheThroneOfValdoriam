@@ -29,6 +29,7 @@ public class TutorialManager : MonoBehaviour
     public void StartClient(){
         NetworkManager.Singleton.StartClient();
         Debug.Log("censé etre co la");
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void StartHost(){
@@ -36,6 +37,6 @@ public class TutorialManager : MonoBehaviour
             Camera.main.gameObject.SetActive(false);
 
         NetworkManager.Singleton.StartHost();
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
