@@ -50,7 +50,7 @@ public class Assassin : MonoBehaviour
         }
 
         // Invisibility input
-        if (Input.GetKeyDown(KeyCode.I) && !isInvisible)
+        if (Input.GetKeyDown(KeyCode.Q) && !isInvisible)
         {
             StartCoroutine(BecomeInvisible());
         }
