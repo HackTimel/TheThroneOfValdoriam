@@ -7,7 +7,6 @@ public class butondesabled : MonoBehaviour
 {
     public GameObject mageButton;
     public GameObject guerrierButton;
-    public GameObject commandButton;
     public GameObject voleurButton;
     public GameObject retour;
 
@@ -21,7 +20,6 @@ public class butondesabled : MonoBehaviour
         Debug.Log("Boutons désactivés !");
         mageButton.SetActive(false);
         guerrierButton.SetActive(false);
-        commandButton.SetActive(false);
         voleurButton.SetActive(false);
         retour.SetActive(false);
     }
