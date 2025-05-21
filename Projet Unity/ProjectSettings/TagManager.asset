@@ -13,6 +13,7 @@ TagManager:
   - Allie
   - Player_Finale
   - Boss
+  - Invisible
   layers:
   - Default
   - TransparentFX
