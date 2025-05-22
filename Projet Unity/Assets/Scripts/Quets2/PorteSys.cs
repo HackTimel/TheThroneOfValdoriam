@@ -19,6 +19,7 @@ public class PorteSys : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         Ouverture_Port();
         if (porte_baisser)
         {

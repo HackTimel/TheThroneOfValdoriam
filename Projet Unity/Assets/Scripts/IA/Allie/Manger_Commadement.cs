@@ -21,7 +21,7 @@ public class Manger_Commadement : MonoBehaviour
     public GameObject allies1_Current;
     [SerializeField] public GameObject action_panel0;
     [SerializeField]public GameObject commandeGameObjectPanel;
-    private bool isCursorLocked = true;
+    private bool isCursorLocked = true; 
     public GameObject panelactivation;
     [SerializeField]public static Manger_Commadement instance0;
     [SerializeField] public float distance;
@@ -30,7 +30,7 @@ public class Manger_Commadement : MonoBehaviour
     private bool suivre = false;
     [SerializeField] public GameObject drapeau;
     private bool active;
-    [SerializeField] public BasePlayers mouvement;
+    [SerializeField] public BasePlayer mouvement;
     private bool activation;
     private GameObject val;
     public Collider[] colliders;
@@ -49,7 +49,7 @@ public class Manger_Commadement : MonoBehaviour
     }
     public void Update()
     {
-        recherche();
+        recherche(); 
         ajout();
         if (Input.GetKeyDown(KeyCode.C))
         {
