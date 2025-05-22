@@ -15,6 +15,18 @@ public class BasePlayer : playermov.PlayerMovement_solo
     public Vector3 RespawnPosition;
     public float DamageMultiplicator;
 
+    //inventaire
+    public GameObject equip_point;
+    public GameObject drop_point; 
+    public Inventaire_RL Inventaire_RL;
+    
+    //musique
+    
+    public MusicZone[] music_zones;
+    public MusicManager audio_manager;
+    
+    
+
     [Header("XP System")]
     public Dictionary<int, float> XpDictionary;
 
@@ -42,6 +54,17 @@ public class BasePlayer : playermov.PlayerMovement_solo
         };
 
         RespawnPosition = transform.position;
+
+        Inventaire_RL.Equiper_Point = equip_point.transform;
+        Inventaire_RL.Drop_Point = drop_point.transform;
+        AudioSource source = GetComponent<AudioSource>();
+        audio_manager.musicSource = source;
+
+        foreach (MusicZone VARIABLE in music_zones)
+        {
+            VARIABLE.audioSource = source;
+        }
+       
     }
 
     public override void Update()

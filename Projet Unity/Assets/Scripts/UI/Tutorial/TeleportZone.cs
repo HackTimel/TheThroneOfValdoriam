@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class TeleportZone: MonoBehaviour
 {
@@ -8,6 +10,12 @@ public class TeleportZone: MonoBehaviour
     public GameObject teleportZone; // l'autre destination
     public bool teleportZoneOn;
     public int compteur;
+
+    public GameObject panel_de_chargement;
+    
+    public int chargement;
+    
+    public bool chargementOn;
     void Start()
     {
         
@@ -21,13 +29,16 @@ public class TeleportZone: MonoBehaviour
         if (other.CompareTag("Player") && teleportZoneOn)
         {
             Debug.Log("contact");
-            CharacterController controller = other.GetComponent<CharacterController>();
+            /*CharacterController controller = other.GetComponent<CharacterController>();
             controller.enabled = false;
             other.transform.position = teleportZone.transform.position;
             controller.enabled = true;
-            //other.transform.root.position = teleportZone.transform.position;
+            */
+            other.transform.root.position = teleportZone.transform.position;
             TeleportZone teleportZoneScript = teleportZone.GetComponent<TeleportZone>();
             teleportZoneScript.teleportZoneOn = false;
+            chargementOn = true;
+            panel_de_chargement.SetActive(true);
         }
     }
 
@@ -40,6 +51,17 @@ public class TeleportZone: MonoBehaviour
             {
                 teleportZoneOn = true;
                 compteur = 0;
+            }
+        }
+
+        if (chargementOn)
+        {
+            chargement++;
+            if (chargement % 200 == 0)
+            {
+                chargementOn = false;
+                chargement = 0;
+                panel_de_chargement.SetActive(false);
             }
         }
     }

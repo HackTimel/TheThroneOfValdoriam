@@ -15,15 +15,9 @@ public class Level1 : MonoBehaviour
     public bool last_Isover = false;
 
     public int instrcution_index;
-    public string[] liste_tuto =
-    {
-        "Pour avancer, appuie sur la touche z",
-        "Super, maintenant recule avec s",
-        "Ensuite à droite avec d",
-        "Et enfin à gauche avec q",
-        "Devant toi, cette chose... c'est un ennemi, attaque le avec clic gauche !",
-        "Bon, on dirait que j'ai plus besoin de t'apprendre quoique ce soit, libère les villagois, et bon courage..."
-    };
+    public string[] liste_tuto;
+
+    public DummySound dummy;
 
     public string next_instruction
     {
@@ -41,7 +35,15 @@ public class Level1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        liste_tuto = new[]
+        {
+            "Pour avancer, appuie sur la touche Z",
+            "Super, maintenant recule avec S",
+            "Ensuite à droite avec D",
+            "Et enfin à gauche avec Q",
+            "Devant toi, cette chose... c'est un ennemi, débarasses toi en avec CLIC GAUCHE, CLIC DROIT, A ou T!",
+            "Bon, on dirait que j'ai plus besoin de t'apprendre quoique ce soit, traverse la grande porte, et bon courage..."
+        };
     }
 
     // Update is called once per frame
@@ -90,7 +92,7 @@ public class Level1 : MonoBehaviour
         }
         if (instrcution_index == 4)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (dummy.death)
             {
                 instructions.text = next_instruction;
             }

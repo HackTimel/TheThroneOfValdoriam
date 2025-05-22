@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6011993460508346559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6140971456156189393}
+  m_Layer: 0
+  m_Name: drop-point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6140971456156189393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6011993460508346559}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.737, z: 0.567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8337416680638350123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7513198964965762719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2527427549619898744}
+  m_Layer: 0
+  m_Name: equip_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2527427549619898744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7513198964965762719}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3521733901672139982}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &178475047637063617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,9 +120,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3649503733021399823, guid: b7293800465b0d447a734dcb413d0190, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2527427549619898744}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7293800465b0d447a734dcb413d0190, type: 3}
+--- !u!4 &3521733901672139982 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3649503733021399823, guid: b7293800465b0d447a734dcb413d0190, type: 3}
+  m_PrefabInstance: {fileID: 178475047637063617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7551685976512881574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7689589044379186279, guid: b7293800465b0d447a734dcb413d0190, type: 3}
@@ -76,7 +146,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9062370495824547917, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3142936099
+      value: 594271298
       objectReference: {fileID: 0}
     - target: {fileID: 268507190368875545, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       propertyPath: m_LocalPosition.x
@@ -150,6 +220,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Assasin LeBon
       objectReference: {fileID: 0}
+    - target: {fileID: 4548067378752378307, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
+      propertyPath: drop_point
+      value: 
+      objectReference: {fileID: 6011993460508346559}
+    - target: {fileID: 4548067378752378307, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
+      propertyPath: equip_point
+      value: 
+      objectReference: {fileID: 7513198964965762719}
     - target: {fileID: 5924826723156092828, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -214,6 +292,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 268507190368875545, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       insertIndex: 2
       addedObject: {fileID: 7551685976512881574}
+    - targetCorrespondingSourceObject: {fileID: 268507190368875545, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6140971456156189393}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4478480108486210126, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       insertIndex: -1

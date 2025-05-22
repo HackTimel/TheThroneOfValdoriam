@@ -20,20 +20,19 @@ public class Inventaire_RL : MonoBehaviour
     private bool isCursorLocked = true;
     public static Inventaire_RL instance;
     [SerializeField] private GameObject action_Panel;
-    [SerializeField] private GameObject Poser;
     [SerializeField] private GameObject Equiper_Arme;
     [SerializeField] private GameObject Detruire;
     [SerializeField] private GameObject Consommer;
     public Item_Scipt_RL _itemSciptRl_current; //public pour debug
     [SerializeField] public Sprite Transparent;
-     [SerializeField] private Transform Drop_Point;
+     [SerializeField] public Transform Drop_Point;
      
      /*
       Champs pour le système d'équipement
       */
 
      public bool Is_Equip; //permet de savoir si on effectue les actions depuis le slot "équipé"
-     [SerializeField] private Transform Equiper_Point;
+     [SerializeField] public Transform Equiper_Point;
      [SerializeField] private GameObject equip_panel; //pour l activer quand on équipe un objet
      public Transform inventaire_slot_RL_EQUIP;
      public Item_Scipt_RL _itemSciptRl_current_EQUIPED;
@@ -233,6 +232,7 @@ public class Inventaire_RL : MonoBehaviour
         
         GameObject instantiate = Instantiate(_itemSciptRl_current.prefab); 
         instantiate.transform.position = Drop_Point.position;
+        instantiate.layer = LayerMask.NameToLayer("Item0"); //pour pouvoir le ramasser
         content.Remove(_itemSciptRl_current);
         Refresh_content_RL();
         Close_Action_Panel();
@@ -257,7 +257,7 @@ public class Inventaire_RL : MonoBehaviour
         instantiate.transform.SetParent(Equiper_Point, false);
         
         instantiate.transform.localPosition = Vector3.zero;
-        instantiate.transform.localRotation = Quaternion.Euler(240f, 0f, 0f);
+        instantiate.transform.localRotation = Quaternion.Euler(-45f, 0f, -120f);
         instantiate.layer = LayerMask.NameToLayer("Default"); //pour évter de pouvoir le ramasser
         
         

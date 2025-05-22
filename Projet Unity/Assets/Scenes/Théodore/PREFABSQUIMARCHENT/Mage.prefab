@@ -31,6 +31,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3101820356557163112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3994818474601412262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7140876739434620553}
+  m_Layer: 0
+  m_Name: Equip point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7140876739434620553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3994818474601412262}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000084750305, y: 0.00000020489084, z: 0.00000017241099, w: 1}
+  m_LocalPosition: {x: 0.000028333694, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8944583025061533832}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7108853048717428901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -186,6 +217,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5308715921138451149, guid: 1fff79988e2068c4eaff689f3b0b5f1a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7895132707616289343}
+    - targetCorrespondingSourceObject: {fileID: 2199501474550599725, guid: 1fff79988e2068c4eaff689f3b0b5f1a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7140876739434620553}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8373164994895873178, guid: 1fff79988e2068c4eaff689f3b0b5f1a, type: 3}
       insertIndex: -1
@@ -271,6 +305,9 @@ MonoBehaviour:
   Lvl: 0
   RespawnPosition: {x: 0, y: 0, z: 0}
   DamageMultiplicator: 0
+  equip_point: {fileID: 0}
+  drop_point: {fileID: 0}
+  Inventaire_RL: {fileID: 0}
 --- !u!114 &6417597715926521093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,3 +414,8 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!4 &8944583025061533832 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2199501474550599725, guid: 1fff79988e2068c4eaff689f3b0b5f1a, type: 3}
+  m_PrefabInstance: {fileID: 7108853048717428901}
+  m_PrefabAsset: {fileID: 0}
