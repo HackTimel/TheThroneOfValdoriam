@@ -25,6 +25,15 @@ public class Quets3 : MonoBehaviour
     public Transform spawnPoint4;
     public Transform spawnPoint5;
     public float spawnInterval = 60f;
+    public Text texteMinutes;   // À gauche
+    public Text texteSecondes; 
+    
+    // À droite
+
+    [Tooltip("Durée du décompte en secondes")]
+    public float dureeTotale = 120f; // Exemple : 2 minutes
+
+    private float tempsRestant;
     // Temps entre chaque spawn en secondes
 
     private float timer;
@@ -37,7 +46,7 @@ public class Quets3 : MonoBehaviour
         rt = Panel.GetComponent<RectTransform>();
 
         // Changer la taille (largeur, hauteur)
-        rt.sizeDelta = new Vector2(191, 57);
+        rt.sizeDelta = new Vector2(255, 79);
         Panel.gameObject.SetActive(false);
         if (!Quetes2.activation_Quets)
         {
@@ -59,6 +68,7 @@ public class Quets3 : MonoBehaviour
                 SpawnBoss();
                 timer = spawnInterval; // Réinitialise le timer
             }
+            minuteur();
         }
 
         refresh_png();
@@ -88,4 +98,31 @@ public class Quets3 : MonoBehaviour
         }
 
     }
-}
+
+    public void minuteur()
+    {
+        tempsRestant -= Time.deltaTime;
+        
+                if (tempsRestant <= 0)
+                {
+                    // Redémarrer le décompte
+                    tempsRestant = dureeTotale;
+                }
+        
+                int minutes = Mathf.FloorToInt(tempsRestant / 60);
+                int secondes = Mathf.FloorToInt(tempsRestant % 60);
+        
+                // Affichage minutes
+                if (minutes == 1)
+                    texteMinutes.text = "1,";
+                else
+                    texteMinutes.text = minutes + ",";
+        
+                // Affichage secondes
+                if (secondes == 1)
+                    texteSecondes.text = "1";
+                else
+                    texteSecondes.text = secondes.ToString();
+    }
+    }
+

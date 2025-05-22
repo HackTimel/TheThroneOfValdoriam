@@ -17,7 +17,8 @@ public class Quets : MonoBehaviour
     [SerializeField] public Text texte;
     //[SerializeField] public GameObject PorteGameObject;
     [SerializeField] public GameObject CibleGameObject;
-     [SerializeField] public GameObject Boss;
+    [SerializeField] public GameObject Boss;
+    [SerializeField] public GameObject CibGameObject;
     public bool Passer_porte = false;  
     public bool porte_baisser0 = false;
     public bool porte_baisser1 = false;
@@ -27,6 +28,7 @@ public class Quets : MonoBehaviour
     public bool code_bon = false;
     private RectTransform rt;
     [SerializeField] public GameObject portail;
+    [SerializeField] public GameObject EnemyGameObject;
     
     
     
@@ -114,6 +116,8 @@ public class Quets : MonoBehaviour
     
     public void Quetes_Fuite_Etape_3()
     {
+        EnemyGameObject.SetActive(true);
+        
         if (est_mort)
         {
             Debug.Log("est mort");
@@ -154,6 +158,16 @@ public class Quets : MonoBehaviour
         texte.text = "Un portail est apparue defender la ville contre les vagues d'enemis";
         activation_Quets = false;
         
+    }
+
+    public void Modif_Pos()
+    {
+        Vector3 position = CibGameObject.transform.position;
+
+        position.x = 196f;  // Nouvelle valeur pour X
+        position.z = 1.7f; // Nouvelle valeur pour Z
+
+        CibGameObject.transform.position = position;
     }
 
   
