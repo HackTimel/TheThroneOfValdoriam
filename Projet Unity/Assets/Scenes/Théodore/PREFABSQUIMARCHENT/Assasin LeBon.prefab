@@ -76,7 +76,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9062370495824547917, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 3883794794
+      value: 3142936099
       objectReference: {fileID: 0}
     - target: {fileID: 268507190368875545, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       propertyPath: m_LocalPosition.x
@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2616988417628386803, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3763336403442683987, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       propertyPath: playerObj
       value: 
@@ -144,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4478480108486210126, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       propertyPath: m_Name
-      value: Assasin Variant
+      value: Assasin LeBon
       objectReference: {fileID: 0}
     - target: {fileID: 5924826723156092828, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
       propertyPath: m_LocalPosition.y
@@ -202,7 +206,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2616988417628386803, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1924784333495487750, guid: 4212c19891a8e134abe303ee7bb24986, type: 3}
     m_AddedGameObjects:

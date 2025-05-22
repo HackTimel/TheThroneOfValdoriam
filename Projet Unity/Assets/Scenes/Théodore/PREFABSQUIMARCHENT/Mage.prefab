@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: touche
       value: 
       objectReference: {fileID: 489574278360388293}
+    - target: {fileID: 2075452098640821923, guid: 1fff79988e2068c4eaff689f3b0b5f1a, type: 3}
+      propertyPath: "vis\xE9e"
+      value: 
+      objectReference: {fileID: 6417597715926521093}
     - target: {fileID: 4162291602573176702, guid: 1fff79988e2068c4eaff689f3b0b5f1a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -253,6 +257,7 @@ MonoBehaviour:
   moveLeft: 97
   Capa1: 113
   Capa2: 116
+  Attack: 324
   orientation: {fileID: 2672666269836267171}
   rb: {fileID: 2319578336388746488}
   readyToJump: 1
@@ -283,6 +288,7 @@ MonoBehaviour:
   terrainLayer:
     serializedVersion: 2
     m_Bits: 64
+  isTargeting: 0
 --- !u!1 &2088726950402569178 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9104904292137368447, guid: 1fff79988e2068c4eaff689f3b0b5f1a, type: 3}

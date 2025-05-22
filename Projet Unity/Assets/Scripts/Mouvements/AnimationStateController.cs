@@ -9,6 +9,7 @@ public class AnimationStateController : MonoBehaviour
 {
     
     Animator animator;
+    public FireballTargeting visée;
     public PlayerMovement_solo touche;
     private bool is_Attacking;
     public float attack_Delay;
@@ -31,6 +32,7 @@ public class AnimationStateController : MonoBehaviour
         bool sauter = Input.GetKey(touche.jumpKey);
         bool Capa1 = Input.GetKey(touche.Capa1);
         bool Capa2 = Input.GetKey(touche.Capa2);
+        bool Attack = Input.GetKey(touche.Attack);
 
         // Mettre à jour les états dans l'Animator
         //if (!grimper)
@@ -50,6 +52,20 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool("Capa1", Capa1);
 
             animator.SetBool("Capa2", Capa2);
+            /*
+
+            if(visée!= null)
+            {
+                if(visée.isTargeting)
+                    animator.SetBool("Attack1", Attack);
+            }
+            else
+            {
+                animator.SetBool("Attack1", Attack);
+            }
+            */
+
+            animator.SetBool("Attack1", Attack);
         
      
     }
