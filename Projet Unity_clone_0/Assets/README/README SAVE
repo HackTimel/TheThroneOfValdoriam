@@ -1,0 +1,19 @@
+﻿7 Fichiers ont été modifiées pour le systeme de save & load :
+    -HealthManager (pour charger correctement les pv)
+    -PlayerDataManager (Pour sauvegarder dans le lvl1)
+    -PersistentManager (Pour pouvoir lire la sauvegarde, puis l'appliquer dans les niveaux) (fichier "dont destroy on load")
+    -PlayerManager (vérifie si un chargement de sauvegarde à eu lieux)
+    
+    -SaveListManager (fouille les saves dispo et les affiche)
+    -Load (appliqué au préfab, permet d'obtenir le nom de la sauvegarde et contient le script de load, et son comportement en terme de couleur si selectioné)
+    -Find_Manager_Save (permet l'articulation des boutons supprimer et charger, en plus d'identifier quelle sauvegarde est actuellement selectionée et indique
+                        au SaveListManager si un changement a eu lieu pour réafficher dynamiquement les saves désormais dispo)
+    
+   
+    
+    Note 22/02/2025 :
+    Ajout du système de sauvegarde dynamique (suppression et création de fichier, chargement de fichier au choix). 
+    
+    
+    TDLR : il reste les autres informations ajoutées à l'avenir
+    
