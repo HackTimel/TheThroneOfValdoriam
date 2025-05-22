@@ -28,5 +28,6 @@ public class Degat_ennemi : MonoBehaviour
             }
         }
         
+        
     }
 }

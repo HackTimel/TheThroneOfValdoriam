@@ -7,11 +7,12 @@ using TMPro;
 public class Quets : MonoBehaviour
 {
     public bool activation_Quets = false;
-    private bool Etape1;
-    private bool Etape2;
-    private bool Etape3;
-    private bool Etape4;
-    private bool Etape5;
+    public bool Etape1;
+    public bool Etape2;
+    public bool Etape3;
+    public bool Etape4;
+    public bool Etape5;
+    public bool Etape6;
     [SerializeField] public Button Panel;
     [SerializeField] public Text texte;
     //[SerializeField] public GameObject PorteGameObject;
@@ -24,6 +25,9 @@ public class Quets : MonoBehaviour
     [SerializeField] public GameObject PorteSysGameObject;
     public bool est_mort = false;
     public bool code_bon = false;
+    private RectTransform rt;
+    [SerializeField] public GameObject portail;
+    
     
     
 
@@ -31,7 +35,10 @@ public class Quets : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rt = Panel.GetComponent<RectTransform>();
+
+        // Changer la taille (largeur, hauteur)
+        rt.sizeDelta = new Vector2(191, 57);
     }
 
     // Update is called once per frame
@@ -40,9 +47,9 @@ public class Quets : MonoBehaviour
        // Debug.Log(Passer_porte+"A");
         //Debug.Log(porte_baisser0+"b");
         
-        if (fin_quetes1)
+        if (activation_Quets)
         {
-            activation_Quets = true;
+            
             Etape1 = true;
         }
 
@@ -70,6 +77,9 @@ public class Quets : MonoBehaviour
         {
             Quetes_Fuite_Etape_5();
         }
+
+      
+
        
     }
 
@@ -80,7 +90,7 @@ public class Quets : MonoBehaviour
         Panel.gameObject.SetActive(true);
         
         texte.text = "Fuis et ferme la porte.";
-        texte.fontSize = 20;
+        texte.fontSize = 14;
         if (Passer_porte&&porte_baisser0)
         {
             Etape1 = false;
@@ -92,8 +102,8 @@ public class Quets : MonoBehaviour
 
     public void Quetes_Fuite_Etape_2()
     {
-        texte.text = "Prend l'un des 2 chemin et affronte les sentinelles.";
-        texte.fontSize = 15;
+        texte.text = "Traverse la foret pour atteindre la cite.";
+        texte.fontSize = 14;
         if (porte_passer2)
         {
             Etape2 = false;
@@ -112,14 +122,13 @@ public class Quets : MonoBehaviour
             return; // ← Arrête l'exécution ici
         }
 
-        texte.text = "Le premier rempart a cédé sous l'armée des morts.\n" +
-                     "Trouvez le code dans le château pour fermer le second rempart.";
-        texte.fontSize = 15;
+        texte.text = "Le premier rempart a cédé sous l'armée des morts .Trouvez le code dans le château pour fermer le second rempart.";
+        texte.fontSize = 12;
+        rt.sizeDelta = new Vector2(265, 79);
 
-        if (Boss != null)
-        {
+        
             Boss.SetActive(true);
-        }
+        
     }
 
     public void Quetes_Fuite_Etape_4()
@@ -131,12 +140,21 @@ public class Quets : MonoBehaviour
         {
             Etape4= false;
             Etape5 = true;
+            return;
             
         }
+
+       
+        
     }
 
     public void Quetes_Fuite_Etape_5()
     {
-        texte.text = "Fin De Quetes";
+        rt.sizeDelta = new Vector2(265, 79);
+        texte.text = "Un portail est apparue defender la ville contre les vagues d'enemis";
+        activation_Quets = false;
+        
     }
+
+  
 }

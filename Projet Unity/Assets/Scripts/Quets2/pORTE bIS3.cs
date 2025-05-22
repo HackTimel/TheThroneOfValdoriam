@@ -29,12 +29,13 @@ public class pORTEbIS3 : MonoBehaviour
         {
             Quetes2.porte_baisser1 = false;
         }
+        Debug.Log(porte_baisser03);
     }
     public void Ouverture_Port()
     {
         if (Vector3.Distance(Player.transform.position, Localisation.transform.position) < Distance)
         {
-            Debug.Log("Ca marche");
+           
             if (!porte_baisser03)
             {
            
@@ -42,7 +43,7 @@ public class pORTEbIS3 : MonoBehaviour
                 Baisser0.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.V))
                 {
-                    Debug.Log("B"+Quetes2.porte_baisser0);
+                    
                   
                     porte_baisser03 = true;
                     Debug.Log("C"+Quetes2.porte_baisser0);

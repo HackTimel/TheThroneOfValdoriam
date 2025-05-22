@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ public class IAManager : MonoBehaviour
      public int difficulty; pour changer les valeurs des pv etc en fonction de celle ci.
      */
     [SerializeField] Image healthBar; //2.13 plus haut
-    
+    [SerializeField] [CanBeNull] public Quets quets;
     
     public float pv = 100f;
     
@@ -29,6 +30,10 @@ public class IAManager : MonoBehaviour
             if (!CompareTag("Boss"))
             {
                 Destroy(this.gameObject);
+            }
+            else
+            {
+                quets.est_mort = true;
             }
            ;  
         }

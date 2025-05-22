@@ -94,7 +94,7 @@ public class IA_Allie_Comportement : MonoBehaviour
 
     public void deplcement()
     {
-        if (Vector3.Distance(agent.transform.position, Objectif.position)>1)
+        if (Vector3.Distance(agent.transform.position, Objectif.position)>2f)
         {
             agent.speed = IA_Speed;
             animator.SetBool("Suivre", true);
