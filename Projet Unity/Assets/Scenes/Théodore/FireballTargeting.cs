@@ -6,7 +6,7 @@ public class FireballTargeting : MonoBehaviour
     public GameObject fireballPrefab;
     public LayerMask terrainLayer;
 
-    private bool isTargeting = false;
+    public bool isTargeting = false;
 
     void Start()
     {
