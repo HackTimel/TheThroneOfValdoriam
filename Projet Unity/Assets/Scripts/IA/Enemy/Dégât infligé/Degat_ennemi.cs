@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Degat_ennemi : MonoBehaviour
 {
-    public int damageAmount = 10; //degat exemple
+    public int damageAmount = 5; //degat exemple
     [SerializeField] public GameObject Health;
     [SerializeField] public IAManager Health0;
 
@@ -30,4 +30,5 @@ public class Degat_ennemi : MonoBehaviour
         
         
     }
+    
 }

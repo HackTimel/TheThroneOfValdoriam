@@ -18,7 +18,6 @@ public class TeleportZone: MonoBehaviour
     public bool chargementOn;
     void Start()
     {
-        
         GetComponent<MeshRenderer>().enabled = false;
     }
 
@@ -34,8 +33,10 @@ public class TeleportZone: MonoBehaviour
             other.transform.position = teleportZone.transform.position;
             controller.enabled = true;
             */
-            other.transform.root.position = teleportZone.transform.position;
+            Vector3 hauteur = new Vector3(0, 0, 0);
+            other.transform.root.position = teleportZone.transform.position + hauteur;
             TeleportZone teleportZoneScript = teleportZone.GetComponent<TeleportZone>();
+            Debug.Log("Teleporting to: " + teleportZone.transform.position);
             teleportZoneScript.teleportZoneOn = false;
             chargementOn = true;
             panel_de_chargement.SetActive(true);
