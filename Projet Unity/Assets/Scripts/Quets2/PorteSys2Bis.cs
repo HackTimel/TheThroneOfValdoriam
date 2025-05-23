@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using JetBrains.Annotations;
 
 public class PorteSys2Bis : MonoBehaviour
 {
@@ -16,10 +17,17 @@ public class PorteSys2Bis : MonoBehaviour
     [SerializeField] public GameObject SysGameObject0;
     [SerializeField] public GameObject SysGameObject1;
 
+    [SerializeField][CanBeNull] public StartClass instance;
 
+    void Start()
+    {
+        Player = instance.player;
+    }
+    // Up
     // Update is called once per frame
     void Update()
     {
+        Player = instance.player;
         Ouverture_Port();
         if (Quetes2.code_bon)
         {

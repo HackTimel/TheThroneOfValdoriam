@@ -49,6 +49,7 @@ public class Level1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if (!First_Isover)
         {
             compteur++;
@@ -63,7 +64,7 @@ public class Level1 : MonoBehaviour
 
         if (instrcution_index == 0)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 instructions.text = next_instruction;
             }
@@ -85,7 +86,7 @@ public class Level1 : MonoBehaviour
         }
         if (instrcution_index == 3)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 instructions.text = next_instruction;
             }

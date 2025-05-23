@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using JetBrains.Annotations;
 
 public class pORTEbIS3 : MonoBehaviour
 {
@@ -14,11 +15,16 @@ public class pORTEbIS3 : MonoBehaviour
      [SerializeField] public GameObject PorteGameObject;
      [SerializeField] public GameObject Localisation;
      [SerializeField] public Quets Quetes2;
-    
+     [SerializeField][CanBeNull] public StartClass instance;
 
+     void Start()
+     {
+         Player = instance.player;
+     }
     // Update is called once per frame
     void Update()
     {
+        Player = instance.player;
        
         Ouverture_Port();
         if (porte_baisser03)

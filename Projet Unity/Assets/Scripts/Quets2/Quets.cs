@@ -7,7 +7,7 @@ using TMPro;
 public class Quets : MonoBehaviour
 {
     public bool activation_Quets = false;
-    public bool Etape1;
+    public bool Etape1 = false;
     public bool Etape2;
     public bool Etape3;
     public bool Etape4;
@@ -16,7 +16,7 @@ public class Quets : MonoBehaviour
     [SerializeField] public Button Panel;
     [SerializeField] public Text texte;
     //[SerializeField] public GameObject PorteGameObject;
-    [SerializeField] public GameObject CibleGameObject;
+    [SerializeField] public GameObject VagueGameObject;
     [SerializeField] public GameObject Boss;
     [SerializeField] public GameObject CibGameObject;
     public bool Passer_porte = false;  
@@ -24,11 +24,14 @@ public class Quets : MonoBehaviour
     public bool porte_baisser1 = false;
     public bool porte_passer2 = false;
     [SerializeField] public GameObject PorteSysGameObject;
+     [SerializeField] public GameObject CodedGameObject;
     public bool est_mort = false;
     public bool code_bon = false;
     private RectTransform rt;
     [SerializeField] public GameObject portail;
     [SerializeField] public GameObject EnemyGameObject;
+    public bool quets3;
+    public bool debut = false;
     
     
     
@@ -37,6 +40,13 @@ public class Quets : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Etape1 = false;
+        Etape2 = false;
+        Etape3 = false;
+        Etape4= false;
+        Etape5 = false;
+        Etape6 = false;
+        quets3 = false;
         rt = Panel.GetComponent<RectTransform>();
 
         // Changer la taille (largeur, hauteur)
@@ -49,7 +59,7 @@ public class Quets : MonoBehaviour
        // Debug.Log(Passer_porte+"A");
         //Debug.Log(porte_baisser0+"b");
         
-        if (activation_Quets)
+        if (debut)
         {
             
             Etape1 = true;
@@ -80,9 +90,11 @@ public class Quets : MonoBehaviour
             Quetes_Fuite_Etape_5();
         }
 
-      
+        Debug.Log(porte_baisser0);
 
-       
+
+
+
     }
 
 
@@ -93,8 +105,10 @@ public class Quets : MonoBehaviour
         
         texte.text = "Fuis et ferme la porte.";
         texte.fontSize = 14;
+        VagueGameObject.SetActive(true);
         if (Passer_porte&&porte_baisser0)
         {
+            debut = false;
             Etape1 = false;
             Etape2 = true;
         }
@@ -157,6 +171,7 @@ public class Quets : MonoBehaviour
         rt.sizeDelta = new Vector2(265, 79);
         texte.text = "Un portail est apparue defender la ville contre les vagues d'enemis";
         activation_Quets = false;
+        quets3 = true;
         
     }
 
@@ -168,6 +183,11 @@ public class Quets : MonoBehaviour
         position.z = 1.7f; // Nouvelle valeur pour Z
 
         CibGameObject.transform.position = position;
+    }
+
+    public void fermer()
+    {
+        CodedGameObject.SetActive(false);
     }
 
   

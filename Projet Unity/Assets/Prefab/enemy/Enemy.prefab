@@ -601,6 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 437815223137495079}
+  quets: {fileID: 0}
   pv: 100
 --- !u!114 &7060083495390457405
 MonoBehaviour:
@@ -2981,7 +2982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbb8fd4402b13c4bb20fecabe25c467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
+  damageAmount: 30
   Health: {fileID: 0}
   Health0: {fileID: 0}
 --- !u!54 &4866612574490627469

@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 229179918
+  GlobalObjectIdHash: 213071564
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -475,6 +475,8 @@ MonoBehaviour:
   equip_point: {fileID: 2213391419699394337}
   drop_point: {fileID: 7890945576605772645}
   Inventaire_RL: {fileID: 0}
+  music_zones: []
+  audio_manager: {fileID: 0}
 --- !u!114 &2616988417628386803
 MonoBehaviour:
   m_ObjectHideFlags: 0

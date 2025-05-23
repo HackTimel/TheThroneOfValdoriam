@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using JetBrains.Annotations;
 
 public class IA_Allie_Comportement : MonoBehaviour
 {
@@ -30,8 +31,10 @@ public class IA_Allie_Comportement : MonoBehaviour
     [SerializeField]public float chaseSpeed;
     [SerializeField] public float attackRadius;
     public bool isAttack;
+    [SerializeField][CanBeNull] public StartClass instance;
     void Start()
     {
+        player = instance.player;
         agent.acceleration = 999f;
         agent.angularSpeed = 720f;
         agent.stoppingDistance = 1f;
@@ -39,6 +42,7 @@ public class IA_Allie_Comportement : MonoBehaviour
 
     public void Update()
     {
+        player = instance.player;
         if (Is_Suivre)
         {
             Suivre();

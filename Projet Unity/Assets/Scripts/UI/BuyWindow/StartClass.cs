@@ -9,6 +9,7 @@ public class StartClass : MonoBehaviour
     public GameObject guerrier;
     public GameObject mage;
     public GameObject assassin;
+    public GameObject player;
 
 
     public bool selected;
@@ -37,15 +38,18 @@ public class StartClass : MonoBehaviour
 
     public void Guerrier()
     {
+        player = guerrier;
         guerrier.SetActive(true);
     }
     
     public void Mage()
     {
+        player = mage;
         mage.SetActive(true);
     }
     public void Assassin()
     {
+        player = assassin;
         assassin.SetActive(true);
     }
 }

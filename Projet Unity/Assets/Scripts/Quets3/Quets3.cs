@@ -48,7 +48,7 @@ public class Quets3 : MonoBehaviour
         // Changer la taille (largeur, hauteur)
         rt.sizeDelta = new Vector2(255, 79);
         Panel.gameObject.SetActive(false);
-        if (!Quetes2.activation_Quets)
+        if (!Quetes2.activation_Quets&&Quetes2.quets3)
         {
             SpawnBoss();
         }
@@ -58,7 +58,7 @@ public class Quets3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Quetes2.activation_Quets)
+        if (!Quetes2.activation_Quets&&Quetes2.quets3)
         {
             Panel.gameObject.SetActive(true);
             timer -= Time.deltaTime;
