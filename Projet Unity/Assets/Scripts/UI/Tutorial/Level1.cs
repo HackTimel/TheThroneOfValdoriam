@@ -64,7 +64,7 @@ public class Level1 : MonoBehaviour
 
         if (instrcution_index == 0)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 instructions.text = next_instruction;
             }
@@ -86,7 +86,7 @@ public class Level1 : MonoBehaviour
         }
         if (instrcution_index == 3)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 instructions.text = next_instruction;
             }
