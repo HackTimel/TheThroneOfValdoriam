@@ -20042,6 +20042,18 @@ PrefabInstance:
       propertyPath: pv
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3598032406598570994, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+      propertyPath: toi
+      value: 
+      objectReference: {fileID: 590322646}
+    - target: {fileID: 3598032406598570994, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+      propertyPath: manager_alli
+      value: 
+      objectReference: {fileID: 1777720026}
+    - target: {fileID: 3598032406598570994, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+      propertyPath: Allies_current
+      value: 
+      objectReference: {fileID: 11400000, guid: 8169b82f34af477469b5447561ff9b4b, type: 2}
     - target: {fileID: 4465537572323320498, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
       propertyPath: player
       value: 
@@ -20071,6 +20083,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+--- !u!1 &590322646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5240542235865846778, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+  m_PrefabInstance: {fileID: 590322645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &592244323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26367,6 +26384,18 @@ PrefabInstance:
       propertyPath: pv
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3598032406598570994, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+      propertyPath: toi
+      value: 
+      objectReference: {fileID: 789228623}
+    - target: {fileID: 3598032406598570994, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+      propertyPath: manager_alli
+      value: 
+      objectReference: {fileID: 1777720026}
+    - target: {fileID: 3598032406598570994, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+      propertyPath: Allies_current
+      value: 
+      objectReference: {fileID: 11400000, guid: 8169b82f34af477469b5447561ff9b4b, type: 2}
     - target: {fileID: 4465537572323320498, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
       propertyPath: player
       value: 
@@ -26396,6 +26425,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+--- !u!1 &789228623 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5240542235865846778, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+  m_PrefabInstance: {fileID: 789228622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &791918331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64502,6 +64536,18 @@ PrefabInstance:
       propertyPath: pv
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3598032406598570994, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+      propertyPath: toi
+      value: 
+      objectReference: {fileID: 1950085857}
+    - target: {fileID: 3598032406598570994, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+      propertyPath: manager_alli
+      value: 
+      objectReference: {fileID: 1777720026}
+    - target: {fileID: 3598032406598570994, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+      propertyPath: Allies_current
+      value: 
+      objectReference: {fileID: 11400000, guid: 8169b82f34af477469b5447561ff9b4b, type: 2}
     - target: {fileID: 4465537572323320498, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
       propertyPath: rb
       value: 
@@ -64535,6 +64581,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+--- !u!1 &1950085857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5240542235865846778, guid: b41de4d3b07003147bfaac15fe6649d5, type: 3}
+  m_PrefabInstance: {fileID: 1950085856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1954632490
 GameObject:
   m_ObjectHideFlags: 0

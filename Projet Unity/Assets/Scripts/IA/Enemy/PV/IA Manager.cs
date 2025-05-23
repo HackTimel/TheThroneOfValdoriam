@@ -12,6 +12,9 @@ public class IAManager : MonoBehaviour
      */
     [SerializeField] Image healthBar; //2.13 plus haut
     [SerializeField] [CanBeNull] public Quets quets;
+    [SerializeField] [CanBeNull]public GameObject toi;
+    [SerializeField] [CanBeNull]public Manger_Commadement manager_alli;
+    [SerializeField] public Allies2 Allies_current;
     
     public float pv = 100f;
     
@@ -29,7 +32,17 @@ public class IAManager : MonoBehaviour
         {
             if (!CompareTag("Boss"))
             {
-                Destroy(this.gameObject);
+                if (CompareTag("Allie"))
+                {
+                    (Allies2, GameObject) val = (Allies_current, toi);
+                    manager_alli.allies.Remove(val);
+                    Destroy(toi);
+                }
+                else
+                {
+                    Destroy(this.gameObject);
+                }
+               
             }
             else
             {

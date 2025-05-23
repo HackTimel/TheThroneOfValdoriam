@@ -121,7 +121,7 @@ public class IA_Allie_Comportement : MonoBehaviour
         {
         
             
-                if (Vector3.Distance(transform.position,player.transform.position) < 5)
+                if (Vector3.Distance(transform.position,player.transform.position) < 3)
                 {
                     Text0.SetActive(true);
                     if (Input.GetKey(KeyCode.V))
@@ -144,7 +144,7 @@ public class IA_Allie_Comportement : MonoBehaviour
             if (manager_alli.colliders.Contains(Allie_Collider))
             {
              
-                if (Vector3.Distance(transform.position,player.transform.position) < 5)
+                if (Vector3.Distance(transform.position,player.transform.position) < 3)
                 {
                   
                     Text.SetActive(true);
