@@ -1,3 +1,4 @@
+#if UNITY_EDITOR 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,3 +16,4 @@ public class Champ_Vison_IA : Editor
         Handles.DrawSolidArc(t.transform.position, Vector3.up, -t.transform.right, 180, t.visoionArea);
     }
 }
+#endif

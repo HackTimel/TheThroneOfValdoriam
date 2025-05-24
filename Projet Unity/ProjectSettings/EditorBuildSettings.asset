@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Level1.unity
     guid: c512b9616dfbc284d88c44639d2991d5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Niveau 1/Level1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Invenatire_RL.unity
     guid: 3121c7765c2a782418ec9eb246f5cd8d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Niveau 1/Level_beta.unity
     guid: db829db5d9cb9904eba584c47bc846ce
   - enabled: 1
