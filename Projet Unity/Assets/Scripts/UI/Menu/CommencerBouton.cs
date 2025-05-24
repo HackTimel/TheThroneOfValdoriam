@@ -8,7 +8,7 @@ public class CommencerBouton : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Scenes/Romario/map 1"); //on lance une nouvelle game dans cette game
     }
     // Start is called before the first frame update
     void Start()

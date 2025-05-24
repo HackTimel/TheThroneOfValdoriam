@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Niveau 1/Level_beta.unity
     guid: db829db5d9cb9904eba584c47bc846ce
+  - enabled: 1
+    path: Assets/Scenes/Romario/map 1.unity
+    guid: a5d2b875ec870864ead99b973ae2790b
   m_configObjects: {}

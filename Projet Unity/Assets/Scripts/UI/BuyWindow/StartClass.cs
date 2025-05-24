@@ -10,6 +10,9 @@ public class StartClass : MonoBehaviour
     public GameObject mage;
     public GameObject assassin;
     public GameObject player;
+    public PlayerDataManager dataManager;
+    public HealthManager healthManager;
+    
 
 
     public bool selected;
@@ -40,16 +43,22 @@ public class StartClass : MonoBehaviour
     {
         player = guerrier;
         guerrier.SetActive(true);
+        dataManager.indice_player = 0;
+        healthManager.player = player;
     }
     
     public void Mage()
     {
         player = mage;
         mage.SetActive(true);
+        dataManager.indice_player = 1;
+        healthManager.player = player;
     }
     public void Assassin()
     {
         player = assassin;
         assassin.SetActive(true);
+        dataManager.indice_player = 2;
+        healthManager.player = player;
     }
 }

@@ -39,6 +39,7 @@ public class MusicZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("la valeur audio est out");
             if (audioSource.isPlaying)
             {
                 audioSource.Stop();

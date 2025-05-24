@@ -53,7 +53,7 @@ public class MenuController : MonoBehaviour
     public void Play()
     {
         persistentManager.Start = false;
-        SceneManager.LoadScene("Level_beta");
+        SceneManager.LoadScene("Scenes/Romario/map 1");
         
         //MusicManager.Instance.PlayMusic("Menu");
     }

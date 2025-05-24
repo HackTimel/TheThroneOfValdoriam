@@ -2160,6 +2160,8 @@ MonoBehaviour:
   healthManager: {fileID: 0}
   playerTransform: {fileID: 0}
   saveNameInput: {fileID: 0}
+  indice_savepoint: 0
+  indice_player: -1
 --- !u!4 &225640974
 Transform:
   m_ObjectHideFlags: 0
@@ -7171,10 +7173,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1037004574}
+  vfxSource: {fileID: 0}
   volumeSlider: {fileID: 1921220919}
   sfxSlider: {fileID: 1657473410}
   persistentManager: {fileID: 2144938556}
   volume: 0
+  sfxVolume: 0
 --- !u!114 &1037004573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11436,7 +11440,7 @@ MonoBehaviour:
   volumeChanged: 0
   persistentManager: {fileID: 2144938556}
   ConfirmationPrompt: {fileID: 1662674536}
-  _newGameLevel: Level1
+  _newGameLevel: map 1
 --- !u!1 &1921220917
 GameObject:
   m_ObjectHideFlags: 0
@@ -12190,7 +12194,10 @@ MonoBehaviour:
   savedHealth: 0
   hasLoaded: 0
   volume: 0
+  sfxVolume: 0
   Start: 1
+  indice_spawn: 0
+  selected_character: 0
 --- !u!4 &2144938557
 Transform:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class HealthManager : MonoBehaviour
     public float pointdevie_temporaire = 100f; //temporaire car doit être affecté à la classe joueur qui sera bientot implémenté
     [SerializeField] public PlayerManager playerManager;
     public float maxHealth = 100f; //important selon la classe après
+    [CanBeNull] public GameObject spawn;
+    public GameObject player;
     
     // Start is called before the first frame update
     
@@ -39,9 +42,14 @@ public class HealthManager : MonoBehaviour
 
         if (pointdevie_temporaire <= 0) //cas de mort. (Temporaire car nocheckpoint)
         {
-           
-            pointdevie_temporaire = 100f;
-            healthBar.fillAmount = pointdevie_temporaire / 100f;
+            /*if (spawn != null)
+            {
+                pointdevie_temporaire = 100f;
+                healthBar.fillAmount = pointdevie_temporaire / 100f;
+                player.transform.position = spawn.transform.position;
+            }
+            */
+            SceneManager.LoadScene("Scenes/Romario/map 1");
         }
         
         

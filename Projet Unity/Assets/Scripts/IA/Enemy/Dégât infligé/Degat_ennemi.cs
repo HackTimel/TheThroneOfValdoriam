@@ -5,7 +5,7 @@ using UnityEngine;
 public class Degat_ennemi : MonoBehaviour
 {
     public int damageAmount = 5; //degat exemple
-    [SerializeField] public GameObject Health;
+    [SerializeField] public HealthManager Health;
     [SerializeField] public IAManager Health0;
 
     
@@ -15,8 +15,7 @@ public class Degat_ennemi : MonoBehaviour
         {
             if (Health != null)
             {
-                HealthManager playerHealthScript = Health.GetComponent<HealthManager>();
-                playerHealthScript.TakeDamage(damageAmount);
+                Health.TakeDamage(damageAmount);
             }
         }
         if (other.CompareTag("Allie"))
