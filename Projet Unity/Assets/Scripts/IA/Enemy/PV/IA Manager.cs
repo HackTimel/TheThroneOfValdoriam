@@ -28,8 +28,13 @@ public class IAManager : MonoBehaviour
 
     private void Update()
     {
-        if (pv<=0)
+        if (pv <= 0)
         {
+            if (CompareTag("PNJ"))
+            {
+                Destroy(this.gameObject);
+            }
+
             if (!CompareTag("Boss"))
             {
                 if (CompareTag("Allie"))
@@ -42,15 +47,17 @@ public class IAManager : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                 }
-               
+
             }
             else
             {
                 quets.est_mort = true;
             }
-           ;  
+
+            ;
         }
     }
+
 
     // Update is called once per frame
   
