@@ -22,6 +22,6 @@ MonoBehaviour:
     Lior, guid\xE9 par une ancienne proph\xE9tie, escalada la montagne sacr\xE9e
     o\xF9 reposait la Hallebarde. Face aux \xE9preuves divines, il fit preuve de
     courage et d'humilit\xE9.          "
-  visuel: {fileID: 21300000, guid: f7111abcf951a1f4398426869d06640b, type: 3}
+  visuel: {fileID: 21300000, guid: ac6cd88de8817084ab2dc565cababd83, type: 3}
   prefab: {fileID: 2655180415730428750, guid: 3c670cc076cb4a046b45588093d4e5ba, type: 3}
   type: 1

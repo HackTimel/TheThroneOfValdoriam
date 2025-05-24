@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Minimap : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] public Transform player;
+    [SerializeField] [CanBeNull] public Transform player;
     [SerializeField] [CanBeNull] StartClass instance;
     void Start()
     {

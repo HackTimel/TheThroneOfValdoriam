@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 
 public class pORTEbIS3 : MonoBehaviour
 {
-     [SerializeField] public GameObject Player;
+     [SerializeField][CanBeNull] public GameObject Player;
      [SerializeField] public float Distance;
      public bool porte_baisser03 = false;
      [SerializeField] public GameObject Monter;

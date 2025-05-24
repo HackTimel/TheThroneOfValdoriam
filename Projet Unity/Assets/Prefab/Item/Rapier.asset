@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 'Rapiere '
   description: "Rapiere de l\xE9gende du roi Th\xE9odore"
-  visuel: {fileID: 21300000, guid: 358541a3db89a6f45956a5d4726d7312, type: 3}
+  visuel: {fileID: 21300000, guid: f8a637d091b244a4f85077310454cc5d, type: 3}
   prefab: {fileID: 1885238686008622576, guid: 51f7ac88607b86c4fbf8d7d0f455771d, type: 3}
   type: 1

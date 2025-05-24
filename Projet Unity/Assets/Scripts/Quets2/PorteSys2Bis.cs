@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 
 public class PorteSys2Bis : MonoBehaviour
 {
-    [SerializeField] public GameObject Player;
+    [SerializeField][CanBeNull] public GameObject Player;
     [SerializeField] public float Distance;
     public bool porte_baisser = false;
     [SerializeField] public GameObject Monter0;

@@ -19,6 +19,7 @@
         // Update is called once per frame
         void Update()
         {
+             GetComponent<Renderer>().enabled = false;
             
                 transform.localScale = Vector3.Lerp(transform.localScale,
                     new Vector3(spher_taille,spher_taille,spher_taille), Time.deltaTime );

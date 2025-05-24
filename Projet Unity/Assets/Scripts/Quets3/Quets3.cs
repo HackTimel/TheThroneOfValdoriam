@@ -8,9 +8,12 @@ public class Quets3 : MonoBehaviour
     [SerializeField] public Quets Quetes2;
     public bool activation_Quets0 = false;
     [SerializeField] public Button Panel;
+    [SerializeField] public Button Panel0;
     [SerializeField] public Text texte;
     [SerializeField] public GameObject PnjGameObject;
+    [SerializeField] public GameObject AuraGameObject;
     public int pnj;
+    public int nb_vague = 0;
 
     private RectTransform rt;
 
@@ -26,7 +29,8 @@ public class Quets3 : MonoBehaviour
     public Transform spawnPoint5;
     public float spawnInterval = 60f;
     public Text texteMinutes;   // À gauche
-    public Text texteSecondes; 
+    public Text texteSecondes;
+  
     
     // À droite
 
@@ -48,7 +52,7 @@ public class Quets3 : MonoBehaviour
         // Changer la taille (largeur, hauteur)
         rt.sizeDelta = new Vector2(255, 79);
         Panel.gameObject.SetActive(false);
-        if (!Quetes2.activation_Quets&&Quetes2.quets3)
+        if (Quetes2.quets3)
         {
             SpawnBoss();
         }
@@ -58,7 +62,13 @@ public class Quets3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Quetes2.activation_Quets&&Quetes2.quets3)
+        if (nb_vague>0)
+        {
+         Panel0.gameObject.SetActive(false);   
+        }
+        
+       
+        if (Quetes2.quets3)
         {
             Panel.gameObject.SetActive(true);
             timer -= Time.deltaTime;
@@ -87,12 +97,15 @@ public class Quets3 : MonoBehaviour
     {
         if (bossPrefab != null && spawnPoint != null)
         {
+            AuraGameObject.SetActive(true);
             Instantiate(bossPrefab, spawnPoint.position, spawnPoint.rotation);
             Instantiate(bossPrefab1, spawnPoint0.position, spawnPoint.rotation);
             Instantiate(bossPrefab2, spawnPoint1.position, spawnPoint.rotation);
             Instantiate(bossPrefab, spawnPoint3.position, spawnPoint.rotation);
             Instantiate(bossPrefab1, spawnPoint4.position, spawnPoint.rotation);
             Instantiate(bossPrefab2, spawnPoint5.position, spawnPoint.rotation);
+            nb_vague += 1;
+            AuraGameObject.SetActive(false);
 
             Debug.Log("Boss spawné à " + Time.time + " secondes.");
         }

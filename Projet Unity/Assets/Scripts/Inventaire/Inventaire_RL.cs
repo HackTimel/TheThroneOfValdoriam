@@ -79,6 +79,10 @@ public class Inventaire_RL : MonoBehaviour
                 Open_inventory();
             }
         }
+         if (Input.GetKeyDown(KeyCode.R))
+                {
+                  Desequip();
+                }
         Refresh_content_RL();
         
     }

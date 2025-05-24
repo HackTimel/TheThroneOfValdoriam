@@ -9,7 +9,7 @@ using JetBrains.Annotations;
 
 public class IA_Allie_Comportement : MonoBehaviour
 {
-    [SerializeField] public GameObject player;
+    [SerializeField][CanBeNull] public GameObject player;
     [SerializeField] public GameObject toi;
     [SerializeField] public Manger_Commadement manager_alli;
     [SerializeField] public float IA_Speed;
